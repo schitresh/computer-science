@@ -16,11 +16,11 @@ Visit [this](https://schitresh.github.io/notes-and-references) site to view note
   - Python
   - Ruby
   - JavaScript
-- System Design
-  - Design Concepts
-  - Design Patterns
-  - Website Designs
 - Web Frameworks
   - Rails
   - React
   - SQL
+- System Design
+  - Design Concepts
+  - Design Patterns
+  - Website Designs
