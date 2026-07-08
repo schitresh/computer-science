@@ -62,5 +62,5 @@ pipx inject mkdocs mkdocs-material mkdocs-gen-nav-plugin
 Publish updates directly to your GitHub repository hosting branch with one command:
 
 ```bash
-pipx run mkdocs gh-deploy --clean
+mkdocs gh-deploy --clean
 ```
