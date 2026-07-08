@@ -1,5 +1,7 @@
-# Computer Science
-- [Object Oriented Programming](object_oriented_programming/index.md)
-- [Database System](database_system/index.md)
-- [Operating System](operating_system/index.md)
-- [Computer Networks](computer_networks/index.md)
+# Software Development
+
+- [Computer Science](computer_science/)
+- [Programming Languages](programming_languages/)
+- [Development Tools](development_tools/)
+- [System Design](system_design/)
+- [Web Frameworks](web_frameworks/)

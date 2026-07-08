@@ -1,5 +1,7 @@
-# Computer Science
-Visit [Computer Science](https://schitresh.github.io/computer-science) to view notes on:
+# References for Software Development
+
+Visit [this](https://schitresh.github.io/notes-and-references) site to view notes on:
+
 - Object Oriented Programming
 - Database System
 - Operating System
