@@ -43,21 +43,34 @@ pipx inject mkdocs mkdocs-material mkdocs-gen-nav-plugin
 ### Development Server
 
 1. **Start the Local Server**:
+
    ```bash
    mkdocs serve
    ```
+
 2. **Preview Your Work**:
+
    Open your web browser and go to:
+
    ```text
    http://localhost:8000
    ```
+
 3. **Clear Cache & Restart**:
+
    If changes or new pages do not show up properly, stop the server (`Ctrl + C`) and run a clean reset:
+
    ```bash
    mkdocs build --clean
    ```
 
 ### Deployment
+
+To regenerate the indexes for new content, run:
+
+```bash
+mkdocs build --clean
+```
 
 Publish updates directly to your GitHub repository hosting branch with one command:
 
