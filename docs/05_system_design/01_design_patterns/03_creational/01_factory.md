@@ -1,40 +1,40 @@
 # Factory
 
--   Also known as Virtual Constructor
--   Provides an interface for creating objects in a superclass
-    -   But allows subclasses to alter the type of objects that will be created
--   Allows creating product objects without specifying their concrete classes
-    -   Avoids tight coupling between the creators and the products
+- Also known as Virtual Constructor
+- Provides an interface for creating objects in a superclass
+  - But allows subclasses to alter the type of objects that will be created
+- Allows creating product objects without specifying their concrete classes
+  - Avoids tight coupling between the creators and the products
 
 ## Problem
 
--   Let's say we're creating a logistics management application
-    -   The app handles transportation by trucks
-    -   So the bulk of the code is in the Truck class
--   After a while, we receive requests to incorporate sea logistics into the app
-    -   Adding a new Ship would require a lot of changes
-    -   Since the the code is coupled to the Truck class
--   Adding yet another type of transportation will require making these changes again
-    -   This will introduce many conditionals to switch the app's behavior
-        -   Depending on the class of the transportation objects
+- Let's say we're creating a logistics management application
+  - The app handles transportation by trucks
+  - So the bulk of the code is in the Truck class
+- After a while, we receive requests to incorporate sea logistics into the app
+  - Adding a new Ship would require a lot of changes
+  - Since the code is coupled to the Truck class
+- Adding yet another type of transportation will require making these changes again
+  - This will introduce many conditionals to switch the app's behavior
+    - Depending on the class of the transportation objects
 
 ## Solution
 
--   Replace the direct object construction calls with calls to a special factory method
-    -   Objects returned by a factory method are often referred as products
--   This allows us to override the factory method in a subclass
-    -   And change the class of products being created by the method
-    -   But these products from all the subclasses should have a common base class or interface
--   The Truck class and the Ship class implement the Transport interface
-    -   The Transport interface declares a method called deliver
-    -   Truck implements it to deliver by land, Ship implements it to deliver by sea
--   The code that uses the factory method
-    -   Doesn’t see a difference between the products returned by various subclasses
-    -   It knows that all transport objects are supposed to have the deliver method
-        -   But exactly how it works isn’t important to it
+- Replace the direct object construction calls with calls to a special factory method
+  - Objects returned by a factory method are often referred as products
+- This allows us to override the factory method in a subclass
+  - And change the class of products being created by the method
+  - But these products from all the subclasses should have a common base class or interface
+- The Truck class and the Ship class implement the Transport interface
+  - The Transport interface declares a method called deliver
+  - Truck implements it to deliver by land, Ship implements it to deliver by sea
+- The code that uses the factory method
+  - Doesn’t see a difference between the products returned by various subclasses
+  - It knows that all transport objects are supposed to have the deliver method
+    - But exactly how it works isn’t important to it
 
 ## Example
-=== "Ruby"
+
 ```rb
 # Creator
 # Declares the factory method that returns an object of a product class. The subclasses
