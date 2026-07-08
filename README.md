@@ -24,3 +24,43 @@ Visit [this](https://schitresh.github.io/notes-and-references) site to view note
   - Design Concepts
   - Design Patterns
   - Website Designs
+
+## Development
+
+This repository contains an automated documentation site powered by **MkDocs** and the **Material theme**. The layout is built automatically based on your folder structure and numbers, completely removing the need to manage manual navigation links inside your configuration file.
+
+### Environment Setup
+
+Install `pipx` and `mkdocs` via terminal:
+
+```bash
+brew install pipx
+pipx ensurepath
+pipx install mkdocs
+pipx inject mkdocs mkdocs-material mkdocs-gen-nav-plugin
+```
+
+### Development Server
+
+1. **Start the Local Server**:
+   ```bash
+   mkdocs serve
+   ```
+2. **Preview Your Work**:
+   Open your web browser and go to:
+   ```text
+   http://localhost:8000
+   ```
+3. **Clear Cache & Restart**:
+   If changes or new pages do not show up properly, stop the server (`Ctrl + C`) and run a clean reset:
+   ```bash
+   mkdocs build --clean
+   ```
+
+### Deployment
+
+Publish updates directly to your GitHub repository hosting branch with one command:
+
+```bash
+pipx run mkdocs gh-deploy --clean
+```
