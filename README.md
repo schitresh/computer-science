@@ -1,6 +1,6 @@
-# References for Software Development
+# Software Development
 
-Visit [this](https://schitresh.github.io/notes-and-references) site to view notes on:
+Visit [this](https://schitresh.github.io/notes-and-references) site to view notes & references on:
 
 - Computer Science
   - Object Oriented Programming
@@ -14,8 +14,8 @@ Visit [this](https://schitresh.github.io/notes-and-references) site to view note
   - VS Code
 - Programming Languages
   - Python
-  - Javascript
   - Ruby
+  - JavaScript
 - System Design
   - Design Concepts
   - Design Patterns

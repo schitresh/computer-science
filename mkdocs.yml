@@ -1,11 +1,12 @@
-site_name: Notes & References for Software Development
+site_name: Software Development
 repo_name: schitresh/notes-and-references
 repo_url: https://github.com/schitresh/notes-and-references
 plugins:
   - search
-  - awesome-pages
   - gen_nav:
       enabled: true
+hooks:
+  - hooks/generate_indexes.py
 theme:
   name: material
   features:
@@ -13,6 +14,7 @@ theme:
     - navigation.indexes
     - navigation.path
     - navigation.tabs
+    - navigation.tabs.link
     - navigation.top
     - search.highlight
     - toc.follow
