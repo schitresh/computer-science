@@ -12370,36 +12370,36 @@
 <ul>
 <li>Immutable</li>
 </ul>
-<pre><code class="language-rb">status = :draft
-status[1] # 'r'
-status[-4] # 'r'
-# status + 'world' raises error
-status.to_s + 'status' # 'draft status'
-
-# Each symbol has only once instance
-a = :value
-b = :value
-a.object_id == b.object_id # true
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:draft</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">status</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="c1"># &#39;r&#39;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">status</span><span class="o">[-</span><span class="mi">4</span><span class="o">]</span><span class="w"> </span><span class="c1"># &#39;r&#39;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># status + &#39;world&#39; raises error</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">status</span><span class="o">.</span><span class="n">to_s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;status&#39;</span><span class="w"> </span><span class="c1"># &#39;draft status&#39;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Each symbol has only once instance</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:value</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:value</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">a</span><span class="o">.</span><span class="n">object_id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="o">.</span><span class="n">object_id</span><span class="w"> </span><span class="c1"># true</span>
+</span></code></pre></div>
 <h2 id="slicing">Slicing</h2>
 <ul>
 <li>Similar to strings</li>
 </ul>
 <h2 id="instance-methods">Instance Methods</h2>
-<pre><code class="language-rb"># General
-length
-to_s
-
-# Find and replace
-start_with(prefix)
-end_with(suffix)
-
-# Case
-casecmp?(sym2) # Compares symbol by ignoring case
-downcase
-upcase
-capitalize # Capitalizes the first letter of symbol
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># General</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">length</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">to_s</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># Find and replace</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">start_with</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">end_with</span><span class="p">(</span><span class="n">suffix</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># Case</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">casecmp?</span><span class="p">(</span><span class="n">sym2</span><span class="p">)</span><span class="w"> </span><span class="c1"># Compares symbol by ignoring case</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">downcase</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">upcase</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">capitalize</span><span class="w"> </span><span class="c1"># Capitalizes the first letter of symbol</span>
+</span></code></pre></div>
 
 
 

@@ -12487,94 +12487,94 @@
 <li>Order of items can be changed for optimization</li>
 <li>This is useful for set operations</li>
 </ul>
-<pre><code class="language-py">subjects = {'Physics', 'Chemistry', 'Maths'}
-items = {25.50, True, -50, 1+2j, 'Physics'}
-items = {1, 2, 2, 2, 3} # {1, 2, 3}
-
-# Assigning mutable data types will raise error
-# items = {[1, 2]}
-
-# Any type of conatenation will raise error
-# {1, 2} + {3, 4}
-# {1} * 4
-{x * 2 for x in range(5, 10)} # [10, 12, 14, 16, 18]
-{x * 2 for x in range(5, 10) if x % 2 == 0} # [12, 16]
-
-# Joining &amp; Intersection
-{1, 2} | {3, 4} # {1, 2, 3, 4}
-{1, 2} &amp; {2, 4} # {2}
-{1, 2}.union({3, 4}) # {1, 2, 3, 4}
-{*s1, *s2} # {1, 2, 3, 4} if s1 is {1, 2} &amp; s2 is {3, 4}
-
-# 2D sets cannot be created since set is mutable
-# {{1} * 4 for _ in range(2)} will raise error
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">subjects</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Physics&#39;</span><span class="p">,</span> <span class="s1">&#39;Chemistry&#39;</span><span class="p">,</span> <span class="s1">&#39;Maths&#39;</span><span class="p">}</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">items</span> <span class="o">=</span> <span class="p">{</span><span class="mf">25.50</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="s1">&#39;Physics&#39;</span><span class="p">}</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">items</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span> <span class="c1"># {1, 2, 3}</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Assigning mutable data types will raise error</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># items = {[1, 2]}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># Any type of conatenation will raise error</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># {1, 2} + {3, 4}</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># {1} * 4</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">{</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)}</span> <span class="c1"># [10, 12, 14, 16, 18]</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">{</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">}</span> <span class="c1"># [12, 16]</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># Joining &amp; Intersection</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span> <span class="o">|</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span> <span class="c1"># {1, 2, 3, 4}</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span> <span class="o">&amp;</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span> <span class="c1"># {2}</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span><span class="o">.</span><span class="n">union</span><span class="p">({</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">})</span> <span class="c1"># {1, 2, 3, 4}</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">{</span><span class="o">*</span><span class="n">s1</span><span class="p">,</span> <span class="o">*</span><span class="n">s2</span><span class="p">}</span> <span class="c1"># {1, 2, 3, 4} if s1 is {1, 2} &amp; s2 is {3, 4}</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="c1"># 2D sets cannot be created since set is mutable</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="c1"># {{1} * 4 for _ in range(2)} will raise error</span>
+</span></code></pre></div>
 <h3 id="accessing">Accessing</h3>
-<pre><code class="language-py"># Can only traverse through a set
-# Using positional index will raise error
-# subjects[1]
-# subjects[1] = 'Statistics'
-# del subjects[1]
-
-2 in {1, 2, 3} # True
-2 not in {1, 2, 3} # False
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Can only traverse through a set</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># Using positional index will raise error</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># subjects[1]</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># subjects[1] = &#39;Statistics&#39;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># del subjects[1]</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="mi">2</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span> <span class="c1"># True</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="mi">2</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span> <span class="c1"># False</span>
+</span></code></pre></div>
 <h3 id="unpacking">Unpacking</h3>
-<pre><code class="language-py">x, y = {1, 2} # x = 1, y = 2
-x, *y = {1, 2, 3} # x = 1, y = [2, 3]
-x, *y, z = {1, 2, 3, 4} # x = 1, y = [2, 3], z = 4
-x, *y, z = {1, 4} # x = 1, y = [], z = 4
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span> <span class="c1"># x = 1, y = 2</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">y</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span> <span class="c1"># x = 1, y = [2, 3]</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span> <span class="c1"># x = 1, y = [2, 3], z = 4</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span> <span class="c1"># x = 1, y = [], z = 4</span>
+</span></code></pre></div>
 <h2 id="slicing">Slicing</h2>
 <ul>
 <li>Not supported since positional indexes are not supported</li>
 </ul>
 <h2 id="general-methods">General Methods</h2>
-<pre><code class="language-py">len(items)
-max(items)
-min(items)
-sum(items)
-list(seq) # Converts sequence or iterator to list
-sorted(items) # Converts to list
-# reversed(items) not supported
-# Refer: iterators
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">max</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">min</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">sum</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">list</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="c1"># Converts sequence or iterator to list</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nb">sorted</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="c1"># Converts to list</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># reversed(items) not supported</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># Refer: iterators</span>
+</span></code></pre></div>
 <h2 id="instance-methods">Instance Methods</h2>
-<pre><code class="language-py"># Insert
-add(obj)
-update(seq) # Add the contents of any seq to the set
-union(seq) # Similar to union but returns a new set object
-copy() # Doing set2 = set1 will only refer set2 to set1
-
-# Remove
-pop() # Removes the first item from set
-remove(obj) # Removes object and raises error if not present
-discard(obj) # Removes object but doesn't raise error if not present
-clear() # Remove all the items
-
-# Find
-count(obj) # Count of occurences of obj
-index(obj) # Lowest index where obj occurs
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Insert</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">add</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">update</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="c1"># Add the contents of any seq to the set</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">union</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="c1"># Similar to union but returns a new set object</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">copy</span><span class="p">()</span> <span class="c1"># Doing set2 = set1 will only refer set2 to set1</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Remove</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">pop</span><span class="p">()</span> <span class="c1"># Removes the first item from set</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">remove</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="c1"># Removes object and raises error if not present</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">discard</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="c1"># Removes object but doesn&#39;t raise error if not present</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="n">clear</span><span class="p">()</span> <span class="c1"># Remove all the items</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1"># Find</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="n">count</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="c1"># Count of occurences of obj</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="n">index</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="c1"># Lowest index where obj occurs</span>
+</span></code></pre></div>
 <h3 id="set-functions">Set functions</h3>
-<pre><code class="language-py"># New set after removing items common with obj
-# Same as a - b
-difference(obj)
-# New set after removing items uncommon with obj
-# Same as a &amp; b
-intersection(obj)
-# New set after adding uncommon items and removing common items
-# Same as a ^ b
-symmetric_difference(obj)
-
-difference_update(obj) # Removes items common with obj
-intersection_update(obj) # Removes items uncommon with obj
-symmetric_difference_update(obj) # Adds uncommon items and removes common items
-
-isdisjoint(seq) # True if the two sequences have no common element
-issubset(seq) # True if set is subset of seq
-issuperset(seq) # True if set is superset of seq
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># New set after removing items common with obj</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># Same as a - b</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">difference</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># New set after removing items uncommon with obj</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># Same as a &amp; b</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">intersection</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># New set after adding uncommon items and removing common items</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1"># Same as a ^ b</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">symmetric_difference</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">difference_update</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="c1"># Removes items common with obj</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="n">intersection_update</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="c1"># Removes items uncommon with obj</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="n">symmetric_difference_update</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="c1"># Adds uncommon items and removes common items</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="n">isdisjoint</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="c1"># True if the two sequences have no common element</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="n">issubset</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="c1"># True if set is subset of seq</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="n">issuperset</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="c1"># True if set is superset of seq</span>
+</span></code></pre></div>
 
 
 

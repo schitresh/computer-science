@@ -12371,38 +12371,38 @@
 
 
 <h1 id="association-methods">Association Methods</h1>
-<pre><code class="language-rb"># belongs_to and has_one
-author
-author = (objects)
-build_author({...}) # Used to initialize a new author object
-create_author({...})
-create_author!({...})
-reload_author
-reset_author
-
-# belongs_to
-author_changed?
-author_previously_changed?
-
-# has_many, has_and_belongs_to_many
-books
-books &lt;&lt; (object, ...)
-books.delete(object, ...)
-books.destroy(object, ...)
-books = (objects)
-book_ids
-book_ids = (ids)
-books.clear
-books.empty?
-books.size
-books.find(...)
-books.where(...)
-books.exists?(...)
-books.build({...}) # Used to initialize new book objects
-books.create({...})
-books.create!({...})
-books.reload
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># belongs_to and has_one</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">author</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">author</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">objects</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">build_author</span><span class="p">({</span><span class="o">...</span><span class="p">})</span><span class="w"> </span><span class="c1"># Used to initialize a new author object</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">create_author</span><span class="p">({</span><span class="o">...</span><span class="p">})</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">create_author!</span><span class="p">({</span><span class="o">...</span><span class="p">})</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">reload_author</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">reset_author</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># belongs_to</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">author_changed?</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">author_previously_changed?</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># has_many, has_and_belongs_to_many</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">books</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">books</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">object</span><span class="p">,</span><span class="w"> </span><span class="o">...</span><span class="p">)</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">books</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">object</span><span class="p">,</span><span class="w"> </span><span class="o">...</span><span class="p">)</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="n">books</span><span class="o">.</span><span class="n">destroy</span><span class="p">(</span><span class="n">object</span><span class="p">,</span><span class="w"> </span><span class="o">...</span><span class="p">)</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="n">books</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">objects</span><span class="p">)</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="n">book_ids</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="n">book_ids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ids</span><span class="p">)</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="n">books</span><span class="o">.</span><span class="n">clear</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="n">books</span><span class="o">.</span><span class="n">empty?</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="n">books</span><span class="o">.</span><span class="n">size</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="n">books</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="n">books</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">books</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="n">books</span><span class="o">.</span><span class="n">build</span><span class="p">({</span><span class="o">...</span><span class="p">})</span><span class="w"> </span><span class="c1"># Used to initialize new book objects</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="n">books</span><span class="o">.</span><span class="n">create</span><span class="p">({</span><span class="o">...</span><span class="p">})</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="n">books</span><span class="o">.</span><span class="n">create!</span><span class="p">({</span><span class="o">...</span><span class="p">})</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="n">books</span><span class="o">.</span><span class="n">reload</span>
+</span></code></pre></div>
 <h2 id="dependent-options">Dependent Options</h2>
 <ul>
 <li>destroy</li>
@@ -12412,8 +12412,8 @@ books.reload
 <li>restrict_with_exception</li>
 <li>restrict_with_error</li>
 </ul>
-<pre><code class="language-rb">has_many :books, dependent: :destroy
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">has_many</span><span class="w"> </span><span class="ss">:books</span><span class="p">,</span><span class="w"> </span><span class="ss">dependent</span><span class="p">:</span><span class="w"> </span><span class="ss">:destroy</span>
+</span></code></pre></div>
 <h2 id="controlling-caching">Controlling Caching</h2>
 <ul>
 <li>All the association methods are built around caching</li>
@@ -12421,46 +12421,46 @@ books.reload
 <li>The cache is even shared across methods</li>
 <li>Call reload on the association to discard the cache</li>
 </ul>
-<pre><code class="language-rb">author.books.load # retrieves books from the database
-author.books.size # uses the cached copy of books
-author.books.empty? # uses the cached copy of books
-author.books.reload.empty? # discards the cached copy of books
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">author</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">load</span><span class="w"> </span><span class="c1"># retrieves books from the database</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">author</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">size</span><span class="w"> </span><span class="c1"># uses the cached copy of books</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">author</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">empty?</span><span class="w"> </span><span class="c1"># uses the cached copy of books</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">author</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">reload</span><span class="o">.</span><span class="n">empty?</span><span class="w"> </span><span class="c1"># discards the cached copy of books</span>
+</span></code></pre></div>
 <h2 id="association-scope">Association Scope</h2>
-<pre><code class="language-rb"># Models within different Modules
-module Business
-  class Supplier &lt; ApplicationRecord
-    has_one :account, class_name: 'Billing::Account'
-  end
-end
-
-module Billing
-  class Account &lt; ApplicationRecord
-    belongs_to :supplier, class_name: 'Business::Supplier'
-  end
-end
-
-# Custom Foreign Key
-class Book &lt; ApplicationRecord
-  belongs_to :writer, class_name: 'Author', foreign_key: 'author_id'
-end
-
-class Author &lt; ApplicationRecord
-  has_many :books, inverse_of: 'writer'
-end
-
-# Customize Query
-class Book &lt; ApplicationRecord
-  belongs_to :author, -&gt; { where(active: true) }
-end
-
-class Chapter &lt; ApplicationRecord
-  # Author belongs to Book
-  # Not required if author was immediate association
-  # Because they are eager-loaded automatically when needed
-  belongs_to :book, -&gt; { includes(:author) }
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Models within different Modules</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">module</span><span class="w"> </span><span class="nn">Business</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="k">class</span><span class="w"> </span><span class="nc">Supplier</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">has_one</span><span class="w"> </span><span class="ss">:account</span><span class="p">,</span><span class="w"> </span><span class="ss">class_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Billing::Account&#39;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="k">end</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">end</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">module</span><span class="w"> </span><span class="nn">Billing</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="k">class</span><span class="w"> </span><span class="nc">Account</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">belongs_to</span><span class="w"> </span><span class="ss">:supplier</span><span class="p">,</span><span class="w"> </span><span class="ss">class_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Business::Supplier&#39;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="k">end</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="k">end</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1"># Custom Foreign Key</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="k">class</span><span class="w"> </span><span class="nc">Book</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="n">belongs_to</span><span class="w"> </span><span class="ss">:writer</span><span class="p">,</span><span class="w"> </span><span class="ss">class_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Author&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">foreign_key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;author_id&#39;</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="k">end</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="k">class</span><span class="w"> </span><span class="nc">Author</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">  </span><span class="n">has_many</span><span class="w"> </span><span class="ss">:books</span><span class="p">,</span><span class="w"> </span><span class="ss">inverse_of</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;writer&#39;</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="k">end</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="c1"># Customize Query</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="k">class</span><span class="w"> </span><span class="nc">Book</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">  </span><span class="n">belongs_to</span><span class="w"> </span><span class="ss">:author</span><span class="p">,</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">where</span><span class="p">(</span><span class="ss">active</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="k">end</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="k">class</span><span class="w"> </span><span class="nc">Chapter</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">  </span><span class="c1"># Author belongs to Book</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">  </span><span class="c1"># Not required if author was immediate association</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">  </span><span class="c1"># Because they are eager-loaded automatically when needed</span>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">  </span><span class="n">belongs_to</span><span class="w"> </span><span class="ss">:book</span><span class="p">,</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">includes</span><span class="p">(</span><span class="ss">:author</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="k">end</span>
+</span></code></pre></div>
 
 
 

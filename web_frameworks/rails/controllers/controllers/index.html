@@ -12465,27 +12465,27 @@
 <li><code>controller_name</code> &amp; <code>action_name</code> methods can be used to get routing info</li>
 <li>ApplicationController is inherited to individual controllers</li>
 </ul>
-<pre><code class="language-rb">class ClientsController &lt; ApplicationController
-  # GET /clients?status=activated
-  def index
-    if params[:status] == &quot;activated&quot;
-      @clients = Client.activated
-    else
-      @clients = Client.inactivated
-    end
-  end
-
-  # POST /clients, data will be sent as part of the request body
-  def create
-    @client = Client.new(params[:client])
-    if @client.save
-      redirect_to @client
-    else
-      render &quot;new&quot; # Overrides the default rendering of 'create' view
-    end
-  end
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">ClientsController</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationController</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="c1"># GET /clients?status=activated</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">index</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">params</span><span class="o">[</span><span class="ss">:status</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;activated&quot;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="vi">@clients</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Client</span><span class="o">.</span><span class="n">activated</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="k">else</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="vi">@clients</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Client</span><span class="o">.</span><span class="n">inactivated</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="k">end</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="k">end</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="c1"># POST /clients, data will be sent as part of the request body</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">create</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="vi">@client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Client</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:client</span><span class="o">]</span><span class="p">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="vi">@client</span><span class="o">.</span><span class="n">save</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span><span class="n">redirect_to</span><span class="w"> </span><span class="vi">@client</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="k">else</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">      </span><span class="n">render</span><span class="w"> </span><span class="s2">&quot;new&quot;</span><span class="w"> </span><span class="c1"># Overrides the default rendering of &#39;create&#39; view</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="k">end</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span><span class="k">end</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="k">end</span>
+</span></code></pre></div>
 <h2 id="parameters">Parameters</h2>
 <ul>
 <li><code>params</code> is used to access data including URL params &amp; POST data</li>
@@ -12510,51 +12510,51 @@ end
 <li>Action Controller params are forbidden to be used in Active Model mass assignments</li>
 <li>They should be permitted first to be used, required params can also be specified</li>
 </ul>
-<pre><code class="language-rb"># Will raise an error
-Person.create(params[:person])
-
-person_params = params.require(:person).permit(:name, :age)
-# To permit the entire hash or parameters
-person_params = params.require(:person).permit!
-# To permit nested params
-params.require(:product).permit(:name, data: {}) # permits name &amp; whole data attribute
-params.permit(:name, { emails: [] }, friends: [:name, { family: [:name] }])
-# Using `fetch` you can supply a default
-params.fetch(:blog, {}).permit(:title, :author)
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Will raise an error</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="no">Person</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:person</span><span class="o">]</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">person_params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="ss">:person</span><span class="p">)</span><span class="o">.</span><span class="n">permit</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span><span class="w"> </span><span class="ss">:age</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># To permit the entire hash or parameters</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">person_params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="ss">:person</span><span class="p">)</span><span class="o">.</span><span class="n">permit!</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># To permit nested params</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">params</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="ss">:product</span><span class="p">)</span><span class="o">.</span><span class="n">permit</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span><span class="w"> </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p">{})</span><span class="w"> </span><span class="c1"># permits name &amp; whole data attribute</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">params</span><span class="o">.</span><span class="n">permit</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="ss">emails</span><span class="p">:</span><span class="w"> </span><span class="o">[]</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="ss">friends</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:name</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="ss">family</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="w"> </span><span class="p">}</span><span class="o">]</span><span class="p">)</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># Using `fetch` you can supply a default</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">params</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="ss">:blog</span><span class="p">,</span><span class="w"> </span><span class="p">{})</span><span class="o">.</span><span class="n">permit</span><span class="p">(</span><span class="ss">:title</span><span class="p">,</span><span class="w"> </span><span class="ss">:author</span><span class="p">)</span>
+</span></code></pre></div>
 <h2 id="filters">Filters</h2>
 <ul>
 <li>Methods that run before, after or around a controller action</li>
 </ul>
-<pre><code class="language-rb">class ApplicationController &lt; ActionController::Base
-  before_action :require_login
-
-  private
-
-    def require_login
-      return if logged_in?
-      flash[:error] = &quot;You must be logged in to access this section&quot;
-      redirect_to new_login_url
-    end
-end
-
-class LoginsController &lt; ApplicationController
-  before_action :do_something, only: [:action1, :action2]
-  after_action :do_something_else, except: [:action1, :action2]
-  skip_before_action :require_login, only: [:new, :create]
-end
-
-class ChangesController &lt; ApplicationController
-  around_action :wrap_in_transaction, only: :show
-
-  private
-    def wrap_in_transaction
-      ActiveRecord::Base.transaction do
-        yield
-      end
-    end
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">ApplicationController</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="n">before_action</span><span class="w"> </span><span class="ss">:require_login</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="kp">private</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">require_login</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">logged_in?</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="n">flash</span><span class="o">[</span><span class="ss">:error</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;You must be logged in to access this section&quot;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">      </span><span class="n">redirect_to</span><span class="w"> </span><span class="n">new_login_url</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="k">end</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">end</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="k">class</span><span class="w"> </span><span class="nc">LoginsController</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationController</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="n">before_action</span><span class="w"> </span><span class="ss">:do_something</span><span class="p">,</span><span class="w"> </span><span class="ss">only</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:action1</span><span class="p">,</span><span class="w"> </span><span class="ss">:action2</span><span class="o">]</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">  </span><span class="n">after_action</span><span class="w"> </span><span class="ss">:do_something_else</span><span class="p">,</span><span class="w"> </span><span class="ss">except</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:action1</span><span class="p">,</span><span class="w"> </span><span class="ss">:action2</span><span class="o">]</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span><span class="n">skip_before_action</span><span class="w"> </span><span class="ss">:require_login</span><span class="p">,</span><span class="w"> </span><span class="ss">only</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:new</span><span class="p">,</span><span class="w"> </span><span class="ss">:create</span><span class="o">]</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="k">end</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="k">class</span><span class="w"> </span><span class="nc">ChangesController</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationController</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">  </span><span class="n">around_action</span><span class="w"> </span><span class="ss">:wrap_in_transaction</span><span class="p">,</span><span class="w"> </span><span class="ss">only</span><span class="p">:</span><span class="w"> </span><span class="ss">:show</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">  </span><span class="kp">private</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">wrap_in_transaction</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">      </span><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">transaction</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">        </span><span class="k">yield</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">      </span><span class="k">end</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span><span class="k">end</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="k">end</span>
+</span></code></pre></div>
 <h2 id="streaming-and-file-downloads">Streaming and File Downloads</h2>
 <ul>
 <li><code>send_data</code> is used to send file data</li>
@@ -12562,40 +12562,40 @@ end
 <li>To turn off streaming 'stream' option is used</li>
 <li>To adjust block size 'buffer_size' option is used</li>
 </ul>
-<pre><code class="language-rb">require &quot;prawn&quot;
-class ClientsController &lt; ApplicationController
-  # Generates a PDF document and returns it as a string
-  # This string will then be streamed to the client as a file download
-  # If the file is not meant to be downloaded, convey it to browser
-  # By setting disposition: :inline (default value is :attachment)
-  def download_pdf
-    send_data(generate_pdf, filename: &quot;#{client.name}.pdf&quot;, type: &quot;application/pdf&quot;)
-  end
-
-  private
-    def generate_pdf
-      Prawn::Document.new do
-        text(client.name, align: :center)
-        text(&quot;Address: #{client.address}&quot;)
-      end.render
-    end
-end
-
-# Using Format
-class ClientsController &lt; ApplicationController
-  def show
-    respond_to do |format|
-      format.html
-      # GET /clients/1.pdf
-      format.pdf { render pdf: generate_pdf(client) }
-    end
-  end
-end
-
-# For live streaming, `ActionController::Live` module is included
-response.headers['Content-Type'] = 'text/event-stream'
-response.stream.write(text)`
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">require</span><span class="w"> </span><span class="s2">&quot;prawn&quot;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">ClientsController</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationController</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="c1"># Generates a PDF document and returns it as a string</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="c1"># This string will then be streamed to the client as a file download</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="c1"># If the file is not meant to be downloaded, convey it to browser</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="c1"># By setting disposition: :inline (default value is :attachment)</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">download_pdf</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="n">send_data</span><span class="p">(</span><span class="n">generate_pdf</span><span class="p">,</span><span class="w"> </span><span class="ss">filename</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.pdf&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">type</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/pdf&quot;</span><span class="p">)</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="k">end</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="kp">private</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">generate_pdf</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="no">Prawn</span><span class="o">::</span><span class="no">Document</span><span class="o">.</span><span class="n">new</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="n">text</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="ss">align</span><span class="p">:</span><span class="w"> </span><span class="ss">:center</span><span class="p">)</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">        </span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Address: </span><span class="si">#{</span><span class="n">client</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">      </span><span class="k">end</span><span class="o">.</span><span class="n">render</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="k">end</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="k">end</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="c1"># Using Format</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="k">class</span><span class="w"> </span><span class="nc">ClientsController</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationController</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">show</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="n">respond_to</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="nb">format</span><span class="o">|</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">      </span><span class="nb">format</span><span class="o">.</span><span class="n">html</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">      </span><span class="c1"># GET /clients/1.pdf</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">      </span><span class="nb">format</span><span class="o">.</span><span class="n">pdf</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">render</span><span class="w"> </span><span class="ss">pdf</span><span class="p">:</span><span class="w"> </span><span class="n">generate_pdf</span><span class="p">(</span><span class="n">client</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">    </span><span class="k">end</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">  </span><span class="k">end</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="k">end</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="c1"># For live streaming, `ActionController::Live` module is included</span>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;text/event-stream&#39;</span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="n">response</span><span class="o">.</span><span class="n">stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="sb">`</span>
+</span></code></pre></div>
 <h2 id="rescue-from">Rescue From</h2>
 <ul>
 <li>Rails default exception handling displays 500 for all exceptions</li>
@@ -12610,16 +12610,16 @@ response.stream.write(text)`
 </ul>
 </li>
 </ul>
-<pre><code class="language-rb">class ApplicationController &lt; ActionController::Base
-  rescue_from User::NotAuthorized, with: :user_not_authorized
-
-  private
-    def user_not_authorized
-      flash[:error] = &quot;You don't have access to this section.&quot;
-      redirect_back(fallback_location: root_path)
-    end
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">ApplicationController</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="n">rescue_from</span><span class="w"> </span><span class="no">User</span><span class="o">::</span><span class="no">NotAuthorized</span><span class="p">,</span><span class="w"> </span><span class="ss">with</span><span class="p">:</span><span class="w"> </span><span class="ss">:user_not_authorized</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="kp">private</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">user_not_authorized</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">      </span><span class="n">flash</span><span class="o">[</span><span class="ss">:error</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;You don&#39;t have access to this section.&quot;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">      </span><span class="n">redirect_back</span><span class="p">(</span><span class="ss">fallback_location</span><span class="p">:</span><span class="w"> </span><span class="n">root_path</span><span class="p">)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="k">end</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="k">end</span>
+</span></code></pre></div>
 
 
 

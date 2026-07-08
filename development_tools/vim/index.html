@@ -12839,250 +12839,250 @@
 
 <h1 id="vim">VIM</h1>
 <h3 id="basics">Basics</h3>
-<pre><code>.                   Repeat the last edit command
-u                   Undo
-U                   Undo line
-CTRL + R            Redo
-CTRL + O            Execute one command in insert mode
-CTRL + [            Exit insert mode
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>.                   Repeat the last edit command
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>u                   Undo
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>U                   Undo line
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>CTRL + R            Redo
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>CTRL + O            Execute one command in insert mode
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>CTRL + [            Exit insert mode
+</span></code></pre></div>
 <h3 id="navigation">Navigation</h3>
 <h4 id="line">Line</h4>
-<pre><code>gg                  First line of file
-G                   Last line of file
-ngg, nG, :n         Line number n
-
-H                   Highest line on screen
-M                   Middle line on screen
-L                   Lowest line on screen
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>gg                  First line of file
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>G                   Last line of file
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>ngg, nG, :n         Line number n
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>H                   Highest line on screen
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>M                   Middle line on screen
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>L                   Lowest line on screen
+</span></code></pre></div>
 <h4 id="cursor">Cursor</h4>
-<pre><code>h                   Left
-j                   Down
-k                   Up
-l                   Right
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>h                   Left
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>j                   Down
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>k                   Up
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>l                   Right
+</span></code></pre></div>
 <h4 id="scroll">Scroll</h4>
-<pre><code>CTRL + F            Scroll forward
-CTRL + B            Scroll backward
-
-CTRL + D            Scroll forward by half screen
-CTRL + U            Scroll backward by half screen
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>CTRL + F            Scroll forward
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>CTRL + B            Scroll backward
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>CTRL + D            Scroll forward by half screen
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>CTRL + U            Scroll backward by half screen
+</span></code></pre></div>
 <h4 id="reposition">Reposition</h4>
-<pre><code>CTRL + E            Scroll forward without moving cursor
-CTRL + Y            Scroll backward without moving cursor
-
-zt                  Reposition line to top of screen
-zz                  Reposition line to middle of screen
-zb                  Reposition line to bottom of screen
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>CTRL + E            Scroll forward without moving cursor
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>CTRL + Y            Scroll backward without moving cursor
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>zt                  Reposition line to top of screen
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>zz                  Reposition line to middle of screen
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>zb                  Reposition line to bottom of screen
+</span></code></pre></div>
 <h3 id="jumps">Jumps</h3>
 <ul>
 <li>Lowercase letters <code>b, e, w, ge</code> jump to puntuations like comma (not space)</li>
 <li>Uppercase letters <code>B, E, W, gE</code> jump over puntuations like comma (not space)</li>
 </ul>
 <h4 id="word">Word</h4>
-<pre><code>b                   Beginning of current word
-e                   End of current word
-w                   Beginning of next word
-ge                  End of previous word
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>b                   Beginning of current word
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>e                   End of current word
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>w                   Beginning of next word
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>ge                  End of previous word
+</span></code></pre></div>
 <h4 id="line_1">Line</h4>
-<pre><code>0                   Beginning of line
-$                   End of line
-_                   Beginning of line without whitespace
-g_                  End of line without whitespace
-gm                  Middle of line
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>0                   Beginning of line
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$                   End of line
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>_                   Beginning of line without whitespace
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>g_                  End of line without whitespace
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>gm                  Middle of line
+</span></code></pre></div>
 <h4 id="paragraph">Paragraph</h4>
-<pre><code>%                   Matching bracket
-
-(                   Previous sentence
-)                   Next sentence
-
-{                   Previous paragraph
-}                   Next paragraph
-
-[[                  Previous section
-]]                  Next section
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>%                   Matching bracket
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>(                   Previous sentence
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>)                   Next sentence
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>{                   Previous paragraph
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>}                   Next paragraph
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>[[                  Previous section
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>]]                  Next section
+</span></code></pre></div>
 <h3 id="motions">Motions</h3>
-<pre><code>[frequency][operation][motion]
-or [operation][frequency][motion]
-
-# Operations
-a                   around
-i                   inside
-
-# Motions
-w                   word
-s                   sentence
-p                   paragraph
-b, )                ()
-B, {}               {}
-t, &lt;&gt;               &lt;&gt;
-&quot;                   &quot;&quot;
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>[frequency][operation][motion]
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>or [operation][frequency][motion]
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a># Operations
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>a                   around
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>i                   inside
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a># Motions
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>w                   word
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>s                   sentence
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>p                   paragraph
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>b, )                ()
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>B, {}               {}
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>t, &lt;&gt;               &lt;&gt;
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>&quot;                   &quot;&quot;
+</span></code></pre></div>
 <h3 id="operations">Operations</h3>
 <h4 id="join">Join</h4>
-<pre><code>J                   Join two lines
-:x,yj               Join lines x to y
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>J                   Join two lines
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>:x,yj               Join lines x to y
+</span></code></pre></div>
 <h4 id="insert">Insert</h4>
-<pre><code>i, a                Insert (before cursor), append (after cursor)
-I, A                Insert at beginning of line, Append at end of line
-o, O                Insert in new line below, above
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>i, a                Insert (before cursor), append (after cursor)
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>I, A                Insert at beginning of line, Append at end of line
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>o, O                Insert in new line below, above
+</span></code></pre></div>
 <h4 id="yank">Yank</h4>
-<pre><code>yy, Y               Yank line
-y0                  Yank from the start of line
-y$                  Yank till the end of line
-
-yi(                 Yank inside ()
-ya(                 Yank around ()
-
-p                   Paste after
-P                   Paste before
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>yy, Y               Yank line
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>y0                  Yank from the start of line
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>y$                  Yank till the end of line
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>yi(                 Yank inside ()
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>ya(                 Yank around ()
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>p                   Paste after
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>P                   Paste before
+</span></code></pre></div>
 <h4 id="change">Change</h4>
-<pre><code>cc                  Change line
-C                   Change till the end of line
-cG                  Change till the end of file
-
-cw                  Change word
-2cw                 Change 2 words
-caw                 Change around word
-ca)                 Change around ()
-
-r                   Replace character
-R                   Keep replacing text
-
-s                   Substitute character (with insert mode)
-S                   Substitute line (with insert mode)
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>cc                  Change line
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>C                   Change till the end of line
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>cG                  Change till the end of file
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>cw                  Change word
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>2cw                 Change 2 words
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>caw                 Change around word
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>ca)                 Change around ()
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>r                   Replace character
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>R                   Keep replacing text
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>s                   Substitute character (with insert mode)
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>S                   Substitute line (with insert mode)
+</span></code></pre></div>
 <h4 id="delete">Delete</h4>
-<pre><code>dd                  Delete line
-d^                  Delete from the start of line
-dD                  Delete till the end of line
-
-x                   Delete character under cursor
-X                   Delete character before cursor
-
-di}                 delete inside {}
-dfs                 delete upto 's'
-d/pattern           delete upto the pattern
-dn                  delete upto the next highlighted pattern
-
-CTRL + U            Delete till start of line (insert mode)
-CTRL + W            Delete previous word (insert mode)
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>dd                  Delete line
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>d^                  Delete from the start of line
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>dD                  Delete till the end of line
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>x                   Delete character under cursor
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>X                   Delete character before cursor
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>di}                 delete inside {}
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>dfs                 delete upto &#39;s&#39;
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>d/pattern           delete upto the pattern
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>dn                  delete upto the next highlighted pattern
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>CTRL + U            Delete till start of line (insert mode)
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>CTRL + W            Delete previous word (insert mode)
+</span></code></pre></div>
 <h4 id="indent">Indent</h4>
-<pre><code>CTRL + T            Indent (insert mode)
-CTRL + D            Unindent (insert mode)
-
-&lt;&lt;                  Indent line backward
-&gt;&gt;                  Indent line forward
-5&gt;&gt;                 Indent 5 lines forward
-:&gt;&gt;&gt;                Indent line forward 3 times
-
-&lt;[motion]           Indent backward
-&gt;[motion]           Indent forward
-&gt;}                  Indent Paragraph
-[visual]5&gt;          Indent the visual block 5 times
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>CTRL + T            Indent (insert mode)
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>CTRL + D            Unindent (insert mode)
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>&lt;&lt;                  Indent line backward
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>&gt;&gt;                  Indent line forward
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>5&gt;&gt;                 Indent 5 lines forward
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>:&gt;&gt;&gt;                Indent line forward 3 times
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>&lt;[motion]           Indent backward
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>&gt;[motion]           Indent forward
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>&gt;}                  Indent Paragraph
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>[visual]5&gt;          Indent the visual block 5 times
+</span></code></pre></div>
 <h3 id="visual-mode">Visual Mode</h3>
-<pre><code>v                   Select from the cursor
-V                   Select the line
-CTRL + V            Select the block
-gv                  Reselect the previous selection
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>v                   Select from the cursor
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>V                   Select the line
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>CTRL + V            Select the block
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>gv                  Reselect the previous selection
+</span></code></pre></div>
 <h3 id="surround">Surround</h3>
 <ul>
 <li>Works with the vim-surround plugin (pre-installed in vscode)</li>
 <li>To add space, use opening bracket: <code>ysiw(</code> will add <code>( hello )</code></li>
 <li>To ignore space, use closing bracket: <code>ysiw)</code> will add <code>(hello)</code></li>
 </ul>
-<pre><code>ysiw'               Surround the word with by ''
-yss'                Surround the line with by ''
-
-cs'&quot;                Change the surround from '' to &quot;&quot;
-cst&lt;p&gt;              Change the surround from current tag to &lt;p&gt;
-ds'                 Drop the surround ''
-
-vi'                 Select content inside ''
-va'                 Select content around ''
-yi&quot;                 Yank content inside &quot;&quot;
-ca)                 Change content around ()
-di)                 Delete content inside ()
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>ysiw&#39;               Surround the word with by &#39;&#39;
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>yss&#39;                Surround the line with by &#39;&#39;
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>cs&#39;&quot;                Change the surround from &#39;&#39; to &quot;&quot;
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>cst&lt;p&gt;              Change the surround from current tag to &lt;p&gt;
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>ds&#39;                 Drop the surround &#39;&#39;
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>vi&#39;                 Select content inside &#39;&#39;
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>va&#39;                 Select content around &#39;&#39;
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>yi&quot;                 Yank content inside &quot;&quot;
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>ca)                 Change content around ()
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>di)                 Delete content inside ()
+</span></code></pre></div>
 <h3 id="search">Search</h3>
-<pre><code>fx                  Search character x forward within the line
-Fx                  Search character x backward within the line
-;                   Repeat last search forward within the line
-,                   Repeat last search backward within the line
-
-*                   Search next match for the word under cursor
-#                   Search previous match for the word under cursor
-
-/pattern            Search forward
-?pattern            Search backward
-n                   Next match
-N                   Previous match
-:noh                Remove highlights
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>fx                  Search character x forward within the line
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>Fx                  Search character x backward within the line
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>;                   Repeat last search forward within the line
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>,                   Repeat last search backward within the line
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>*                   Search next match for the word under cursor
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>#                   Search previous match for the word under cursor
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>/pattern            Search forward
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>?pattern            Search backward
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>n                   Next match
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>N                   Previous match
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>:noh                Remove highlights
+</span></code></pre></div>
 <h3 id="substitute">Substitute</h3>
-<pre><code>:s/old/new/g        Substitute within the line
-:%s/old/new/g       Substitute within the file
-&amp;                   Repeat the last substitution
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>:s/old/new/g        Substitute within the line
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>:%s/old/new/g       Substitute within the file
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>&amp;                   Repeat the last substitution
+</span></code></pre></div>
 <h3 id="case">Case</h3>
-<pre><code>~                   Toggle case of character
-g~[motion]          Toggle case
-
-gu[motion]          Lowercase
-gU[motion]          Uppercase
-
-guu                 Lowercase line
-gUU                 Uppercase line
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>~                   Toggle case of character
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>g~[motion]          Toggle case
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>gu[motion]          Lowercase
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>gU[motion]          Uppercase
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>guu                 Lowercase line
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>gUU                 Uppercase line
+</span></code></pre></div>
 <h3 id="marking">Marking</h3>
-<pre><code>mx                  Mark current position as x
-mX                  Global mark with file and location
-
-`x                  Jump to x
-'x                  Jump to x (at the start of the line)
-``                  Jump to previous location
-''                  Jump to previous location (at the start of the line)
-
-`.                  Jump to last edit
-`[                  Jump to last edit (at the start of the line)
-`]                  Jump to last edit (at the end of the line)
-gi                  Jump to last edit with insert
-
-CTRL + O            Backward in jumplist
-CTRL + I            Forward in jumplist
-g;                  Backward in changelist
-g,                  Forward in changelist
-:marks              List marks
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>mx                  Mark current position as x
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>mX                  Global mark with file and location
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>`x                  Jump to x
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>&#39;x                  Jump to x (at the start of the line)
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>``                  Jump to previous location
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>&#39;&#39;                  Jump to previous location (at the start of the line)
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>`.                  Jump to last edit
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>`[                  Jump to last edit (at the start of the line)
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>`]                  Jump to last edit (at the end of the line)
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>gi                  Jump to last edit with insert
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>CTRL + O            Backward in jumplist
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>CTRL + I            Forward in jumplist
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>g;                  Backward in changelist
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>g,                  Forward in changelist
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>:marks              List marks
+</span></code></pre></div>
 <h3 id="formatting">Formatting</h3>
-<pre><code>==                  Fix line indent
-=G                  Indent till last line
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>==                  Fix line indent
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>=G                  Indent till last line
+</span></code></pre></div>
 <h3 id="commands">Commands</h3>
-<pre><code>ZZ, :x, :wq         Write and quit file
-:w !sudo tee %      Write using sudo
-%                   Current filename
-
-:!cmd               Run command
-:r !cmd             Read from command out
-:n,m!cmd            Send lines n-m to command
-:!!                 Repeat last command
-
-:sh                 Start external shell
-:term               Start internal terminal
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>ZZ, :x, :wq         Write and quit file
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>:w !sudo tee %      Write using sudo
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>%                   Current filename
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>:!cmd               Run command
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>:r !cmd             Read from command out
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>:n,m!cmd            Send lines n-m to command
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>:!!                 Repeat last command
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>:sh                 Start external shell
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>:term               Start internal terminal
+</span></code></pre></div>
 
 
 

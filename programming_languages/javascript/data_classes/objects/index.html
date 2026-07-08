@@ -12401,62 +12401,62 @@
   <h1>Objects</h1>
 
 <h2 id="objects">Objects</h2>
-<pre><code class="language-js">let subjects = { phy: 'Physics', chem: 'Chemistry', math: 'Mathematics' }
-let numbers = { 1: 'one', 2: 'two' } // Converted to string keys: { '1': 'one', ... }
-
-let [a, b, c] = ['hello', 10, {}]
-let obj = { a, b, c } // { a: 'hello', b: 10, c: {} }
-Object.fromEntries([['a', 100], ['b', 200]]) // { 'a': 100, 'b': 200 }
-
-const student = {
-  name: 'John Wick',
-  dept: '',
-  [`prop${value}`]: 'hello',
-  printName: function() { console.log(this.name) },
-  printDept() { console.log(this.dept) }
-}
-student.printName()
-student.printDept()
-
-{ ...student1, ...details1 }
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">subjects</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">phy</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Physics&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">chem</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Chemistry&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">math</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Mathematics&#39;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">1</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;one&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;two&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// Converted to string keys: { &#39;1&#39;: &#39;one&#39;, ... }</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="p">{}]</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kd">let</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// { a: &#39;hello&#39;, b: 10, c: {} }</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">Object</span><span class="p">.</span><span class="nx">fromEntries</span><span class="p">([[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">]])</span><span class="w"> </span><span class="c1">// { &#39;a&#39;: 100, &#39;b&#39;: 200 }</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">student</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;John Wick&#39;</span><span class="p">,</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nx">dept</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="p">[</span><span class="sb">`prop</span><span class="si">${</span><span class="nx">value</span><span class="si">}</span><span class="sb">`</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hello&#39;</span><span class="p">,</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nx">printName</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nx">printDept</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">dept</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">}</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="nx">student</span><span class="p">.</span><span class="nx">printName</span><span class="p">()</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nx">student</span><span class="p">.</span><span class="nx">printDept</span><span class="p">()</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">student1</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">details1</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="accessing">Accessing</h3>
-<pre><code class="language-js">subjects['phy'] // 'Physics'
-subjects.phy // 'Physics'
-
-subjects['math'] = 'Algebra'
-subjects.stat = 'Statistics'
-delete subjects.math
-Object.freeze(subjects)
-
-for (code in subjects) {
-  console.log(code)
-}
-
-Object.entries(subjects).forEach(([code, name]) =&gt; {
-  console.log(code, name)
-})
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">subjects</span><span class="p">[</span><span class="s1">&#39;phy&#39;</span><span class="p">]</span><span class="w"> </span><span class="c1">// &#39;Physics&#39;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nx">subjects</span><span class="p">.</span><span class="nx">phy</span><span class="w"> </span><span class="c1">// &#39;Physics&#39;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nx">subjects</span><span class="p">[</span><span class="s1">&#39;math&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Algebra&#39;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nx">subjects</span><span class="p">.</span><span class="nx">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Statistics&#39;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="ow">delete</span><span class="w"> </span><span class="nx">subjects</span><span class="p">.</span><span class="nx">math</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">(</span><span class="nx">subjects</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">code</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">subjects</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">code</span><span class="p">)</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">subjects</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(([</span><span class="nx">code</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">code</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">)</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">})</span>
+</span></code></pre></div>
 <h2 id="destructuring">Destructuring</h2>
-<pre><code class="language-js">const { name, age } = { name: 'Tom Cruise', age: 25, dept: 'Finance' }
-const { name: { first, last }, dept } = { name: { first: 'Tom', last: 'Cruise'}, age: 25 }
-const { name, ...attributes } = { name: 'Tom Cruise', age: 25, dept: 'Finance' }
-
-// Renaming &amp; Defaults
-const { message = 'hello' } = obj
-const { message: text } = obj
-const { message: text = 'hello' } = obj
-
-// Functions
-const sum = ({ num1, num2, num3 }) =&gt; num1 + num2 + num3
-const { name, dept } = processData()
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Tom Cruise&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span><span class="w"> </span><span class="nx">dept</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Finance&#39;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">first</span><span class="p">,</span><span class="w"> </span><span class="nx">last</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nx">dept</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">first</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Tom&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">last</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Cruise&#39;</span><span class="p">},</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">attributes</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Tom Cruise&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span><span class="w"> </span><span class="nx">dept</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Finance&#39;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">// Renaming &amp; Defaults</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;hello&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">obj</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">obj</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;hello&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">obj</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1">// Functions</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="kd">const</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">num1</span><span class="p">,</span><span class="w"> </span><span class="nx">num2</span><span class="p">,</span><span class="w"> </span><span class="nx">num3</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">num2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">num3</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">dept</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">processData</span><span class="p">()</span>
+</span></code></pre></div>
 <h2 id="instance-methods">Instance Methods</h2>
-<pre><code class="language-js">Object.keys(obj)
-Object.values(obj)
-Object.entries(obj) // Array of key-value pairs
-Object.groupBy(obj, callbackFn)
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span><span class="w"> </span><span class="c1">// Array of key-value pairs</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">Object</span><span class="p">.</span><span class="nx">groupBy</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span><span class="w"> </span><span class="nx">callbackFn</span><span class="p">)</span>
+</span></code></pre></div>
 
 
 

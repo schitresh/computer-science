@@ -12540,98 +12540,98 @@
 <li><code>None</code> data type is used to denote nothing</li>
 </ul>
 <h2 id="boolean">Boolean</h2>
-<pre><code class="language-py"># bool
-flag = True
-in_process = False
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># bool</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">in_process</span> <span class="o">=</span> <span class="kc">False</span>
+</span></code></pre></div>
 <h2 id="numeric">Numeric</h2>
-<pre><code class="language-py"># Immutable
-
-# int
-a = 10
-
-# float
-b = 10.25
-
-# complex
-c = 10 + 2j
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Immutable</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># int</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># float</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">b</span> <span class="o">=</span> <span class="mf">10.25</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># complex</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">c</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span>
+</span></code></pre></div>
 <h2 id="string">String</h2>
-<pre><code class="language-py"># str
-# Immutable
-text = 'Hello World!'
-text = &quot;Hello World!&quot;
-para = '''Multiline
-String'''
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># str</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># Immutable</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">para</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Multiline</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="s1">String&#39;&#39;&#39;</span>
+</span></code></pre></div>
 <h2 id="sequence">Sequence</h2>
 <ul>
 <li>Bounded and iterable</li>
 <li>Can store elements with different data types (as opposed to C)</li>
 </ul>
-<pre><code class="language-py"># list
-# Mutable (elements and size can be changed)
-items = [1, 2.5, 'one', 'two', [3, 4]]
-items[2] # 'one'
-
-# tuple
-# Immutable (cannot be updated)
-# Read-only lists
-items = (1, 2.5, 'one', 'two', [3, 4])
-items[2] # 'one'
-
-# range
-# Immutable sequence of numbers (used to iterate)
-# range(start, stop, step)
-range(3) # 0, 1, 2
-range(5, 8) # 5, 6, 7
-range(5, 15, 3) # 5, 8, 11
-range(8, 5, -1) # 8, 7, 6
-for i in range(3): print(i) # Will print 0, 1, 2
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># list</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># Mutable (elements and size can be changed)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">items</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># &#39;one&#39;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># tuple</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Immutable (cannot be updated)</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># Read-only lists</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">items</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">items</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># &#39;one&#39;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1"># range</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1"># Immutable sequence of numbers (used to iterate)</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1"># range(start, stop, step)</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># 0, 1, 2</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> <span class="c1"># 5, 6, 7</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># 5, 8, 11</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 8, 7, 6</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># Will print 0, 1, 2</span>
+</span></code></pre></div>
 <h2 id="mapping">Mapping</h2>
-<pre><code class="language-py"># dict
-# Keys are usually strings or numbers but can be almost any type
-number_map = { 1: 'one', 2: 'two' }
-number_map[1] # 'one'
-
-word_map = { 'one': 1, 'two': 2 }
-word_map['one'] # 1
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># dict</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># Keys are usually strings or numbers but can be almost any type</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">number_map</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;two&#39;</span> <span class="p">}</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">number_map</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># &#39;one&#39;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">word_map</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">word_map</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">]</span> <span class="c1"># 1</span>
+</span></code></pre></div>
 <h2 id="set">Set</h2>
-<pre><code class="language-py"># set
-# Stores unique immutable objects (int, float, complex, bool, string, tuple)
-# But it itself is mutable
-# Not indexed or ordered:
-# The position of items is optimized by python
-# To perform operations over set as defined in mathematics
-items = {1, 2.5, 'one', 'two'}
-
-# frozenset
-# Imutable set
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># set</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># Stores unique immutable objects (int, float, complex, bool, string, tuple)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># But it itself is mutable</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Not indexed or ordered:</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># The position of items is optimized by python</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># To perform operations over set as defined in mathematics</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">items</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">}</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1"># frozenset</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># Imutable set</span>
+</span></code></pre></div>
 <h2 id="binary">Binary</h2>
 <ul>
 <li>Commonly used while dealing with files, images, network packets, etc</li>
 </ul>
-<pre><code class="language-py"># bytes
-# Each byte is an integer value between 0 &amp; 255
-b = b'Hello'
-b = bytearray([72, 101, 108, 108, 111]) # b'Hello'
-
-# bytearray
-# mutable
-a = b'Hello'
-b = bytearray([72, 101, 108, 108, 111])
-b = bytearray('Hello', 'utf-8')
-
-# memoryview
-# Provides a view into the memory of the original object
-# Generally objects that support the buffer protocol like bytes &amp; bytearray
-data = bytearray(b'Hello')
-view = memoryview(data)
-print(view) # &lt;memory at 0x00000186FFAA3580&gt;
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># bytes</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># Each byte is an integer value between 0 &amp; 255</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;Hello&#39;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">([</span><span class="mi">72</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">111</span><span class="p">])</span> <span class="c1"># b&#39;Hello&#39;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># bytearray</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># mutable</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">a</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;Hello&#39;</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">([</span><span class="mi">72</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">111</span><span class="p">])</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="c1"># memoryview</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1"># Provides a view into the memory of the original object</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="c1"># Generally objects that support the buffer protocol like bytes &amp; bytearray</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="n">data</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="n">view</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="nb">print</span><span class="p">(</span><span class="n">view</span><span class="p">)</span> <span class="c1"># &lt;memory at 0x00000186FFAA3580&gt;</span>
+</span></code></pre></div>
 <h2 id="type-casting">Type Casting</h2>
 <h3 id="implicit-casting">Implicit Casting</h3>
 <ul>
@@ -12654,22 +12654,22 @@ print(view) # &lt;memory at 0x00000186FFAA3580&gt;
 <li>Using python's built-in functions to perform explicit conversions</li>
 <li>Such as string to integer</li>
 </ul>
-<pre><code class="language-py">str(100) # '100'
-str(10.5) # '10.5'
-str([1, 2]) # '[1, 2]'
-
-int('100') # 100
-int('110', 2) # Binary: 6
-int('2A9', 16) # Hex: 681
-int(10.5) # 10
-int('Hello') # Raises error
-float(100) # 100.0
-
-list('Hello') # ['H', 'e', 'l', 'l', 'o']
-list((1, 2)) # [1, 2]
-tuple([1, 2]) # (1, 2)
-list(range(2, 6)) # [2, 3, 4, 5]
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">str</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># &#39;100&#39;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">str</span><span class="p">(</span><span class="mf">10.5</span><span class="p">)</span> <span class="c1"># &#39;10.5&#39;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nb">str</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="c1"># &#39;[1, 2]&#39;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;100&#39;</span><span class="p">)</span> <span class="c1"># 100</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;110&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Binary: 6</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;2A9&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span> <span class="c1"># Hex: 681</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nb">int</span><span class="p">(</span><span class="mf">10.5</span><span class="p">)</span> <span class="c1"># 10</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span> <span class="c1"># Raises error</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="nb">float</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># 100.0</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span> <span class="c1"># [&#39;H&#39;, &#39;e&#39;, &#39;l&#39;, &#39;l&#39;, &#39;o&#39;]</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="nb">list</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="c1"># [1, 2]</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="nb">tuple</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="c1"># (1, 2)</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> <span class="c1"># [2, 3, 4, 5]</span>
+</span></code></pre></div>
 
 
 

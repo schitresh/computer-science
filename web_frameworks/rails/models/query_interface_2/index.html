@@ -12472,67 +12472,67 @@
 
 <h1 id="query-interface-2">Query Interface 2</h1>
 <h2 id="finding-by-sql">Finding by SQL</h2>
-<pre><code class="language-rb"># Returns an array of objects
-Customer.find_by_sql(
-  &quot;SELECT * FROM customers
-  INNER JOIN orders ON customers.id = orders.customer_id
-  ORDER BY customers.created_at desc&quot;
-)
-
-# Returns ActiveRecord::Result
-# Calling 'to_a' on the result will return an array of hashes
-# [{&quot;first_name&quot;=&gt;&quot;Rafael&quot;, &quot;created_at&quot;=&gt;&quot;2012-11-10 23:23:45.281189&quot;}]
-Customer.connection.select_all(
-  &quot;SELECT first_name, created_at FROM customers WHERE id = '1'&quot;
-).to_a
-
-# Select
-# Returns ActiveRecord objects, need to map to get original values
-Customer.select(:id).map(&amp;:id)
-Customer.select(:id, :first_name).map { |c| [c.id, c.first_name] }
-Customer.select(:first_name, :last_name).map(&amp;:name) # name is a model method
-
-# Pluck
-# Selects and returns array of values (cannot be chained further)
-Customer.pluck(:id, :first_name)
-Book.where(out_of_print: true).pluck(:id)
-Order.distinct.pluck(:status)
-Order.joins(:customer, :books).pluck('orders.created_at, customers.email, books.title')
-
-Customer.pick(:id) # Short form for Customer.pluck(:id).first
-Customer.ids
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Returns an array of objects</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="no">Customer</span><span class="o">.</span><span class="n">find_by_sql</span><span class="p">(</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="s2">&quot;SELECT * FROM customers</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="s2">  INNER JOIN orders ON customers.id = orders.customer_id</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="s2">  ORDER BY customers.created_at desc&quot;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># Returns ActiveRecord::Result</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Calling &#39;to_a&#39; on the result will return an array of hashes</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># [{&quot;first_name&quot;=&gt;&quot;Rafael&quot;, &quot;created_at&quot;=&gt;&quot;2012-11-10 23:23:45.281189&quot;}]</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="no">Customer</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="s2">&quot;SELECT first_name, created_at FROM customers WHERE id = &#39;1&#39;&quot;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">)</span><span class="o">.</span><span class="n">to_a</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># Select</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># Returns ActiveRecord objects, need to map to get original values</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="no">Customer</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="ss">:id</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:id</span><span class="p">)</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="no">Customer</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="ss">:id</span><span class="p">,</span><span class="w"> </span><span class="ss">:first_name</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">c</span><span class="o">|</span><span class="w"> </span><span class="o">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="o">.</span><span class="n">first_name</span><span class="o">]</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="no">Customer</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="ss">:first_name</span><span class="p">,</span><span class="w"> </span><span class="ss">:last_name</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:name</span><span class="p">)</span><span class="w"> </span><span class="c1"># name is a model method</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="c1"># Pluck</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="c1"># Selects and returns array of values (cannot be chained further)</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="no">Customer</span><span class="o">.</span><span class="n">pluck</span><span class="p">(</span><span class="ss">:id</span><span class="p">,</span><span class="w"> </span><span class="ss">:first_name</span><span class="p">)</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="no">Book</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">out_of_print</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span><span class="p">)</span><span class="o">.</span><span class="n">pluck</span><span class="p">(</span><span class="ss">:id</span><span class="p">)</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="no">Order</span><span class="o">.</span><span class="n">distinct</span><span class="o">.</span><span class="n">pluck</span><span class="p">(</span><span class="ss">:status</span><span class="p">)</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="no">Order</span><span class="o">.</span><span class="n">joins</span><span class="p">(</span><span class="ss">:customer</span><span class="p">,</span><span class="w"> </span><span class="ss">:books</span><span class="p">)</span><span class="o">.</span><span class="n">pluck</span><span class="p">(</span><span class="s1">&#39;orders.created_at, customers.email, books.title&#39;</span><span class="p">)</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="no">Customer</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="ss">:id</span><span class="p">)</span><span class="w"> </span><span class="c1"># Short form for Customer.pluck(:id).first</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="no">Customer</span><span class="o">.</span><span class="n">ids</span>
+</span></code></pre></div>
 <h2 id="joining-tables">Joining Tables</h2>
 <ul>
 <li>There are two joins available: joins, left_joins</li>
 </ul>
-<pre><code class="language-rb"># Raw SQL Joins
-Author.joins(&quot;INNER JOIN books ON books.author_id = authors.id
-  AND books.out_of_print = FALSE&quot;)
-
-# Single Joins
-Book.joins(:reviews)
-Book.joins(:author, :reviews)
-
-# Nested Joins
-Book.joins(reviews: :customer)
-Author.joins(books: [{ reviews: { customer: :orders } }, :supplier])
-
-# Conditions
-Customer.joins(:orders).where(orders: { created_at: time_range }).distinct
-Customer.joins(:orders).find_by(orders: { created_at: time_range }) # Gets first record
-
-# Left Join
-Customer.left_joins(:reviews).distinct
-        .select('customers.*, COUNT(reviews.*) AS reviews_count')
-        .group('customers.id')
-
-# Association Presence
-# Customers have at least one review
-Customer.where.associated(:reviews)
-# Customers have no review
-Customer.where.missing(:reviews)
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Raw SQL Joins</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="no">Author</span><span class="o">.</span><span class="n">joins</span><span class="p">(</span><span class="s2">&quot;INNER JOIN books ON books.author_id = authors.id</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s2">  AND books.out_of_print = FALSE&quot;</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># Single Joins</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="no">Book</span><span class="o">.</span><span class="n">joins</span><span class="p">(</span><span class="ss">:reviews</span><span class="p">)</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="no">Book</span><span class="o">.</span><span class="n">joins</span><span class="p">(</span><span class="ss">:author</span><span class="p">,</span><span class="w"> </span><span class="ss">:reviews</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># Nested Joins</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="no">Book</span><span class="o">.</span><span class="n">joins</span><span class="p">(</span><span class="ss">reviews</span><span class="p">:</span><span class="w"> </span><span class="ss">:customer</span><span class="p">)</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="no">Author</span><span class="o">.</span><span class="n">joins</span><span class="p">(</span><span class="ss">books</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="p">{</span><span class="w"> </span><span class="ss">reviews</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="ss">customer</span><span class="p">:</span><span class="w"> </span><span class="ss">:orders</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="ss">:supplier</span><span class="o">]</span><span class="p">)</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1"># Conditions</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="no">Customer</span><span class="o">.</span><span class="n">joins</span><span class="p">(</span><span class="ss">:orders</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">orders</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="ss">created_at</span><span class="p">:</span><span class="w"> </span><span class="n">time_range</span><span class="w"> </span><span class="p">})</span><span class="o">.</span><span class="n">distinct</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="no">Customer</span><span class="o">.</span><span class="n">joins</span><span class="p">(</span><span class="ss">:orders</span><span class="p">)</span><span class="o">.</span><span class="n">find_by</span><span class="p">(</span><span class="ss">orders</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="ss">created_at</span><span class="p">:</span><span class="w"> </span><span class="n">time_range</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="c1"># Gets first record</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c1"># Left Join</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="no">Customer</span><span class="o">.</span><span class="n">left_joins</span><span class="p">(</span><span class="ss">:reviews</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">        </span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;customers.*, COUNT(reviews.*) AS reviews_count&#39;</span><span class="p">)</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;customers.id&#39;</span><span class="p">)</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="c1"># Association Presence</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="c1"># Customers have at least one review</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="no">Customer</span><span class="o">.</span><span class="n">where</span><span class="o">.</span><span class="n">associated</span><span class="p">(</span><span class="ss">:reviews</span><span class="p">)</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="c1"># Customers have no review</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="no">Customer</span><span class="o">.</span><span class="n">where</span><span class="o">.</span><span class="n">missing</span><span class="p">(</span><span class="ss">:reviews</span><span class="p">)</span>
+</span></code></pre></div>
 <h2 id="locking-records">Locking Records</h2>
 <ul>
 <li>Used to prevent race conditions when updating records in the database</li>
@@ -12554,46 +12554,46 @@ Customer.where.missing(:reviews)
 </ul>
 </li>
 </ul>
-<pre><code class="language-rb">c1 = Customer.find(1)
-c2 = Customer.find(1)
-
-c1.first_name = &quot;Sandra&quot;
-c1.save
-
-c2.first_name = &quot;Michael&quot;
-c2.save # Raises an ActiveRecord::StaleObjectError
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">c1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Customer</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">c2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Customer</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">c1</span><span class="o">.</span><span class="n">first_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Sandra&quot;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">c1</span><span class="o">.</span><span class="n">save</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">c2</span><span class="o">.</span><span class="n">first_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Michael&quot;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">c2</span><span class="o">.</span><span class="n">save</span><span class="w"> </span><span class="c1"># Raises an ActiveRecord::StaleObjectError</span>
+</span></code></pre></div>
 <h3 id="pessimistic-locking">Pessimistic Locking</h3>
 <ul>
 <li>Uses a locking mechanism provided by underlying database</li>
 <li>An exclusive lock is obtained on selected rows using <code>lock</code></li>
 <li>Relations using <code>lock</code> are usually wrapped in a transaction to prevent deadlock</li>
 </ul>
-<pre><code class="language-rb">Book.transaction do
-  book = Book.lock.first
-  book.title = 'Algorithms'
-  book.save!
-end
-# Equivalent SQL
-# BEGIN
-#   SELECT * FROM books LIMIT 1 FOR UPDATE
-#   UPDATE books SET updated_at = '2009-02-07 18:05:56', title = 'Algorithms'
-#   WHERE id = 1
-# COMMIT
-
-# If there is already an instance
-book = Book.first
-book.with_lock do
-  # This block is called within a transaction
-  book.increment!(:views)
-end
-
-# Can also pass raw SQL to the lock method for different types of locks
-Book.transaction do
-  book = Book.lock(&quot;LOCK IN SHARE MODE&quot;).find(1)
-  book.increment!(:views)
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="no">Book</span><span class="o">.</span><span class="n">transaction</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="n">book</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Book</span><span class="o">.</span><span class="n">lock</span><span class="o">.</span><span class="n">first</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="n">book</span><span class="o">.</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Algorithms&#39;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="n">book</span><span class="o">.</span><span class="n">save!</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">end</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># Equivalent SQL</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># BEGIN</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1">#   SELECT * FROM books LIMIT 1 FOR UPDATE</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1">#   UPDATE books SET updated_at = &#39;2009-02-07 18:05:56&#39;, title = &#39;Algorithms&#39;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1">#   WHERE id = 1</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1"># COMMIT</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1"># If there is already an instance</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="n">book</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Book</span><span class="o">.</span><span class="n">first</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="n">book</span><span class="o">.</span><span class="n">with_lock</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="c1"># This block is called within a transaction</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">  </span><span class="n">book</span><span class="o">.</span><span class="n">increment!</span><span class="p">(</span><span class="ss">:views</span><span class="p">)</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="k">end</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="c1"># Can also pass raw SQL to the lock method for different types of locks</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="no">Book</span><span class="o">.</span><span class="n">transaction</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">  </span><span class="n">book</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Book</span><span class="o">.</span><span class="n">lock</span><span class="p">(</span><span class="s2">&quot;LOCK IN SHARE MODE&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">  </span><span class="n">book</span><span class="o">.</span><span class="n">increment!</span><span class="p">(</span><span class="ss">:views</span><span class="p">)</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="k">end</span>
+</span></code></pre></div>
 <h2 id="scopes">Scopes</h2>
 <ul>
 <li>Used to specify commonly used queries in method calls</li>
@@ -12602,43 +12602,43 @@ end
 </ul>
 </li>
 </ul>
-<pre><code class="language-rb">class Book &lt; ApplicationRecord
-  scope :out_of_print, -&gt; { where(out_of_print: true) }
-  scope :out_of_print_and_expensive, -&gt; { out_of_print.where(&quot;price &gt; 500&quot;) }
-  scope :costs_more_than, -&gt;(amount) { where(&quot;price &gt; ?&quot;, amount) }
-  scope :created_before, -&gt;(time) { where(created_at: ...time) if time.present? }
-end
-
-Book.out_of_print
-Book.out_of_print.costs_more_than(500)
-Book.in_print.merge(Book.out_of_print)
-Book.in_print.joins(:author).merge(Author.active)
-
-# Default Scope
-class Book &lt; ApplicationRecord
-  default_scope { where(out_of_print: false) }
-end
-
-Book.all # Applies default scope
-Book.unscoped.all # To skip default scope
-Book.new # Applies out_of_print = false by default
-Book.unscoped.new # To skip the default scope value
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Book</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="n">scope</span><span class="w"> </span><span class="ss">:out_of_print</span><span class="p">,</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">where</span><span class="p">(</span><span class="ss">out_of_print</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="n">scope</span><span class="w"> </span><span class="ss">:out_of_print_and_expensive</span><span class="p">,</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">out_of_print</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;price &gt; 500&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="n">scope</span><span class="w"> </span><span class="ss">:costs_more_than</span><span class="p">,</span><span class="w"> </span><span class="o">-&gt;</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;price &gt; ?&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="n">scope</span><span class="w"> </span><span class="ss">:created_before</span><span class="p">,</span><span class="w"> </span><span class="o">-&gt;</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">where</span><span class="p">(</span><span class="ss">created_at</span><span class="p">:</span><span class="w"> </span><span class="o">...</span><span class="n">time</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">time</span><span class="o">.</span><span class="n">present?</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">end</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="no">Book</span><span class="o">.</span><span class="n">out_of_print</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="no">Book</span><span class="o">.</span><span class="n">out_of_print</span><span class="o">.</span><span class="n">costs_more_than</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="no">Book</span><span class="o">.</span><span class="n">in_print</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="no">Book</span><span class="o">.</span><span class="n">out_of_print</span><span class="p">)</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="no">Book</span><span class="o">.</span><span class="n">in_print</span><span class="o">.</span><span class="n">joins</span><span class="p">(</span><span class="ss">:author</span><span class="p">)</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="no">Author</span><span class="o">.</span><span class="n">active</span><span class="p">)</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1"># Default Scope</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="k">class</span><span class="w"> </span><span class="nc">Book</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">  </span><span class="n">default_scope</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">where</span><span class="p">(</span><span class="ss">out_of_print</span><span class="p">:</span><span class="w"> </span><span class="kp">false</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="k">end</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="no">Book</span><span class="o">.</span><span class="n">all</span><span class="w"> </span><span class="c1"># Applies default scope</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="no">Book</span><span class="o">.</span><span class="n">unscoped</span><span class="o">.</span><span class="n">all</span><span class="w"> </span><span class="c1"># To skip default scope</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="no">Book</span><span class="o">.</span><span class="n">new</span><span class="w"> </span><span class="c1"># Applies out_of_print = false by default</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="no">Book</span><span class="o">.</span><span class="n">unscoped</span><span class="o">.</span><span class="n">new</span><span class="w"> </span><span class="c1"># To skip the default scope value</span>
+</span></code></pre></div>
 <h2 id="enums">Enums</h2>
 <ul>
 <li>Defines an array of values allowed for an attribute</li>
 <li>Creates scopes and instance methods to get, set &amp; query values</li>
 </ul>
-<pre><code class="language-rb">class Order &lt; ApplicationRecord
-  enum :status, [:shipped, :being_packaged, :complete, :cancelled]
-end
-
-Order.shipped
-Order.not_shipped
-order.shipped?
-order.complete?
-order.shipped!
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Order</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="n">enum</span><span class="w"> </span><span class="ss">:status</span><span class="p">,</span><span class="w"> </span><span class="o">[</span><span class="ss">:shipped</span><span class="p">,</span><span class="w"> </span><span class="ss">:being_packaged</span><span class="p">,</span><span class="w"> </span><span class="ss">:complete</span><span class="p">,</span><span class="w"> </span><span class="ss">:cancelled</span><span class="o">]</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">end</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="no">Order</span><span class="o">.</span><span class="n">shipped</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="no">Order</span><span class="o">.</span><span class="n">not_shipped</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">order</span><span class="o">.</span><span class="n">shipped?</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">order</span><span class="o">.</span><span class="n">complete?</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">order</span><span class="o">.</span><span class="n">shipped!</span>
+</span></code></pre></div>
 
 
 

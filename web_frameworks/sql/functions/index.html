@@ -12396,37 +12396,37 @@
 
 <h1 id="queries">Queries</h1>
 <h2 id="date-and-time">Date and Time</h2>
-<pre><code class="language-sql">now() -- Current Date and Time
-curdate() -- Current Date
-curtime() -- Current Time
-date(created_at) -- Extracts date
-
--- Units: second, minute, hour, day, week, month, quarter, year
-datediff(date1, date2)
-date_add(date, interval 10 day)
-date_sub(date, interval 10 day)
-date_format(date, format)
-extract(year from date)
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">now</span><span class="p">()</span><span class="w"> </span><span class="c1">-- Current Date and Time</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">curdate</span><span class="p">()</span><span class="w"> </span><span class="c1">-- Current Date</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">curtime</span><span class="p">()</span><span class="w"> </span><span class="c1">-- Current Time</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">date</span><span class="p">(</span><span class="n">created_at</span><span class="p">)</span><span class="w"> </span><span class="c1">-- Extracts date</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1">-- Units: second, minute, hour, day, week, month, quarter, year</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">datediff</span><span class="p">(</span><span class="n">date1</span><span class="p">,</span><span class="w"> </span><span class="n">date2</span><span class="p">)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">date_add</span><span class="p">(</span><span class="nb">date</span><span class="p">,</span><span class="w"> </span><span class="nb">interval</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">day</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">date_sub</span><span class="p">(</span><span class="nb">date</span><span class="p">,</span><span class="w"> </span><span class="nb">interval</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">day</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">date_format</span><span class="p">(</span><span class="nb">date</span><span class="p">,</span><span class="w"> </span><span class="n">format</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">extract</span><span class="p">(</span><span class="k">year</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="nb">date</span><span class="p">)</span>
+</span></code></pre></div>
 <h2 id="string">String</h2>
-<pre><code class="language-sql">length(full_name)
-concat(first_name, ' ', last_name)
-concat_ws(' ', first_name, middle_name, last_name) -- concat with the first given string
-lower(full_name) -- Lower case
-upper(full_name)
-trim(full_name)
-replace(full_name, '_', ' ')
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">length</span><span class="p">(</span><span class="n">full_name</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">concat</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">last_name</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">concat_ws</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">first_name</span><span class="p">,</span><span class="w"> </span><span class="n">middle_name</span><span class="p">,</span><span class="w"> </span><span class="n">last_name</span><span class="p">)</span><span class="w"> </span><span class="c1">-- concat with the first given string</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">lower</span><span class="p">(</span><span class="n">full_name</span><span class="p">)</span><span class="w"> </span><span class="c1">-- Lower case</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">upper</span><span class="p">(</span><span class="n">full_name</span><span class="p">)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">trim</span><span class="p">(</span><span class="n">full_name</span><span class="p">)</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">replace</span><span class="p">(</span><span class="n">full_name</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></code></pre></div>
 <h2 id="numeric">Numeric</h2>
-<pre><code class="language-sql">abs(-100) -- Absolute
-ceil(10.25)
-floor(10.25)
-round(10.25)
-truncate(10.251250, 2)
-greatest(1, 2, 3, 4, 5)
-least(1, 2, 3, 4, 5)
-power(10, 2)
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="c1">-- Absolute</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">ceil</span><span class="p">(</span><span class="mi">10</span><span class="p">.</span><span class="mi">25</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">floor</span><span class="p">(</span><span class="mi">10</span><span class="p">.</span><span class="mi">25</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">round</span><span class="p">(</span><span class="mi">10</span><span class="p">.</span><span class="mi">25</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">truncate</span><span class="p">(</span><span class="mi">10</span><span class="p">.</span><span class="mi">251250</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">greatest</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">least</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">power</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+</span></code></pre></div>
 <h2 id="json">JSON</h2>
 <ul>
 <li>'$' references entire object</li>
@@ -12434,17 +12434,17 @@ power(10, 2)
 <li>'$[4]' references the fourth object in an array</li>
 <li>'$.details[4].name'</li>
 </ul>
-<pre><code class="language-sql">json_exists(data, path) -- Returns 1 if the element exists, 0 if not
-json_value(data, path) -- Returns the scalar specified by the path, returns null if there is no match
-json_query(data, path) -- Returns an object or array specified by the path
-json_contains(data, to_search, path)
-json_search(data, 'one'/'all', to_search)
-
--- Flatten json as rows
-select *
-from table_1,
-json_table(data, path columns (name varchar(50) path '$.name')) details;
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">json_exists</span><span class="p">(</span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">)</span><span class="w"> </span><span class="c1">-- Returns 1 if the element exists, 0 if not</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">json_value</span><span class="p">(</span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">)</span><span class="w"> </span><span class="c1">-- Returns the scalar specified by the path, returns null if there is no match</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">json_query</span><span class="p">(</span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">)</span><span class="w"> </span><span class="c1">-- Returns an object or array specified by the path</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">json_contains</span><span class="p">(</span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="n">to_search</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">json_search</span><span class="p">(</span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;one&#39;</span><span class="o">/</span><span class="s1">&#39;all&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">to_search</span><span class="p">)</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1">-- Flatten json as rows</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">from</span><span class="w"> </span><span class="n">table_1</span><span class="p">,</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">json_table</span><span class="p">(</span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="n">columns</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="s1">&#39;$.name&#39;</span><span class="p">))</span><span class="w"> </span><span class="n">details</span><span class="p">;</span>
+</span></code></pre></div>
 <h2 id="sql-injection">SQL Injection</h2>
 <ul>
 <li>Hazardous security vulnerability that uses the interactions between web applications and their databases</li>
@@ -12456,19 +12456,19 @@ json_table(data, path columns (name varchar(50) path '$.name')) details;
 </ul>
 </li>
 </ul>
-<pre><code class="language-rb"># Example 1
-user_query = &quot;select * from users where username = '#{username}'&quot;
-# If the user passes the following username from frontend or api paramenters, it will return all users
-username = &quot;application' or 1 = 1 --&quot;
-# Since the ' is commented using --, it will execute and return all users
-resultant_query = &quot;select * from users where username = 'application' or 1 == 1 --'&quot;
-
-# Example 2
-products = &quot;select name, description from products where category = '#{category}'&quot;
-category = &quot;gifts' union select username, password from users --&quot;
-resultant_query = &quot;select name, description from products where category = 'gifts'
-  union select username, password from users --'&quot;
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Example 1</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">user_query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;select * from users where username = &#39;</span><span class="si">#{</span><span class="n">username</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># If the user passes the following username from frontend or api paramenters, it will return all users</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;application&#39; or 1 = 1 --&quot;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># Since the &#39; is commented using --, it will execute and return all users</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">resultant_query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;select * from users where username = &#39;application&#39; or 1 == 1 --&#39;&quot;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># Example 2</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">products</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;select name, description from products where category = &#39;</span><span class="si">#{</span><span class="n">category</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;gifts&#39; union select username, password from users --&quot;</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="n">resultant_query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;select name, description from products where category = &#39;gifts&#39;</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="s2">  union select username, password from users --&#39;&quot;</span>
+</span></code></pre></div>
 
 
 

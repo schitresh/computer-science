@@ -13056,12 +13056,12 @@
 </ul>
 </li>
 <li>But javascript has a handly eval() function to execute any string as code
-    <code>html
-    &lt;div
-        id="mycode"
-        expr="alert('hah!')"
-        style="background:url('javascript:eval(document.all.mycode.expr)')"
-    &gt;&lt;/div&gt;</code></li>
+    <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">div</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="na">id</span><span class="o">=</span><span class="s">&quot;mycode&quot;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="na">expr</span><span class="o">=</span><span class="s">&quot;alert(&#39;hah!&#39;)&quot;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="na">style</span><span class="o">=</span><span class="s">&quot;background:url(&#39;javascript:eval(document.all.mycode.expr)&#39;)&quot;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div></li>
 <li>The eval() function is a nightmare for restricted list input filters<ul>
 <li>As it allows the style attribute to hide the word 'innerHTML'</li>
 <li><code>alert(eval('document.body.inne' + 'rHTML'));</code></li>
@@ -13069,15 +13069,12 @@
 </li>
 <li>The next problem was MySpace filtering the word 'javascript'<ul>
 <li>So the author used <code>java&lt;NEWLINE&gt;script</code> to get around this
-```html
-&lt;div
-    id="mycode"
-    expr="alert('hah!')"
-    style="background:url('java↵script:eval(document.all.mycode.expr)')"<blockquote>
-<p></div>
-```</p>
-</blockquote>
-</li>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">div</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="na">id</span><span class="o">=</span><span class="s">&quot;mycode&quot;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="na">expr</span><span class="o">=</span><span class="s">&quot;alert(&#39;hah!&#39;)&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="na">style</span><span class="o">=</span><span class="s">&quot;background:url(&#39;java↵script:eval(document.all.mycode.expr)&#39;)&quot;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div></li>
 </ul>
 </li>
 <li>Another problem for the author was the CSRF security tokens<ul>
@@ -13187,17 +13184,17 @@
 </ul>
 </li>
 </ul>
-<pre><code class="language-rb">Rails.application.config.hosts &lt;&lt; &quot;product.com&quot;
-
-Rails.application.config.host_authorization = {
-  # Exclude requests for the /healthcheck/ path from host checking
-  exclude: -&gt;(request) { request.path.include?(&quot;healthcheck&quot;) },
-  # Add custom Rack application for the response
-  response_app: -&gt; env do
-    [400, { &quot;Content-Type&quot; =&gt; &quot;text/plain&quot; }, [&quot;Bad Request&quot;]]
-  end
-}
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="no">Rails</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">hosts</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;product.com&quot;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="no">Rails</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">host_authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="c1"># Exclude requests for the /healthcheck/ path from host checking</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="ss">exclude</span><span class="p">:</span><span class="w"> </span><span class="o">-&gt;</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="s2">&quot;healthcheck&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="c1"># Add custom Rack application for the response</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="ss">response_app</span><span class="p">:</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">env</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="o">[</span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;Content-Type&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s2">&quot;text/plain&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;Bad Request&quot;</span><span class="o">]]</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="k">end</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
+</span></code></pre></div>
 
 
 

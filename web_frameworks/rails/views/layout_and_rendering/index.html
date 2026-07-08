@@ -12465,56 +12465,56 @@
 </li>
 </ul>
 <h2 id="render">Render</h2>
-<pre><code class="language-rb">def update
-  @book = Book.find(params[:id])
-  if @book.update(book_params)
-    redirect_to(@book)
-  else
-    render :edit, status: :unprocessable_entity
-  end
-end
-
-# To render views for products from books controller
-render &quot;products/show&quot;
-render template: &quot;products/show&quot;
-
-# Different Formats
-render plain: &quot;OK&quot;
-render json: @product
-render xml: @product
-render js: &quot;alert('Hello Rails');&quot;
-render file: &quot;#{Rails.root}/public/404.html&quot;, layout: false
-
-# Default content_type is 'text/html'
-render template: &quot;feed&quot;, content_type: &quot;application/rss&quot;
-render layout: &quot;special_layout&quot;
-render layout: false
-
-render status: 500
-render status: :forbidden
-
-# There should exist a template with the specified format
-render formats: :xml
-render formats: [:json, :xml]
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">update</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="vi">@book</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Book</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="vi">@book</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">book_params</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">redirect_to</span><span class="p">(</span><span class="vi">@book</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="k">else</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">render</span><span class="w"> </span><span class="ss">:edit</span><span class="p">,</span><span class="w"> </span><span class="ss">status</span><span class="p">:</span><span class="w"> </span><span class="ss">:unprocessable_entity</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="k">end</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">end</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># To render views for products from books controller</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">render</span><span class="w"> </span><span class="s2">&quot;products/show&quot;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">render</span><span class="w"> </span><span class="ss">template</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;products/show&quot;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># Different Formats</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">render</span><span class="w"> </span><span class="ss">plain</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK&quot;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">render</span><span class="w"> </span><span class="ss">json</span><span class="p">:</span><span class="w"> </span><span class="vi">@product</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">render</span><span class="w"> </span><span class="ss">xml</span><span class="p">:</span><span class="w"> </span><span class="vi">@product</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="n">render</span><span class="w"> </span><span class="ss">js</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;alert(&#39;Hello Rails&#39;);&quot;</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="n">render</span><span class="w"> </span><span class="ss">file</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">#{</span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="si">}</span><span class="s2">/public/404.html&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">layout</span><span class="p">:</span><span class="w"> </span><span class="kp">false</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="c1"># Default content_type is &#39;text/html&#39;</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="n">render</span><span class="w"> </span><span class="ss">template</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;feed&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">content_type</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/rss&quot;</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="n">render</span><span class="w"> </span><span class="ss">layout</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;special_layout&quot;</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="n">render</span><span class="w"> </span><span class="ss">layout</span><span class="p">:</span><span class="w"> </span><span class="kp">false</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="n">render</span><span class="w"> </span><span class="ss">status</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">render</span><span class="w"> </span><span class="ss">status</span><span class="p">:</span><span class="w"> </span><span class="ss">:forbidden</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="c1"># There should exist a template with the specified format</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="n">render</span><span class="w"> </span><span class="ss">formats</span><span class="p">:</span><span class="w"> </span><span class="ss">:xml</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="n">render</span><span class="w"> </span><span class="ss">formats</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:json</span><span class="p">,</span><span class="w"> </span><span class="ss">:xml</span><span class="o">]</span>
+</span></code></pre></div>
 <h2 id="redirect">Redirect</h2>
-<pre><code class="language-rb">redirect_to photos_url
-redirect_back(fallback_location: root_path)
-
-# Alternatives
-def show
-  @book = Book.find_by(id: params[:id])
-  if @book.nil?
-    # This will redirect to index and it will have to be rendered again
-    redirect_to action: :index
-
-    # A better option can be to handle the data here and render index directly
-    @books = Book.all
-    flash.now[:alert] = &quot;Your book was not found&quot;
-    render 'index'
-  end
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">redirect_to</span><span class="w"> </span><span class="n">photos_url</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">redirect_back</span><span class="p">(</span><span class="ss">fallback_location</span><span class="p">:</span><span class="w"> </span><span class="n">root_path</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Alternatives</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">show</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="vi">@book</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Book</span><span class="o">.</span><span class="n">find_by</span><span class="p">(</span><span class="nb">id</span><span class="p">:</span><span class="w"> </span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="vi">@book</span><span class="o">.</span><span class="n">nil?</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="c1"># This will redirect to index and it will have to be rendered again</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">redirect_to</span><span class="w"> </span><span class="ss">action</span><span class="p">:</span><span class="w"> </span><span class="ss">:index</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="c1"># A better option can be to handle the data here and render index directly</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="vi">@books</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Book</span><span class="o">.</span><span class="n">all</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="n">flash</span><span class="o">.</span><span class="n">now</span><span class="o">[</span><span class="ss">:alert</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Your book was not found&quot;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="n">render</span><span class="w"> </span><span class="s1">&#39;index&#39;</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="k">end</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="k">end</span>
+</span></code></pre></div>
 <h2 id="layouts">Layouts</h2>
 <ul>
 <li>Rails combines the view with a layout</li>
@@ -12525,57 +12525,57 @@ end
 <li>It provides a yield method where the view is required to render</li>
 <li>To yield specific sections, content_for is specified</li>
 </ul>
-<pre><code class="language-js">// Layout
-&lt;html&gt;
-  &lt;head&gt;
-  &lt;%= yield :head %&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-  &lt;%= yield %&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-
-// View
-&lt;% content_for :head do %&gt;
-  &lt;title&gt;A simple page&lt;/title&gt;
-&lt;% end %&gt;
-&lt;p&gt;Hello, Rails!&lt;/p&gt;
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// Layout</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="o">&lt;%=</span><span class="w"> </span><span class="k">yield</span><span class="w"> </span><span class="o">:</span><span class="nx">head</span><span class="w"> </span><span class="o">%&gt;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="o">&lt;</span><span class="err">/head&gt;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="o">&lt;%=</span><span class="w"> </span><span class="k">yield</span><span class="w"> </span><span class="o">%&gt;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="o">&lt;</span><span class="err">/body&gt;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="o">&lt;</span><span class="err">/html&gt;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">// View</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="o">&lt;%</span><span class="w"> </span><span class="nx">content_for</span><span class="w"> </span><span class="o">:</span><span class="nx">head</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">%&gt;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">A</span><span class="w"> </span><span class="nx">simple</span><span class="w"> </span><span class="nx">page</span><span class="o">&lt;</span><span class="err">/title&gt;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="o">&lt;%</span><span class="w"> </span><span class="nx">end</span><span class="w"> </span><span class="o">%&gt;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span><span class="w"> </span><span class="nx">Rails</span><span class="o">!&lt;</span><span class="err">/p&gt;</span>
+</span></code></pre></div>
 <h3 id="layout-rendering">Layout Rendering</h3>
 <ul>
 <li>To find the current layout, rails first looks in 'apps/views/layouts'</li>
 <li>For PhotosController, it will look for 'app/views/layouts/photos.html.erb'</li>
 <li>If not found, it will use 'app/views/layouts/application.html.erb'</li>
 </ul>
-<pre><code class="language-rb"># To override default conventions for layout
-# They also cascade downward in hierarchy
-class ProductsController &lt; ApplicationController
-  layout &quot;inventory&quot;
-  layout &quot;product&quot;, only: [:index, :rss]
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># To override default conventions for layout</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># They also cascade downward in hierarchy</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">ProductsController</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationController</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="n">layout</span><span class="w"> </span><span class="s2">&quot;inventory&quot;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="n">layout</span><span class="w"> </span><span class="s2">&quot;product&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">only</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:index</span><span class="p">,</span><span class="w"> </span><span class="ss">:rss</span><span class="o">]</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">end</span>
+</span></code></pre></div>
 <h2 id="partials">Partials</h2>
 <ul>
 <li>Renders a partial view inside a view</li>
 </ul>
-<pre><code class="language-js">&lt;%= render &quot;application/ad_banner&quot; %&gt;
-&lt;h1&gt;Products&lt;/h1&gt;
-&lt;%= render &quot;application/footer&quot; %&gt;
-
-// Passing variables
-&lt;h1&gt;Editing zone&lt;/h1&gt;
-&lt;%= render partial: &quot;form&quot;, locals: { zone: @zone } %&gt;
-
-// Renders show page of customer
-&lt;%= render @customer %&gt;
-// Renders index page of articles
-&lt;%= render @articles %&gt;
-
-// Collection
-// Will render partial for each product
-&lt;h1&gt;Products&lt;/h1&gt;
-&lt;%= render partial: &quot;product&quot;, collection: @products %&gt;
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">&lt;%=</span><span class="w"> </span><span class="nx">render</span><span class="w"> </span><span class="s2">&quot;application/ad_banner&quot;</span><span class="w"> </span><span class="o">%&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Products</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="o">&lt;%=</span><span class="w"> </span><span class="nx">render</span><span class="w"> </span><span class="s2">&quot;application/footer&quot;</span><span class="w"> </span><span class="o">%&gt;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">// Passing variables</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Editing</span><span class="w"> </span><span class="nx">zone</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="o">&lt;%=</span><span class="w"> </span><span class="nx">render</span><span class="w"> </span><span class="nx">partial</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;form&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">locals</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">zone</span><span class="o">:</span><span class="w"> </span><span class="err">@</span><span class="nx">zone</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">%&gt;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1">// Renders show page of customer</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="o">&lt;%=</span><span class="w"> </span><span class="nx">render</span><span class="w"> </span><span class="err">@</span><span class="nx">customer</span><span class="w"> </span><span class="o">%&gt;</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1">// Renders index page of articles</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="o">&lt;%=</span><span class="w"> </span><span class="nx">render</span><span class="w"> </span><span class="err">@</span><span class="nx">articles</span><span class="w"> </span><span class="o">%&gt;</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="c1">// Collection</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="c1">// Will render partial for each product</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Products</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="o">&lt;%=</span><span class="w"> </span><span class="nx">render</span><span class="w"> </span><span class="nx">partial</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;product&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">collection</span><span class="o">:</span><span class="w"> </span><span class="err">@</span><span class="nx">products</span><span class="w"> </span><span class="o">%&gt;</span>
+</span></code></pre></div>
 
 
 

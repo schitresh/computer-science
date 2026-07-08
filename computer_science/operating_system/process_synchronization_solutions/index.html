@@ -12446,11 +12446,11 @@
 <li>Doesn't provide mutual exclusion in some cases</li>
 <li>Busy Waiting</li>
 </ul>
-<pre><code class="language-py">while lock != 0: continue
-lock = 1
-# Critical Section
-lock = 0
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">while</span> <span class="n">lock</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span> <span class="k">continue</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">lock</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Critical Section</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">lock</span> <span class="o">=</span> <span class="mi">0</span>
+</span></code></pre></div>
 <h2 id="petersons-solution">Peterson's Solution</h2>
 <ul>
 <li>Have 2 shared variables</li>
@@ -12461,21 +12461,21 @@ lock = 0
 <li>Limited to 2 processes at a time</li>
 <li>Cannot be used in modern architecture with multiple CPUs</li>
 </ul>
-<pre><code class="language-py">while (True):
-  # Pi wants to enter CS
-  flag[i] = True
-
-  # Give preference to Pj to avoid conflicts
-  turn = j
-  # Wait if Pj is executing
-  while (flat[j] &amp;&amp; turn == j): continue
-
-  # Critical Section
-
-  flag[i] = False
-
-  # Remainder Section
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">while</span> <span class="p">(</span><span class="kc">True</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  <span class="c1"># Pi wants to enter CS</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  <span class="n">flag</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  <span class="c1"># Give preference to Pj to avoid conflicts</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  <span class="n">turn</span> <span class="o">=</span> <span class="n">j</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  <span class="c1"># Wait if Pj is executing</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  <span class="k">while</span> <span class="p">(</span><span class="n">flat</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">turn</span> <span class="o">==</span> <span class="n">j</span><span class="p">):</span> <span class="k">continue</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  <span class="c1"># Critical Section</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>  <span class="n">flag</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>  <span class="c1"># Remainder Section</span>
+</span></code></pre></div>
 <h2 id="dekkers-solution">Dekker's Solution</h2>
 <ul>
 <li>One of the first mutual exclusion algorithms. The latest revision satisfies all 3 conditions of CS.</li>
@@ -12487,24 +12487,24 @@ lock = 0
 <li>Limited to 2 processes at a time</li>
 <li>Cannot be used in modern architecture with multiple CPUs</li>
 </ul>
-<pre><code class="language-py">while (True):
-  # Pi wants to enter CS
-  flag[i] = True
-
-  # Wait if Pj is executing
-  while flat[j]:
-    if turn == j:
-      flag[i] = False
-      while turn == j: continue
-      flag[i] = True
-
-  # Critical Section
-
-  turn = j
-  flag[i] = False
-
-  # Remainder Section
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">while</span> <span class="p">(</span><span class="kc">True</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  <span class="c1"># Pi wants to enter CS</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  <span class="n">flag</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  <span class="c1"># Wait if Pj is executing</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  <span class="k">while</span> <span class="n">flat</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="k">if</span> <span class="n">turn</span> <span class="o">==</span> <span class="n">j</span><span class="p">:</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>      <span class="n">flag</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>      <span class="k">while</span> <span class="n">turn</span> <span class="o">==</span> <span class="n">j</span><span class="p">:</span> <span class="k">continue</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>      <span class="n">flag</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>  <span class="c1"># Critical Section</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>  <span class="n">turn</span> <span class="o">=</span> <span class="n">j</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>  <span class="n">flag</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>  <span class="c1"># Remainder Section</span>
+</span></code></pre></div>
 <h2 id="bakery-algorithm">Bakery Algorithm</h2>
 <ul>
 <li>Follows first come first serve</li>
@@ -12515,19 +12515,19 @@ lock = 0
 <li>Not scalable (overhead increases with number of processes)</li>
 <li>High time complexity, Memory overhead, Busy waiting</li>
 </ul>
-<pre><code class="language-py">while True:
-  choosing_number[i] = True
-  number[i] = max(number) + 1
-  choosing_number[i] = False
-
-  for j in range(0, n):
-    while choosing_number[j]: continue
-    while number[j] != 0 and [number[j], j] &lt; [number[i], i]: continue
-
-  # Critical Section
-  number[i] = 0
-  # Remainder Section
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  <span class="n">choosing_number</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  <span class="n">number</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  <span class="n">choosing_number</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">while</span> <span class="n">choosing_number</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span> <span class="k">continue</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="k">while</span> <span class="n">number</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="p">[</span><span class="n">number</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="n">number</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span><span class="p">]:</span> <span class="k">continue</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  <span class="c1"># Critical Section</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>  <span class="n">number</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>  <span class="c1"># Remainder Section</span>
+</span></code></pre></div>
 <h2 id="semaphore">Semaphore</h2>
 <ul>
 <li>Signaling mechanism: A process waiting on a semaphore will be signaled by another process</li>
@@ -12549,21 +12549,21 @@ lock = 0
 <li>Deadlock</li>
 <li>Busy waiting: To solve maintain a waiting queue</li>
 </ul>
-<pre><code class="language-py">int semaphore = S # Maximum number of processes that can enter CS at this time
-
-def wait(semaphore):
-  while semaphore &lt;= 0: continue # Wait till CS is available
-  semaphore -= 1
-
-def signal(sempahore):
-  semaphore += 1
-
-# Process P
-wait(semaphore)
-# Critical Section
-signal(semaphore)
-# Remainder Section
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">int</span> <span class="n">semaphore</span> <span class="o">=</span> <span class="n">S</span> <span class="c1"># Maximum number of processes that can enter CS at this time</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">wait</span><span class="p">(</span><span class="n">semaphore</span><span class="p">):</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  <span class="k">while</span> <span class="n">semaphore</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span> <span class="k">continue</span> <span class="c1"># Wait till CS is available</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  <span class="n">semaphore</span> <span class="o">-=</span> <span class="mi">1</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">signal</span><span class="p">(</span><span class="n">sempahore</span><span class="p">):</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>  <span class="n">semaphore</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># Process P</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="n">wait</span><span class="p">(</span><span class="n">semaphore</span><span class="p">)</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1"># Critical Section</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="n">signal</span><span class="p">(</span><span class="n">semaphore</span><span class="p">)</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="c1"># Remainder Section</span>
+</span></code></pre></div>
 <h2 id="mutex">Mutex</h2>
 <ul>
 <li>Mutual Exclusion Object</li>
@@ -12576,19 +12576,19 @@ signal(semaphore)
 <li>Can be used as Binary semaphore, but vice-versa is not true</li>
 <li>Priority inversion is solved by priority inheritance</li>
 </ul>
-<pre><code class="language-py">def lock():
-  while not available: continue
-  available = False
-
-def unlock():
-  available = True
-
-# Process P
-lock()
-# Critical Section
-unlock()
-# Remainder Section
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">lock</span><span class="p">():</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  <span class="k">while</span> <span class="ow">not</span> <span class="n">available</span><span class="p">:</span> <span class="k">continue</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>  <span class="n">available</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">unlock</span><span class="p">():</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>  <span class="n">available</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1"># Process P</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">lock</span><span class="p">()</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># Critical Section</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">unlock</span><span class="p">()</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c1"># Remainder Section</span>
+</span></code></pre></div>
 <h2 id="monitors">Monitors</h2>
 <ul>
 <li>A module that encapsulates a shared resource and provides access through a set of procedures</li>

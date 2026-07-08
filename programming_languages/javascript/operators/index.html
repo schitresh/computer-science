@@ -12460,37 +12460,37 @@
 <ul>
 <li>Includes regular operators like +, -, *, /</li>
 </ul>
-<pre><code class="language-js">a / b // Float Division: 5 / 2 = 2.5
-a % b // Modulus
-a ** b // Exponent
-a++ // Increment
-a-- // Decrement
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="c1">// Float Division: 5 / 2 = 2.5</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nx">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="c1">// Modulus</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nx">a</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="c1">// Exponent</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nx">a</span><span class="o">++</span><span class="w"> </span><span class="c1">// Increment</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nx">a</span><span class="o">--</span><span class="w"> </span><span class="c1">// Decrement</span>
+</span></code></pre></div>
 <h2 id="logical-operators">Logical Operators</h2>
-<pre><code class="language-js">a &amp;&amp; b
-a || b
-!a
-// Nullish coalescing operator
-// Returns 'b' if 'a' is null or undefined
-// Otherwise it returns 'a' even if it is false
-a ?? b
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">a</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">b</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nx">a</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">b</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="o">!</span><span class="nx">a</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">// Nullish coalescing operator</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">// Returns &#39;b&#39; if &#39;a&#39; is null or undefined</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1">// Otherwise it returns &#39;a&#39; even if it is false</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nx">a</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="nx">b</span>
+</span></code></pre></div>
 <h2 id="membership-operators">Membership Operators</h2>
-<pre><code class="language-js">a = 10
-b = [10, 20]
-
-a in b // True
-a in { 10: 'ten' } // True
-a not in b // False
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">]</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nx">a</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="c1">// True</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nx">a</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">10</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ten&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// True</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nx">a</span><span class="w"> </span><span class="nx">not</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="c1">// False</span>
+</span></code></pre></div>
 <h2 id="identity-operators">Identity Operators</h2>
-<pre><code class="language-js">a = [10, 20]
-b = [10, 20]
-c = a
-
-a is c // True
-a is not b // True
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">]</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">]</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nx">a</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="c1">// True</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nx">a</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">not</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="c1">// True</span>
+</span></code></pre></div>
 <h2 id="other-operators">Other Operators</h2>
 <ul>
 <li>Comparison: ==, !=, ===, !===, &gt;, &lt;, &gt;=, &lt;=</li>
@@ -12498,43 +12498,43 @@ a is not b // True
 <li>Bitwise: &amp;, |, ^, ~, &lt;&lt;, &gt;&gt;</li>
 </ul>
 <h2 id="equality">Equality</h2>
-<pre><code class="language-js">a == b // Checks only the value
-1 == 1 // true
-1 == 1.0 // true
-1 == '1' // true
-1 == true // true
-2 == true // false
-null == undefined // true
-
-a === b // Checks the value and the data type
-1 === 1 // true
-1 === 1.0 // true
-1 === '1' // false
-1 === true // false
-2 === true // false
-null == undefined // false
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="c1">// Checks only the value</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="mf">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="mf">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="mf">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="mf">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="mf">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// false</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="kc">null</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">undefined</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="nx">a</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="c1">// Checks the value and the data type</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="mf">1</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="mf">1</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="mf">1</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="c1">// false</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="mf">1</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// false</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="mf">2</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">// false</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="kc">null</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">undefined</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div>
 <h2 id="spread-operator">Spread Operator</h2>
 <ul>
 <li>Spreads the entities into a container</li>
 </ul>
-<pre><code class="language-js">let array = [1, 2, 'hello']
-console.log(array) // [1, 2, 'hello']
-console.log(...array) // 1 2 hello
-
-[...arr1, ...arr2] // [1, 2, 3, 4] if arr1 = [1, 2] &amp; arr2 = [3, 4]
-arr2 = [...arr1] // Clones arr1 to arr2
-
-let words = { two: 4, three: 3 }
-{ one: 1, two: 2, ...words } // { one: 1, two: 4, three: 3 }
-{ ...words, one: 1, two: 2 } // { one: 1, two: 2, three: 3 }
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;hello&#39;</span><span class="p">]</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span><span class="w"> </span><span class="c1">// [1, 2, &#39;hello&#39;]</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(...</span><span class="nx">array</span><span class="p">)</span><span class="w"> </span><span class="c1">// 1 2 hello</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">[...</span><span class="nx">arr1</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">arr2</span><span class="p">]</span><span class="w"> </span><span class="c1">// [1, 2, 3, 4] if arr1 = [1, 2] &amp; arr2 = [3, 4]</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nx">arr2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">arr1</span><span class="p">]</span><span class="w"> </span><span class="c1">// Clones arr1 to arr2</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="kd">let</span><span class="w"> </span><span class="nx">words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">two</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="nx">three</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">{</span><span class="w"> </span><span class="nx">one</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">two</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">words</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// { one: 1, two: 4, three: 3 }</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">words</span><span class="p">,</span><span class="w"> </span><span class="nx">one</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">two</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// { one: 1, two: 2, three: 3 }</span>
+</span></code></pre></div>
 <h2 id="rest-operator">Rest Operator</h2>
 <ul>
 <li>Collects the entities into an array</li>
 </ul>
-<pre><code class="language-js">(a, ...nums) =&gt; a + nums.reduce((sum, val) =&gt; sum + val, 0)
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">nums</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">nums</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">sum</span><span class="p">,</span><span class="w"> </span><span class="nx">val</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">val</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span>
+</span></code></pre></div>
 
 
 

@@ -12520,74 +12520,74 @@
 <li>Immutable: Integer, Float, Boolean, Symbol</li>
 </ul>
 <h2 id="boolean">Boolean</h2>
-<pre><code class="language-rb"># Boolean
-flag = true
-in_process = false
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Boolean</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">true</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">in_process</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">false</span>
+</span></code></pre></div>
 <h2 id="numeric">Numeric</h2>
-<pre><code class="language-rb"># Integer
-a = 10
-
-# Float
-b = 10.25
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Integer</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Float</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="o">.</span><span class="mi">25</span>
+</span></code></pre></div>
 <h2 id="string">String</h2>
-<pre><code class="language-rb"># String
-text = 'Hello World!'
-text = &quot;Hello World!&quot;
-para = 'Multiline'\
-       'String'
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># String</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello World!&#39;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello World!&quot;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">para</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Multiline&#39;</span><span class="p">\</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">       </span><span class="s1">&#39;String&#39;</span>
+</span></code></pre></div>
 <h2 id="symbol">Symbol</h2>
-<pre><code class="language-rb"># Symbol
-# Immutable
-# Light-weight strings
-status = :draft
-category = :electronics
-
-# Each symbol has only once instance
-a = :value
-b = :value
-a.object_id == b.object_id # true
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Symbol</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># Immutable</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Light-weight strings</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:draft</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:electronics</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Each symbol has only once instance</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:value</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:value</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">a</span><span class="o">.</span><span class="n">object_id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="o">.</span><span class="n">object_id</span><span class="w"> </span><span class="c1"># true</span>
+</span></code></pre></div>
 <h2 id="array">Array</h2>
 <ul>
 <li>Bounded and iterable</li>
 <li>Can store elements with different data types (as opposed to C)</li>
 </ul>
-<pre><code class="language-rb"># Array
-# Mutable (elements and size can be changed)
-items = [1, 2.5, 'one', 'two', [3, 4]]
-items[2] # 'one'
-items.first # 1
-items.second # 2.5
-items.last # [3, 4]
-
-# Range
-# (a..b) includes b
-# (a...b) excludes b
-(5..8) # 5, 6, 7, 8
-(5...8) # 5, 6, 7
-(1..3).each { |x| print x } # Will print 1, 2, 3
-(1..3).to_a # [1, 2, 3]
-(8..5) # 8, 7, 6, 5
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Array</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># Mutable (elements and size can be changed)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;one&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;two&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">]]</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">items</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="w"> </span><span class="c1"># &#39;one&#39;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">items</span><span class="o">.</span><span class="n">first</span><span class="w"> </span><span class="c1"># 1</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">items</span><span class="o">.</span><span class="n">second</span><span class="w"> </span><span class="c1"># 2.5</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">items</span><span class="o">.</span><span class="n">last</span><span class="w"> </span><span class="c1"># [3, 4]</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1"># Range</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># (a..b) includes b</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1"># (a...b) excludes b</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">(</span><span class="mi">5</span><span class="o">..</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="c1"># 5, 6, 7, 8</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="p">(</span><span class="mi">5</span><span class="o">...</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="c1"># 5, 6, 7</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="nb">print</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1"># Will print 1, 2, 3</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span><span class="w"> </span><span class="c1"># [1, 2, 3]</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="p">(</span><span class="mi">8</span><span class="o">..</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="c1"># 8, 7, 6, 5</span>
+</span></code></pre></div>
 <h2 id="hash">Hash</h2>
-<pre><code class="language-rb"># Hash
-# Symbol keys
-word_map = { one: 1, two: 2 }
-word_map[:one] # 1
-
-# Other keys
-word_map = { 'one' =&gt; 1, 'two' =&gt; 2 }
-word_map['one'] # 1
-
-number_map = { 1 =&gt;  'one', 2 =&gt; 'two' }
-number_map[1] # 'one'
-
-list_map = { [1, 2] =&gt;  'one', [3, 4] =&gt; 'two' }
-list_map[[1,2]] # 'one'
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Hash</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># Symbol keys</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">word_map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="ss">one</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">two</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">word_map</span><span class="o">[</span><span class="ss">:one</span><span class="o">]</span><span class="w"> </span><span class="c1"># 1</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># Other keys</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">word_map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;one&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;two&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">word_map</span><span class="o">[</span><span class="s1">&#39;one&#39;</span><span class="o">]</span><span class="w"> </span><span class="c1"># 1</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">number_map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=&gt;</span><span class="w">  </span><span class="s1">&#39;one&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;two&#39;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">number_map</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="c1"># &#39;one&#39;</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="n">list_map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">]</span><span class="w"> </span><span class="o">=&gt;</span><span class="w">  </span><span class="s1">&#39;one&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">]</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;two&#39;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="n">list_map</span><span class="o">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">]]</span><span class="w"> </span><span class="c1"># &#39;one&#39;</span>
+</span></code></pre></div>
 <h2 id="type-casting">Type Casting</h2>
 <h3 id="implicit-casting">Implicit Casting</h3>
 <ul>
@@ -12609,28 +12609,28 @@ list_map[[1,2]] # 'one'
 <li>Using built-in functions to perform explicit conversions</li>
 <li>Such as string to integer</li>
 </ul>
-<pre><code class="language-rb">100.to_s # 100
-10.5.to_s # '10.5'
-[1, 2].to_s # '[1, 2]'
-String(100) # String function can also be used
-
-'100'.to_i # 100
-10.5.to_i # 10
-'Hello'.to_i # 0
-Integer('100') # 100
-
-100.to_f # 100.0
-'10.25'.to_f # 10.25
-Float(100) # 100.0
-
-Array('Hello') # ['Hello']
-Array(['Hello']) # ['Hello']
-'Hello'.to_a # Raises error
-
-Array([1, 2]) # [1, 2]
-Array((2..4)) # [2, 3, 4]
-(2..4).to_a # [2, 3, 4]
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="mi">100</span><span class="o">.</span><span class="n">to_s</span><span class="w"> </span><span class="c1"># 100</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="mi">10</span><span class="o">.</span><span class="mi">5</span><span class="o">.</span><span class="n">to_s</span><span class="w"> </span><span class="c1"># &#39;10.5&#39;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">].</span><span class="n">to_s</span><span class="w"> </span><span class="c1"># &#39;[1, 2]&#39;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">String</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="c1"># String function can also be used</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="s1">&#39;100&#39;</span><span class="o">.</span><span class="n">to_i</span><span class="w"> </span><span class="c1"># 100</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="mi">10</span><span class="o">.</span><span class="mi">5</span><span class="o">.</span><span class="n">to_i</span><span class="w"> </span><span class="c1"># 10</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="s1">&#39;Hello&#39;</span><span class="o">.</span><span class="n">to_i</span><span class="w"> </span><span class="c1"># 0</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nb">Integer</span><span class="p">(</span><span class="s1">&#39;100&#39;</span><span class="p">)</span><span class="w"> </span><span class="c1"># 100</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="mi">100</span><span class="o">.</span><span class="n">to_f</span><span class="w"> </span><span class="c1"># 100.0</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="s1">&#39;10.25&#39;</span><span class="o">.</span><span class="n">to_f</span><span class="w"> </span><span class="c1"># 10.25</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="nb">Float</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="c1"># 100.0</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="nb">Array</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span><span class="w"> </span><span class="c1"># [&#39;Hello&#39;]</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="nb">Array</span><span class="p">(</span><span class="o">[</span><span class="s1">&#39;Hello&#39;</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="c1"># [&#39;Hello&#39;]</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="s1">&#39;Hello&#39;</span><span class="o">.</span><span class="n">to_a</span><span class="w"> </span><span class="c1"># Raises error</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="nb">Array</span><span class="p">(</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="c1"># [1, 2]</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="nb">Array</span><span class="p">((</span><span class="mi">2</span><span class="o">..</span><span class="mi">4</span><span class="p">))</span><span class="w"> </span><span class="c1"># [2, 3, 4]</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="p">(</span><span class="mi">2</span><span class="o">..</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span><span class="w"> </span><span class="c1"># [2, 3, 4]</span>
+</span></code></pre></div>
 
 
 

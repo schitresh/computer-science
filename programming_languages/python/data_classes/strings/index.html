@@ -12619,128 +12619,128 @@
 <li>One hack can be to convert it into list (which is mutable)</li>
 <li>Perform required operations and join it back</li>
 </ul>
-<pre><code class="language-py">text = 'hello'
-text[1] # 'e' (Single char is also a string)
-text + 'world' # 'hello world'
-text * 3 # 'hellohellohello'
-
-text = &quot;Hello World!&quot;
-para = '''Multiline
-String'''
-
-'el' in 'hello' # True
-'el' not in 'hello' # False
-
-'hello\nworld' # Adds new line
-r'hello\nworld' # Raw string, ignores escaped characters, no new line
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># &#39;e&#39; (Single char is also a string)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">text</span> <span class="o">+</span> <span class="s1">&#39;world&#39;</span> <span class="c1"># &#39;hello world&#39;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">text</span> <span class="o">*</span> <span class="mi">3</span> <span class="c1"># &#39;hellohellohello&#39;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">para</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Multiline</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="s1">String&#39;&#39;&#39;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="s1">&#39;el&#39;</span> <span class="ow">in</span> <span class="s1">&#39;hello&#39;</span> <span class="c1"># True</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="s1">&#39;el&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;hello&#39;</span> <span class="c1"># False</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="s1">&#39;hello</span><span class="se">\n</span><span class="s1">world&#39;</span> <span class="c1"># Adds new line</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="sa">r</span><span class="s1">&#39;hello\nworld&#39;</span> <span class="c1"># Raw string, ignores escaped characters, no new line</span>
+</span></code></pre></div>
 <h2 id="formatting">Formatting</h2>
 <h3 id="formatting-operator">Formatting Operator</h3>
-<pre><code class="language-py"># %s: converts to string using str() before formatting
-# %c: character
-'Employee name is %s' % 'John Wick'
-'Category code is %4s' % 'BD' # min padding 2 chars: 'Category code is   BD'
-'%s is in %s department' % ('John Wick', 'Finance')
-# %d: integer
-# %f: float
-'Scored %d out of 20' % 15
-'Scored %2d out of 20' % 6 # min padding 2 chars using space: 'Scored  6'
-'Scored %02d out of 20' % 6 # min padding 2 chars using 0: 'Scored 06 ...'
-'Scored %.2f out of 20' % 6.1 # min 2 zeroes after decimal: 'Scored 6.10'
-'Scored %05.2f out of 20' % 6.1 # min padding 5 chars with 0: 'Scored 06.10'
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># %s: converts to string using str() before formatting</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># %c: character</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s1">&#39;Employee name is </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="s1">&#39;John Wick&#39;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s1">&#39;Category code is </span><span class="si">%4s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="s1">&#39;BD&#39;</span> <span class="c1"># min padding 2 chars: &#39;Category code is   BD&#39;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is in </span><span class="si">%s</span><span class="s1"> department&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;John Wick&#39;</span><span class="p">,</span> <span class="s1">&#39;Finance&#39;</span><span class="p">)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># %d: integer</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># %f: float</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="s1">&#39;Scored </span><span class="si">%d</span><span class="s1"> out of 20&#39;</span> <span class="o">%</span> <span class="mi">15</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="s1">&#39;Scored </span><span class="si">%2d</span><span class="s1"> out of 20&#39;</span> <span class="o">%</span> <span class="mi">6</span> <span class="c1"># min padding 2 chars using space: &#39;Scored  6&#39;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="s1">&#39;Scored </span><span class="si">%02d</span><span class="s1"> out of 20&#39;</span> <span class="o">%</span> <span class="mi">6</span> <span class="c1"># min padding 2 chars using 0: &#39;Scored 06 ...&#39;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="s1">&#39;Scored </span><span class="si">%.2f</span><span class="s1"> out of 20&#39;</span> <span class="o">%</span> <span class="mf">6.1</span> <span class="c1"># min 2 zeroes after decimal: &#39;Scored 6.10&#39;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="s1">&#39;Scored </span><span class="si">%05.2f</span><span class="s1"> out of 20&#39;</span> <span class="o">%</span> <span class="mf">6.1</span> <span class="c1"># min padding 5 chars with 0: &#39;Scored 06.10&#39;</span>
+</span></code></pre></div>
 <h3 id="format-method">Format Method</h3>
-<pre><code class="language-py">'{} is in {} department'.format('John Wick', 'Finance')
-'{name} is in {dept} department'.format(name = 'John Wick', dept = 'Finance')
-'{:s} scored {:05.2f} out of 20'.format('John', 6.1)
-'Category code is {:.2}'.format('BDEG') # Truncation: 'Category code is BD'
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> is in </span><span class="si">{}</span><span class="s1"> department&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;John Wick&#39;</span><span class="p">,</span> <span class="s1">&#39;Finance&#39;</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="s1">&#39;</span><span class="si">{name}</span><span class="s1"> is in </span><span class="si">{dept}</span><span class="s1"> department&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;John Wick&#39;</span><span class="p">,</span> <span class="n">dept</span> <span class="o">=</span> <span class="s1">&#39;Finance&#39;</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> scored </span><span class="si">{:05.2f}</span><span class="s1"> out of 20&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="mf">6.1</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="s1">&#39;Category code is </span><span class="si">{:.2}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;BDEG&#39;</span><span class="p">)</span> <span class="c1"># Truncation: &#39;Category code is BD&#39;</span>
+</span></code></pre></div>
 <h3 id="f-strings">F-strings</h3>
-<pre><code class="language-py">name = 'John Wick'; dept = 'Finance'
-f'{name} is in {dept} department'
-
-price = 100; quantity = 5
-f'Total amount: {price * quantity}' # 'Total amount: 500'
-
-# Self debugging expression using '='
-# 'Total amount: price * quantity = 500'
-f'Total amount: {price * quantity = }'
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;John Wick&#39;</span><span class="p">;</span> <span class="n">dept</span> <span class="o">=</span> <span class="s1">&#39;Finance&#39;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> is in </span><span class="si">{</span><span class="n">dept</span><span class="si">}</span><span class="s1"> department&#39;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">price</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="n">quantity</span> <span class="o">=</span> <span class="mi">5</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="sa">f</span><span class="s1">&#39;Total amount: </span><span class="si">{</span><span class="n">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">quantity</span><span class="si">}</span><span class="s1">&#39;</span> <span class="c1"># &#39;Total amount: 500&#39;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Self debugging expression using &#39;=&#39;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># &#39;Total amount: price * quantity = 500&#39;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="sa">f</span><span class="s1">&#39;Total amount: </span><span class="si">{</span><span class="n">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">quantity</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span>
+</span></code></pre></div>
 <h3 id="templates">Templates</h3>
-<pre><code class="language-py">from string import Template
-template = Template('$name is in $dept department')
-template.substitute(name = 'John Wick', dept = 'Finance')
-
-data = { 'name': 'John Wick', 'dept': 'Finance' }
-template.substitute(**data)
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">string</span><span class="w"> </span><span class="kn">import</span> <span class="n">Template</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">template</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s1">&#39;$name is in $dept department&#39;</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">template</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;John Wick&#39;</span><span class="p">,</span> <span class="n">dept</span> <span class="o">=</span> <span class="s1">&#39;Finance&#39;</span><span class="p">)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">data</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John Wick&#39;</span><span class="p">,</span> <span class="s1">&#39;dept&#39;</span><span class="p">:</span> <span class="s1">&#39;Finance&#39;</span> <span class="p">}</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">template</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span>
+</span></code></pre></div>
 <h2 id="slicing">Slicing</h2>
-<pre><code class="language-py"># From left, the indexes are 0, 1, 2, ...
-# From right, the indexes are ..., -3, -2, -1
-# Slicing: [start:stop:step]
-# With respect to index: [first_index : last_index + 1 : step]
-
-text = 'hello world'
-text[:5] # 'hello'
-text[6:] # 'world'
-text[:-6] # 'hello'
-
-text[2:5] # 'llo'
-text[-5:-2] # 'wor'
-text[6:-2] # 'wor'
-
-text[1:10:3] # 'eoo'
-text[6:][:3] # 'wor'
-
-text[:] # Just clones the string: 'hello world'
-# Replacing not supported for strings (though supported by lists)
-# text[2:4] = 'kk'
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># From left, the indexes are 0, 1, 2, ...</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># From right, the indexes are ..., -3, -2, -1</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Slicing: [start:stop:step]</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># With respect to index: [first_index : last_index + 1 : step]</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">text</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="c1"># &#39;hello&#39;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">text</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span> <span class="c1"># &#39;world&#39;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">text</span><span class="p">[:</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span> <span class="c1"># &#39;hello&#39;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="c1"># &#39;llo&#39;</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># &#39;wor&#39;</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="n">text</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># &#39;wor&#39;</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># &#39;eoo&#39;</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="n">text</span><span class="p">[</span><span class="mi">6</span><span class="p">:][:</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># &#39;wor&#39;</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="n">text</span><span class="p">[:]</span> <span class="c1"># Just clones the string: &#39;hello world&#39;</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="c1"># Replacing not supported for strings (though supported by lists)</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="c1"># text[2:4] = &#39;kk&#39;</span>
+</span></code></pre></div>
 <h2 id="general-methods">General Methods</h2>
-<pre><code class="language-py">len(string)
-max(string)
-min(string)
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">max</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">min</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+</span></code></pre></div>
 <h2 id="instance-methods">Instance Methods</h2>
 <ul>
 <li>Applied on string like <code>string.method_name(*args, **kwargs)</code></li>
 </ul>
 <h3 id="find-and-replace">Find and replace</h3>
-<pre><code class="language-py">find(substr, beg = i, end = j) # Returns index if found else -1
-# lfind, rfind
-index(substr, beg = i, end = j) # Raises exception if not found
-# lindex, rindex
-count(substr, beg = i, end = j) # Counts occurence of substring
-replace(old, new)
-
-startswith(prefix, beg = i, end = j)
-endswith(suffix, beg = i, end = j)
-removeprefix(prefix)
-removesuffix(suffix)
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">find</span><span class="p">(</span><span class="n">substr</span><span class="p">,</span> <span class="n">beg</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">j</span><span class="p">)</span> <span class="c1"># Returns index if found else -1</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># lfind, rfind</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">index</span><span class="p">(</span><span class="n">substr</span><span class="p">,</span> <span class="n">beg</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">j</span><span class="p">)</span> <span class="c1"># Raises exception if not found</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># lindex, rindex</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">count</span><span class="p">(</span><span class="n">substr</span><span class="p">,</span> <span class="n">beg</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">j</span><span class="p">)</span> <span class="c1"># Counts occurence of substring</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">replace</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">)</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">startswith</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">beg</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">j</span><span class="p">)</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">endswith</span><span class="p">(</span><span class="n">suffix</span><span class="p">,</span> <span class="n">beg</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">j</span><span class="p">)</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">removeprefix</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="n">removesuffix</span><span class="p">(</span><span class="n">suffix</span><span class="p">)</span>
+</span></code></pre></div>
 <h3 id="split-and-join">Split and Join</h3>
-<pre><code class="language-py">strip # Removes trailing whitespaces
-# lstrip, rstrip
-split(delimiter) # Deletes delimiter, splits and returns list of subsrings
-partition(sep) # Splits the string in 3 tuples on occurence of separator
-# lpartition, rpartition
-join(seq) # Joins the sequence using the string
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">strip</span> <span class="c1"># Removes trailing whitespaces</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># lstrip, rstrip</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">split</span><span class="p">(</span><span class="n">delimiter</span><span class="p">)</span> <span class="c1"># Deletes delimiter, splits and returns list of subsrings</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">partition</span><span class="p">(</span><span class="n">sep</span><span class="p">)</span> <span class="c1"># Splits the string in 3 tuples on occurence of separator</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1"># lpartition, rpartition</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="n">join</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="c1"># Joins the sequence using the string</span>
+</span></code></pre></div>
 <h3 id="char-types">Char Types</h3>
-<pre><code class="language-py">isalpha()
-isdigit() # If all chars are digits (no decimals or fractions)
-isnumeric() # If all chars are any numerical value (including decimals, fractions)
-isalnum()
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">isalpha</span><span class="p">()</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">isdigit</span><span class="p">()</span> <span class="c1"># If all chars are digits (no decimals or fractions)</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">isnumeric</span><span class="p">()</span> <span class="c1"># If all chars are any numerical value (including decimals, fractions)</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">isalnum</span><span class="p">()</span>
+</span></code></pre></div>
 <h3 id="case">Case</h3>
-<pre><code class="language-py">islower()
-isupper()
-istitle()
-lower()
-upper()
-title() # Titlecase
-capitalize() # Capitalizes the first letter of string
-</code></pre>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">islower</span><span class="p">()</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">isupper</span><span class="p">()</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">istitle</span><span class="p">()</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">lower</span><span class="p">()</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">upper</span><span class="p">()</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="n">title</span><span class="p">()</span> <span class="c1"># Titlecase</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="n">capitalize</span><span class="p">()</span> <span class="c1"># Capitalizes the first letter of string</span>
+</span></code></pre></div>
 
 
 

@@ -12362,79 +12362,79 @@
 </ul>
 </li>
 </ul>
-<pre><code class="language-js">const App = () =&gt; {
-    const counter = &lt;Counter /&gt;;
-    const [isFancy, setIsFancy] = useState(0);
-    return (
-        &lt;div&gt;
-            {/* These are two separate counters */}
-            {/* Because each is rendered at its own position in the tree */}
-            {/* Each of them will get its own independent score state */}
-            {counter}
-            {counter}
-
-            {/* These counters are rendered at the same position in the tree */}
-            {/* So this will preserve the score state */}
-            {/* Toggling isFancy state won't change the value of the score */}
-            {isFancy ? &lt;Counter isFancy={true} /&gt; : &lt;Counter isFancy={false} /&gt;}
-
-            {/* Toggling isPaused or isFancy will reset the state of the counter */}
-            {/* The structure should be same to preserve the state */}
-            {isPaused ? &lt;p&gt;See you later!&lt;/p&gt; : &lt;Counter /&gt;}
-            {isFancy ? (
-                &lt;div&gt;
-                    {&quot; &quot;}
-                    &lt;Counter isFancy={true} /&gt;{&quot; &quot;}
-                &lt;/div&gt;
-            ) : (
-                &lt;section&gt;
-                    {&quot; &quot;}
-                    &lt;Counter isFancy={false} /&gt;{&quot; &quot;}
-                &lt;/section&gt;
-            )}
-        &lt;/div&gt;
-    );
-};
-export default App;
-
-const Counter = () =&gt; {
-    const [score, setScore] = useState(0);
-    return (
-        &lt;div&gt;
-            &lt;h1&gt;{score}&lt;/h1&gt;
-            &lt;button onClick={() =&gt; setScore(score + 1)}&gt;Add one&lt;/button&gt;
-        &lt;/div&gt;
-    );
-};
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">Counter</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">isFancy</span><span class="p">,</span><span class="w"> </span><span class="nx">setIsFancy</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">            </span><span class="p">{</span><span class="cm">/* These are two separate counters */</span><span class="p">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="p">{</span><span class="cm">/* Because each is rendered at its own position in the tree */</span><span class="p">}</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span><span class="p">{</span><span class="cm">/* Each of them will get its own independent score state */</span><span class="p">}</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">            </span><span class="p">{</span><span class="nx">counter</span><span class="p">}</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">            </span><span class="p">{</span><span class="nx">counter</span><span class="p">}</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">            </span><span class="p">{</span><span class="cm">/* These counters are rendered at the same position in the tree */</span><span class="p">}</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="p">{</span><span class="cm">/* So this will preserve the score state */</span><span class="p">}</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">            </span><span class="p">{</span><span class="cm">/* Toggling isFancy state won&#39;t change the value of the score */</span><span class="p">}</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">            </span><span class="p">{</span><span class="nx">isFancy</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">Counter</span><span class="w"> </span><span class="nx">isFancy</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">Counter</span><span class="w"> </span><span class="nx">isFancy</span><span class="o">=</span><span class="p">{</span><span class="kc">false</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">}</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">            </span><span class="p">{</span><span class="cm">/* Toggling isPaused or isFancy will reset the state of the counter */</span><span class="p">}</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">            </span><span class="p">{</span><span class="cm">/* The structure should be same to preserve the state */</span><span class="p">}</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">            </span><span class="p">{</span><span class="nx">isPaused</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">See</span><span class="w"> </span><span class="nx">you</span><span class="w"> </span><span class="nx">later</span><span class="o">!&lt;</span><span class="sr">/p&gt; : &lt;Counter /</span><span class="o">&gt;</span><span class="p">}</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">            </span><span class="p">{</span><span class="nx">isFancy</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">                </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">                    </span><span class="p">{</span><span class="s2">&quot; &quot;</span><span class="p">}</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">                    </span><span class="o">&lt;</span><span class="nx">Counter</span><span class="w"> </span><span class="nx">isFancy</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">{</span><span class="s2">&quot; &quot;</span><span class="p">}</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">                </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">            </span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">                </span><span class="o">&lt;</span><span class="nx">section</span><span class="o">&gt;</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">                    </span><span class="p">{</span><span class="s2">&quot; &quot;</span><span class="p">}</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">                    </span><span class="o">&lt;</span><span class="nx">Counter</span><span class="w"> </span><span class="nx">isFancy</span><span class="o">=</span><span class="p">{</span><span class="kc">false</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">{</span><span class="s2">&quot; &quot;</span><span class="p">}</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">                </span><span class="o">&lt;</span><span class="err">/section&gt;</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">            </span><span class="p">)}</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">        </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="p">);</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="p">};</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="kd">const</span><span class="w"> </span><span class="nx">Counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">score</span><span class="p">,</span><span class="w"> </span><span class="nx">setScore</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">score</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setScore</span><span class="p">(</span><span class="nx">score</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">)}</span><span class="o">&gt;</span><span class="nx">Add</span><span class="w"> </span><span class="nx">one</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">        </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">    </span><span class="p">);</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="p">};</span>
+</span></code></pre></div>
 <h2 id="avoid-nested-declarations">Avoid Nested Declarations</h2>
-<pre><code class="language-js">const MyComponent = () =&gt; {
-    const [counter, setCounter] = useState(0);
-
-    const MyTextField = () =&gt; {
-        const [text, setText] = useState(&quot;&quot;);
-        return &lt;input value={text} onChange={(e) =&gt; setText(e.target.value)} /&gt;;
-    };
-
-    return (
-        &lt;&gt;
-            {/* Every time the button is clicked, MyTextField will re-render */}
-            {/* and the input will disappear. This is because the function MyTextField */}
-            {/* is created for every render. Hence, always declare component functions */}
-            {/* at the top level and don't nest their definitions */}
-            &lt;MyTextField /&gt;
-            &lt;button
-                onClick={() =&gt; {
-                    setCounter(counter + 1);
-                }}
-            &gt;
-                Clicked {counter} times
-            &lt;/button&gt;
-        &lt;/&gt;
-    );
-};
-export default MyComponent;
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">MyComponent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">counter</span><span class="p">,</span><span class="w"> </span><span class="nx">setCounter</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">MyTextField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">text</span><span class="p">,</span><span class="w"> </span><span class="nx">setText</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">text</span><span class="p">}</span><span class="w"> </span><span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setText</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)}</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="o">&lt;&gt;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">            </span><span class="p">{</span><span class="cm">/* Every time the button is clicked, MyTextField will re-render */</span><span class="p">}</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">            </span><span class="p">{</span><span class="cm">/* and the input will disappear. This is because the function MyTextField */</span><span class="p">}</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">            </span><span class="p">{</span><span class="cm">/* is created for every render. Hence, always declare component functions */</span><span class="p">}</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">            </span><span class="p">{</span><span class="cm">/* at the top level and don&#39;t nest their definitions */</span><span class="p">}</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">MyTextField</span><span class="w"> </span><span class="o">/&gt;</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">button</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">                </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">                    </span><span class="nx">setCounter</span><span class="p">(</span><span class="nx">counter</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">                </span><span class="p">}}</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">            </span><span class="o">&gt;</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">                </span><span class="nx">Clicked</span><span class="w"> </span><span class="p">{</span><span class="nx">counter</span><span class="p">}</span><span class="w"> </span><span class="nx">times</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">            </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">        </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="p">);</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="p">};</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">MyComponent</span><span class="p">;</span>
+</span></code></pre></div>
 <h2 id="deliberate-state-reset">Deliberate State Reset</h2>
 <ul>
 <li>By default, react preserves state of a component while it stays at the same position</li>
@@ -12458,36 +12458,36 @@ export default MyComponent;
 </ul>
 </li>
 </ul>
-<pre><code class="language-js">const Scoreboard = () =&gt; {
-    const [isPlayerA, setIsPlayerA] = useState(true);
-    return (
-        &lt;div&gt;
-            {/* Initially isPlayerA is true, so the first position contains Counter state */}
-            {/* When the button is clicked, the first position clears and state is destroyed */}
-            {isPlayerA &amp;&amp; &lt;Counter person=&quot;Taylor&quot; /&gt;}
-            {/* Initially isPlayerA is true, so the seconds position is empty */}
-            {!isPlayerA &amp;&amp; &lt;Counter person=&quot;Sarah&quot; /&gt;}
-
-            {/* Specifying a key tells React to use the key itself as part of the position */}
-            {/* instead of their order within the parent */}
-            {isPlayerA ? (
-                &lt;Counter key=&quot;Taylor&quot; person=&quot;Taylor&quot; /&gt;
-            ) : (
-                &lt;Counter key=&quot;Sarah&quot; person=&quot;Sarah&quot; /&gt;
-            )}
-
-            &lt;button
-                onClick={() =&gt; {
-                    setIsPlayerA(!isPlayerA);
-                }}
-            &gt;
-                Next player!
-            &lt;/button&gt;
-        &lt;/div&gt;
-    );
-};
-export default Scoreboard;
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">Scoreboard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">isPlayerA</span><span class="p">,</span><span class="w"> </span><span class="nx">setIsPlayerA</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">            </span><span class="p">{</span><span class="cm">/* Initially isPlayerA is true, so the first position contains Counter state */</span><span class="p">}</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">            </span><span class="p">{</span><span class="cm">/* When the button is clicked, the first position clears and state is destroyed */</span><span class="p">}</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">            </span><span class="p">{</span><span class="nx">isPlayerA</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">Counter</span><span class="w"> </span><span class="nx">person</span><span class="o">=</span><span class="s2">&quot;Taylor&quot;</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">}</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">            </span><span class="p">{</span><span class="cm">/* Initially isPlayerA is true, so the seconds position is empty */</span><span class="p">}</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">            </span><span class="p">{</span><span class="o">!</span><span class="nx">isPlayerA</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">Counter</span><span class="w"> </span><span class="nx">person</span><span class="o">=</span><span class="s2">&quot;Sarah&quot;</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">}</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">            </span><span class="p">{</span><span class="cm">/* Specifying a key tells React to use the key itself as part of the position */</span><span class="p">}</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">            </span><span class="p">{</span><span class="cm">/* instead of their order within the parent */</span><span class="p">}</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">            </span><span class="p">{</span><span class="nx">isPlayerA</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">                </span><span class="o">&lt;</span><span class="nx">Counter</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Taylor&quot;</span><span class="w"> </span><span class="nx">person</span><span class="o">=</span><span class="s2">&quot;Taylor&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">            </span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">                </span><span class="o">&lt;</span><span class="nx">Counter</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Sarah&quot;</span><span class="w"> </span><span class="nx">person</span><span class="o">=</span><span class="s2">&quot;Sarah&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">            </span><span class="p">)}</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">button</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">                </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">                    </span><span class="nx">setIsPlayerA</span><span class="p">(</span><span class="o">!</span><span class="nx">isPlayerA</span><span class="p">);</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">                </span><span class="p">}}</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">            </span><span class="o">&gt;</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">                </span><span class="nx">Next</span><span class="w"> </span><span class="nx">player</span><span class="o">!</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">            </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">        </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span><span class="p">);</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="p">};</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Scoreboard</span><span class="p">;</span>
+</span></code></pre></div>
 
 
 

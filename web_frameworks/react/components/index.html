@@ -12457,15 +12457,15 @@
 </ul>
 </li>
 </ul>
-<pre><code class="language-js">const Profile = () =&gt; &lt;img src=&quot;image_url&quot; /&gt;;
-
-const Gallery = () =&gt; (
-    &lt;div&gt;
-        &lt;Profile /&gt;
-        &lt;Profile /&gt;
-    &lt;/div&gt;
-);
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">Profile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">img</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="s2">&quot;image_url&quot;</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">Gallery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">Profile</span><span class="w"> </span><span class="o">/&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">Profile</span><span class="w"> </span><span class="o">/&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">);</span>
+</span></code></pre></div>
 <h2 id="jsx">JSX</h2>
 <ul>
 <li>Syntax extension that is written like html</li>
@@ -12493,22 +12493,22 @@ const Gallery = () =&gt; (
 </ul>
 </li>
 </ul>
-<pre><code class="language-js">const TodoList = () =&gt; {
-    const person = { name: &quot;Name&quot;, theme: {} };
-
-    return (
-        &lt;div style={person.theme}&gt;
-            &lt;h1&gt;{person.name}'s Todos&lt;/h1&gt;
-            &lt;img className=&quot;avatar&quot; src=&quot;image_url&quot; /&gt;
-            &lt;ul&gt;
-                &lt;li&gt;Task 1&lt;/li&gt;
-                &lt;li&gt;Task 2&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/div&gt;
-    );
-};
-export default TodoList;
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">TodoList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Name&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">theme</span><span class="o">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">person</span><span class="p">.</span><span class="nx">theme</span><span class="p">}</span><span class="o">&gt;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="err">&#39;</span><span class="nx">s</span><span class="w"> </span><span class="nx">Todos</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">img</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;avatar&quot;</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="s2">&quot;image_url&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">                </span><span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="nx">Task</span><span class="w"> </span><span class="mf">1</span><span class="o">&lt;</span><span class="err">/li&gt;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">                </span><span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="nx">Task</span><span class="w"> </span><span class="mf">2</span><span class="o">&lt;</span><span class="err">/li&gt;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">            </span><span class="o">&lt;</span><span class="err">/ul&gt;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="p">);</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">};</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">TodoList</span><span class="p">;</span>
+</span></code></pre></div>
 <p>&lt;!--</p>
 <h2 id="props">Props</h2>
 <ul>
@@ -12525,31 +12525,31 @@ export default TodoList;
 <li>The parent conmponent will receive that content in a prop called children</li>
 <li>In <code>&lt;Card&gt;&lt;Avatar/&gt;&lt;/Card&gt;</code>, Card component will receive Avatar in 'children' prop</li>
 </ul>
-<pre><code class="language-js">const Profile = () =&gt; (
-  &lt;Card&gt;
-    &lt;Avatar
-      size={100}
-      person={{ name: 'Katsuko Saruhashi', image_url: 'image_url' }}
-    /&gt;
-  &lt;/Card&gt;
-);
-
-const Avatar = ({ person, size }) =&gt; (
-  &lt;img
-    className='avatar'
-    src={person.image_url}
-    alt={person.name}
-    width={size}
-    height={size}
-  /&gt;
-);
-
-const Card = ({ children }) =&gt; (
-  &lt;div className=&quot;card&quot;&gt;
-    {children}
-  &lt;/div&gt;
-);
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">Profile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="o">&lt;</span><span class="nx">Card</span><span class="o">&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">Avatar</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mf">100</span><span class="p">}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">      </span><span class="nx">person</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Katsuko Saruhashi&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">image_url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;image_url&#39;</span><span class="w"> </span><span class="p">}}</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="o">/&gt;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="o">&lt;</span><span class="err">/Card&gt;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">);</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="kd">const</span><span class="w"> </span><span class="nx">Avatar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">person</span><span class="p">,</span><span class="w"> </span><span class="nx">size</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="o">&lt;</span><span class="nx">img</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="nx">className</span><span class="o">=</span><span class="s1">&#39;avatar&#39;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">person</span><span class="p">.</span><span class="nx">image_url</span><span class="p">}</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="nx">alt</span><span class="o">=</span><span class="p">{</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="nx">width</span><span class="o">=</span><span class="p">{</span><span class="nx">size</span><span class="p">}</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="nx">height</span><span class="o">=</span><span class="p">{</span><span class="nx">size</span><span class="p">}</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">  </span><span class="o">/&gt;</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="p">);</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="kd">const</span><span class="w"> </span><span class="nx">Card</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">  </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;card&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">  </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="p">);</span>
+</span></code></pre></div>
 <h2 id="rendering-lists">Rendering Lists</h2>
 <ul>
 <li>Javascript's <code>map()</code> can be used to transform</li>
@@ -12569,18 +12569,18 @@ const Card = ({ children }) =&gt; (
 </ul>
 </li>
 </ul>
-<pre><code class="language-js">const List = ({ people }) =&gt; (
-  &lt;div&gt;
-    {people.map((person) =&gt; (
-      &lt;li key={person.id}&gt;
-        &lt;b&gt;{person.name}&lt;/b&gt;
-        &lt;p&gt;{person.description}&lt;/p&gt;
-      &lt;/li&gt;
-    ))}
-  &lt;/div&gt;
-)
-export default List;
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">List</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">people</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="p">{</span><span class="nx">people</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">person</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">li</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">person</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">b</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/b&gt;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">person</span><span class="p">.</span><span class="nx">description</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">      </span><span class="o">&lt;</span><span class="err">/li&gt;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p">))}</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">)</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">List</span><span class="p">;</span>
+</span></code></pre></div>
 <h2 id="ui-as-tree">UI as Tree</h2>
 <ul>
 <li>React uses trees to model relationships between components and modules</li>

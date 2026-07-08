@@ -12374,15 +12374,15 @@
 </ul>
 </li>
 </ul>
-<pre><code class="language-html">&lt;form accept-charset=&quot;UTF-8&quot; action=&quot;/users/1&quot; method=&quot;post&quot;&gt;
-    &lt;input
-        type=&quot;hidden&quot;
-        value=&quot;67250ab105eb5ad10851c00a5621854a23af5489&quot;
-        name=&quot;authenticity_token&quot;
-    /&gt;
-    &lt;!-- fields --&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">accept-charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/users/1&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="p">&lt;</span><span class="nt">input</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="na">value</span><span class="o">=</span><span class="s">&quot;67250ab105eb5ad10851c00a5621854a23af5489&quot;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="na">name</span><span class="o">=</span><span class="s">&quot;authenticity_token&quot;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="p">/&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="cm">&lt;!-- fields --&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></code></pre></div>
 <h2 id="http-authentications">HTTP Authentications</h2>
 <ul>
 <li>Rails has three built-in HTTP authentication mechanisms<ul>
@@ -12392,37 +12392,37 @@
 </ul>
 </li>
 </ul>
-<pre><code class="language-rb"># Basic Auth
-class AdminsController &lt; ApplicationController
-  http_basic_authenticate_with name: &quot;humbaba&quot;, password: &quot;5baa61e4&quot;
-end
-
-# Digest Auth
-class AdminsController &lt; ApplicationController
-  USERS = { &quot;lifo&quot; =&gt; &quot;world&quot; }
-  before_action :authenticate
-
-  private
-    def authenticate
-      authenticate_or_request_with_http_digest do |username|
-        USERS[username]
-      end
-    end
-end
-
-# Token Auth
-class PostsController &lt; ApplicationController
-  TOKEN = &quot;secret&quot;
-  before_action :authenticate
-
-  private
-    def authenticate
-      authenticate_or_request_with_http_token do |token, options|
-        ActiveSupport::SecurityUtils.secure_compare(token, TOKEN)
-      end
-    end
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Basic Auth</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">AdminsController</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationController</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">http_basic_authenticate_with</span><span class="w"> </span><span class="nb">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;humbaba&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">password</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5baa61e4&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">end</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># Digest Auth</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">class</span><span class="w"> </span><span class="nc">AdminsController</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationController</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="no">USERS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;lifo&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s2">&quot;world&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="n">before_action</span><span class="w"> </span><span class="ss">:authenticate</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="kp">private</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">authenticate</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">      </span><span class="n">authenticate_or_request_with_http_digest</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">username</span><span class="o">|</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="no">USERS</span><span class="o">[</span><span class="n">username</span><span class="o">]</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">      </span><span class="k">end</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="k">end</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="k">end</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="c1"># Token Auth</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="k">class</span><span class="w"> </span><span class="nc">PostsController</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationController</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">  </span><span class="no">TOKEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;secret&quot;</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">  </span><span class="n">before_action</span><span class="w"> </span><span class="ss">:authenticate</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">  </span><span class="kp">private</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">authenticate</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">      </span><span class="n">authenticate_or_request_with_http_token</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="n">options</span><span class="o">|</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">        </span><span class="no">ActiveSupport</span><span class="o">::</span><span class="no">SecurityUtils</span><span class="o">.</span><span class="n">secure_compare</span><span class="p">(</span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="no">TOKEN</span><span class="p">)</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">      </span><span class="k">end</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">    </span><span class="k">end</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="k">end</span>
+</span></code></pre></div>
 
 
 

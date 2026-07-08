@@ -12550,31 +12550,31 @@
 
 <h1 id="association-relationships">Association Relationships</h1>
 <h2 id="one-to-one">One to One</h2>
-<pre><code class="language-rb"># managers table should have project_id
-class Manager &lt; ApplicationRecord
-  belongs_to :project
-end
-
-class Project &lt; ApplicationRecord
-  has_one :manager
-end
-
-# Migration
-add_reference :managers, :project, foreign_key: true
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># managers table should have project_id</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">Manager</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="n">belongs_to</span><span class="w"> </span><span class="ss">:project</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">end</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">Project</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="n">has_one</span><span class="w"> </span><span class="ss">:manager</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">end</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># Migration</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">add_reference</span><span class="w"> </span><span class="ss">:managers</span><span class="p">,</span><span class="w"> </span><span class="ss">:project</span><span class="p">,</span><span class="w"> </span><span class="ss">foreign_key</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
+</span></code></pre></div>
 <h2 id="one-to-many">One to Many</h2>
-<pre><code class="language-rb"># books table should have author_id
-class Book &lt; ApplicationRecord
-  belongs_to :author
-end
-
-class Author &lt; ApplicationRecord
-  has_many :books
-end
-
-# Migration
-add_reference :books, :author, foreign_key: true
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># books table should have author_id</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">Book</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">belongs_to</span><span class="w"> </span><span class="ss">:author</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">end</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">Author</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="n">has_many</span><span class="w"> </span><span class="ss">:books</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">end</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># Migration</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">add_reference</span><span class="w"> </span><span class="ss">:books</span><span class="p">,</span><span class="w"> </span><span class="ss">:author</span><span class="p">,</span><span class="w"> </span><span class="ss">foreign_key</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
+</span></code></pre></div>
 <h2 id="many-to-many">Many to Many</h2>
 <h3 id="has-many-through">Has Many Through</h3>
 <ul>
@@ -12584,29 +12584,29 @@ add_reference :books, :author, foreign_key: true
 </ul>
 </li>
 </ul>
-<pre><code class="language-rb">class Physician &lt; ApplicationRecord
-  has_many :appointments
-  has_many :patients, through: :appointments
-end
-
-class Appointment &lt; ApplicationRecord
-  belongs_to :physician
-  belongs_to :patient
-end
-
-class Patient &lt; ApplicationRecord
-  has_many :appointments
-  has_many :physicians, through: :appointments
-end
-
-# Migration
-create_table :appointments, primary_key: [:physician_id, :patient_id] do |t|
-  t.belongs_to :physician
-  t.belongs_to :patient
-  t.datetime :appointment_date
-  t.timestamps
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Physician</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="n">has_many</span><span class="w"> </span><span class="ss">:appointments</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="n">has_many</span><span class="w"> </span><span class="ss">:patients</span><span class="p">,</span><span class="w"> </span><span class="ss">through</span><span class="p">:</span><span class="w"> </span><span class="ss">:appointments</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">end</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">Appointment</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="n">belongs_to</span><span class="w"> </span><span class="ss">:physician</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="n">belongs_to</span><span class="w"> </span><span class="ss">:patient</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">end</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">class</span><span class="w"> </span><span class="nc">Patient</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="n">has_many</span><span class="w"> </span><span class="ss">:appointments</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="n">has_many</span><span class="w"> </span><span class="ss">:physicians</span><span class="p">,</span><span class="w"> </span><span class="ss">through</span><span class="p">:</span><span class="w"> </span><span class="ss">:appointments</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="k">end</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="c1"># Migration</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="n">create_table</span><span class="w"> </span><span class="ss">:appointments</span><span class="p">,</span><span class="w"> </span><span class="ss">primary_key</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:physician_id</span><span class="p">,</span><span class="w"> </span><span class="ss">:patient_id</span><span class="o">]</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">t</span><span class="o">|</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span><span class="n">t</span><span class="o">.</span><span class="n">belongs_to</span><span class="w"> </span><span class="ss">:physician</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">  </span><span class="n">t</span><span class="o">.</span><span class="n">belongs_to</span><span class="w"> </span><span class="ss">:patient</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">  </span><span class="n">t</span><span class="o">.</span><span class="n">datetime</span><span class="w"> </span><span class="ss">:appointment_date</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">  </span><span class="n">t</span><span class="o">.</span><span class="n">timestamps</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="k">end</span>
+</span></code></pre></div>
 <h3 id="has-and-belongs-to-many">Has and Belongs to Many</h3>
 <ul>
 <li>Should be used if the joining model is not required</li>
@@ -12615,74 +12615,74 @@ end
 </ul>
 </li>
 </ul>
-<pre><code class="language-rb">class Physician &lt; ApplicationRecord
-  has_and_belongs_to_many :patients
-end
-
-class Patient &lt; ApplicationRecord
-  has_and_belongs_to_many :physicians
-end
-
-# Migration
-create_table :physicians_patients, id: false do |t|
-  t.belongs_to :physician
-  t.belongs_to :patient
-  t.index [:physician_id, :patient_id]
-  t.index [:patient_id, :physician_id]
-end
-# Or
-create_join_table :physicians_patients, :parts do |t|
-  t.index :physician_id
-  t.index :patient_id
-  t.index [:physician_id, :patient_id]
-  t.index [:patient_id, :physician_id]
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Physician</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="n">has_and_belongs_to_many</span><span class="w"> </span><span class="ss">:patients</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">end</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">Patient</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="n">has_and_belongs_to_many</span><span class="w"> </span><span class="ss">:physicians</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">end</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># Migration</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">create_table</span><span class="w"> </span><span class="ss">:physicians_patients</span><span class="p">,</span><span class="w"> </span><span class="nb">id</span><span class="p">:</span><span class="w"> </span><span class="kp">false</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">t</span><span class="o">|</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="n">t</span><span class="o">.</span><span class="n">belongs_to</span><span class="w"> </span><span class="ss">:physician</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="n">t</span><span class="o">.</span><span class="n">belongs_to</span><span class="w"> </span><span class="ss">:patient</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="n">t</span><span class="o">.</span><span class="n">index</span><span class="w"> </span><span class="o">[</span><span class="ss">:physician_id</span><span class="p">,</span><span class="w"> </span><span class="ss">:patient_id</span><span class="o">]</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="n">t</span><span class="o">.</span><span class="n">index</span><span class="w"> </span><span class="o">[</span><span class="ss">:patient_id</span><span class="p">,</span><span class="w"> </span><span class="ss">:physician_id</span><span class="o">]</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="k">end</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c1"># Or</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="n">create_join_table</span><span class="w"> </span><span class="ss">:physicians_patients</span><span class="p">,</span><span class="w"> </span><span class="ss">:parts</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">t</span><span class="o">|</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">  </span><span class="n">t</span><span class="o">.</span><span class="n">index</span><span class="w"> </span><span class="ss">:physician_id</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">  </span><span class="n">t</span><span class="o">.</span><span class="n">index</span><span class="w"> </span><span class="ss">:patient_id</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">  </span><span class="n">t</span><span class="o">.</span><span class="n">index</span><span class="w"> </span><span class="o">[</span><span class="ss">:physician_id</span><span class="p">,</span><span class="w"> </span><span class="ss">:patient_id</span><span class="o">]</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">  </span><span class="n">t</span><span class="o">.</span><span class="n">index</span><span class="w"> </span><span class="o">[</span><span class="ss">:patient_id</span><span class="p">,</span><span class="w"> </span><span class="ss">:physician_id</span><span class="o">]</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="k">end</span>
+</span></code></pre></div>
 <h2 id="polymorphism">Polymorphism</h2>
 <ul>
 <li>A model can belong to multiple other models on a single association</li>
 </ul>
-<pre><code class="language-rb"># images table should have object_id &amp; object_type
-# Migration: `add_reference :images, :object, polymorphic: true`
-# Add index on [:object_type, :object_id]
-# For employee, object_type will be 'Employee' &amp; object_id will be employee.id
-class Image &lt; ApplicationRecord
-  belongs_to :object, polymorphic: true
-end
-
-class Employee &lt; ApplicationRecord
-  has_many :pictures, as: :object
-end
-
-class Product &lt; ApplicationRecord
-  has_many :pictures, as: :object
-end
-
-# Migration
-create_table :images do |t|
-  t.references :object, polymorphic: true
-  t.timestamps
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># images table should have object_id &amp; object_type</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># Migration: `add_reference :images, :object, polymorphic: true`</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Add index on [:object_type, :object_id]</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># For employee, object_type will be &#39;Employee&#39; &amp; object_id will be employee.id</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">Image</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="n">belongs_to</span><span class="w"> </span><span class="ss">:object</span><span class="p">,</span><span class="w"> </span><span class="ss">polymorphic</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">end</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="k">class</span><span class="w"> </span><span class="nc">Employee</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="n">has_many</span><span class="w"> </span><span class="ss">:pictures</span><span class="p">,</span><span class="w"> </span><span class="ss">as</span><span class="p">:</span><span class="w"> </span><span class="ss">:object</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="k">end</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="k">class</span><span class="w"> </span><span class="nc">Product</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">  </span><span class="n">has_many</span><span class="w"> </span><span class="ss">:pictures</span><span class="p">,</span><span class="w"> </span><span class="ss">as</span><span class="p">:</span><span class="w"> </span><span class="ss">:object</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="k">end</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="c1"># Migration</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="n">create_table</span><span class="w"> </span><span class="ss">:images</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">t</span><span class="o">|</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">  </span><span class="n">t</span><span class="o">.</span><span class="n">references</span><span class="w"> </span><span class="ss">:object</span><span class="p">,</span><span class="w"> </span><span class="ss">polymorphic</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">  </span><span class="n">t</span><span class="o">.</span><span class="n">timestamps</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="k">end</span>
+</span></code></pre></div>
 <h2 id="self-joins">Self Joins</h2>
-<pre><code class="language-rb">class Employee &lt; ApplicationRecord
-  has_many :subordinates, class_name: 'Employee', foreign_key: 'manager_id'
-  belongs_to :manager, class_name: 'Employee', optional: true
-end
-
-# Migration
-add_reference :employees, :manager, foreign_key: { to_table: :employees }
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Employee</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="n">has_many</span><span class="w"> </span><span class="ss">:subordinates</span><span class="p">,</span><span class="w"> </span><span class="ss">class_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Employee&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">foreign_key</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;manager_id&#39;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="n">belongs_to</span><span class="w"> </span><span class="ss">:manager</span><span class="p">,</span><span class="w"> </span><span class="ss">class_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Employee&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">optional</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">end</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># Migration</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">add_reference</span><span class="w"> </span><span class="ss">:employees</span><span class="p">,</span><span class="w"> </span><span class="ss">:manager</span><span class="p">,</span><span class="w"> </span><span class="ss">foreign_key</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="ss">to_table</span><span class="p">:</span><span class="w"> </span><span class="ss">:employees</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
 <h2 id="composite-primary-key">Composite Primary Key</h2>
-<pre><code class="language-rb">class Author &lt; ApplicationRecord
-  self.primary_key = [:first_name, :last_name]
-  has_many :books, query_constraints: [:first_name, :last_name]
-end
-
-class Book &lt; ApplicationRecord
-  belongs_to :author, query_constraints: [:author_first_name, :author_last_name]
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Author</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nb">self</span><span class="o">.</span><span class="n">primary_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="ss">:first_name</span><span class="p">,</span><span class="w"> </span><span class="ss">:last_name</span><span class="o">]</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="n">has_many</span><span class="w"> </span><span class="ss">:books</span><span class="p">,</span><span class="w"> </span><span class="ss">query_constraints</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:first_name</span><span class="p">,</span><span class="w"> </span><span class="ss">:last_name</span><span class="o">]</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">end</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">Book</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="n">belongs_to</span><span class="w"> </span><span class="ss">:author</span><span class="p">,</span><span class="w"> </span><span class="ss">query_constraints</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:author_first_name</span><span class="p">,</span><span class="w"> </span><span class="ss">:author_last_name</span><span class="o">]</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="k">end</span>
+</span></code></pre></div>
 <h2 id="single-table-inheritance-sti">Single Table Inheritance (STI)</h2>
 <ul>
 <li>To share fields and behavior between different models</li>
@@ -12692,38 +12692,38 @@ end
 </ul>
 </li>
 </ul>
-<pre><code class="language-rb">class Vehicle &lt; ApplicationRecord
-end
-
-class Car &lt; Vehicle
-end
-
-# There will be only one table 'vehicles', Car objects will be stored in the same
-# Will be saved to vehicles tables with type = 'Car' and the mentioned details
-Car.create(color: 'Red', price: 10000)
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Vehicle</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">end</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">Vehicle</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">end</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># There will be only one table &#39;vehicles&#39;, Car objects will be stored in the same</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1"># Will be saved to vehicles tables with type = &#39;Car&#39; and the mentioned details</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="no">Car</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">color</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Red&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">price</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span>
+</span></code></pre></div>
 <h3 id="delegate-type">Delegate Type</h3>
 <ul>
 <li>STI can bloat the vehicles table</li>
 <li>Columns specific to Car will need to be included in the same table</li>
 <li>This can be solved by using delegated type</li>
 </ul>
-<pre><code class="language-rb">module VehicleEntity
-  extend ActiveSupport::Concern
-
-  included do
-    has_one :vehicle, as: :vehicle_entity, touch: true
-  end
-end
-
-class Vehicle &lt; ApplicationRecord
-  delegated_type :vehicle_entity, types: %w[Car Bike], dependent: :destroy
-end
-
-class Car &lt; ApplicationRecord
-  include VehicleEntity
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">module</span><span class="w"> </span><span class="nn">VehicleEntity</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="kp">extend</span><span class="w"> </span><span class="no">ActiveSupport</span><span class="o">::</span><span class="no">Concern</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="n">included</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="n">has_one</span><span class="w"> </span><span class="ss">:vehicle</span><span class="p">,</span><span class="w"> </span><span class="ss">as</span><span class="p">:</span><span class="w"> </span><span class="ss">:vehicle_entity</span><span class="p">,</span><span class="w"> </span><span class="ss">touch</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="k">end</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">end</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="k">class</span><span class="w"> </span><span class="nc">Vehicle</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="n">delegated_type</span><span class="w"> </span><span class="ss">:vehicle_entity</span><span class="p">,</span><span class="w"> </span><span class="ss">types</span><span class="p">:</span><span class="w"> </span><span class="sx">%w[Car Bike]</span><span class="p">,</span><span class="w"> </span><span class="ss">dependent</span><span class="p">:</span><span class="w"> </span><span class="ss">:destroy</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="k">end</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">  </span><span class="kp">include</span><span class="w"> </span><span class="no">VehicleEntity</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="k">end</span>
+</span></code></pre></div>
 
 
 

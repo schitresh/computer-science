@@ -12444,28 +12444,28 @@
 <li>localStorage: Never expires</li>
 <li>sessionStorage: expires when the browser tab is closed</li>
 </ul>
-<pre><code class="language-js">// The same methods apply to sessionStorage
-localStorage.setItem(key, value)
-localStorage.getItem(key)
-localStorage.removeItem(key)
-localStorage.clear()
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// The same methods apply to sessionStorage</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span>
+</span></code></pre></div>
 <h2 id="forms-api">Forms API</h2>
 <ul>
 <li>Used to perform client-side form validation</li>
 </ul>
-<pre><code class="language-js">// DOM Properties
-// Contains multiple properties to perform a particular validation
-// customError, valueMissing, rangeOverflow, rangeUnderflow, tooLong
-// patternMismatch, stepMismatch, typeMismatch
-// valid (boolean to indicate if valid or not)
-element.validity
-element.validationMessage
-
-// DOM Methods
-element.checkValidity() // Checks if the input value is valid
-element.setCustomValidity(message) // Sets custom message for validation of the input
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// DOM Properties</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">// Contains multiple properties to perform a particular validation</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">// customError, valueMissing, rangeOverflow, rangeUnderflow, tooLong</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">// patternMismatch, stepMismatch, typeMismatch</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">// valid (boolean to indicate if valid or not)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nx">element</span><span class="p">.</span><span class="nx">validity</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nx">element</span><span class="p">.</span><span class="nx">validationMessage</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1">// DOM Methods</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nx">element</span><span class="p">.</span><span class="nx">checkValidity</span><span class="p">()</span><span class="w"> </span><span class="c1">// Checks if the input value is valid</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="nx">element</span><span class="p">.</span><span class="nx">setCustomValidity</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span><span class="w"> </span><span class="c1">// Sets custom message for validation of the input</span>
+</span></code></pre></div>
 <h2 id="worker-api">Worker API</h2>
 <ul>
 <li>Allows to run javascript code in a background thread</li>
@@ -12475,72 +12475,72 @@ element.setCustomValidity(message) // Sets custom message for validation of the 
 <li>Generating reports, processing audio &amp; video</li>
 <li>Cannot use these objects: window, document, parent</li>
 </ul>
-<pre><code class="language-js">&lt;div&gt;
-  &lt;button onclick=&quot;startWorker()&quot;&gt;Start Counter&lt;/button&gt;
-  &lt;button onclick=&quot;stopWorker()&quot;&gt;Stop Counter&lt;/button&gt;
-&lt;/div&gt;
-&lt;div id=&quot;output&quot;&gt;
-&lt;/div&gt;
-&lt;script&gt;
-  let output = document.getElementById('output')
-  let workerObj
-
-  function startWorker() {
-    if (typeof workerObj !== undefined) return
-    workerObj = new Worker('textWorker.js')
-    // To get the message in main thread from the worker file
-    // Which is sent using postMessage method, onmessage event is used
-    workerObj.onmessage = function (e) {
-      output.innerHTML += `Event: ${event.data}&lt;br&gt;`
-    }
-  }
-
-  function stopWorker() {
-    workerObj?.terminate()
-    workerObj = undefined
-  }
-
-  let = i
-  function counter () {
-    i += 1
-    postMessage(data) // To send data to the main thread
-    setTimeout('counter()', 1000)
-  }
-  counter()
-&lt;/script&gt;
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onclick</span><span class="o">=</span><span class="s2">&quot;startWorker()&quot;</span><span class="o">&gt;</span><span class="nx">Start</span><span class="w"> </span><span class="nx">Counter</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onclick</span><span class="o">=</span><span class="s2">&quot;stopWorker()&quot;</span><span class="o">&gt;</span><span class="nx">Stop</span><span class="w"> </span><span class="nx">Counter</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">id</span><span class="o">=</span><span class="s2">&quot;output&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">)</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">workerObj</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">startWorker</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">workerObj</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nx">workerObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Worker</span><span class="p">(</span><span class="s1">&#39;textWorker.js&#39;</span><span class="p">)</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="c1">// To get the message in main thread from the worker file</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="c1">// Which is sent using postMessage method, onmessage event is used</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="nx">workerObj</span><span class="p">.</span><span class="nx">onmessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">      </span><span class="nx">output</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sb">`Event: </span><span class="si">${</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="si">}</span><span class="sb">&lt;br&gt;`</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">stopWorker</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="nx">workerObj</span><span class="o">?</span><span class="p">.</span><span class="nx">terminate</span><span class="p">()</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="nx">workerObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">undefined</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">i</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">counter</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">    </span><span class="nx">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">1</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">    </span><span class="nx">postMessage</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="c1">// To send data to the main thread</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">    </span><span class="nx">setTimeout</span><span class="p">(</span><span class="s1">&#39;counter()&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1000</span><span class="p">)</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">  </span><span class="nx">counter</span><span class="p">()</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></code></pre></div>
 <h2 id="fetch-api">Fetch API</h2>
 <ul>
 <li>Allows a browser to make HTTP request to a web server</li>
 </ul>
-<pre><code class="language-js">// Using Promise
-// Options object contains method (GET, PATCH, POST), headers, body, etc.
-fetch(URL, options)
-  .then(res =&gt; res.json())
-  .then(data =&gt; {
-    let output = document.getElementById('output')
-    output.innerHTML += JSON.stringify(data)
-  })
-  .catch(error =&gt; {})
-
-// Using Await
-let res = await fetch(URL, options)
-let data = await res.json()
-let output = document.getElementById('output')
-output.innerHTML += JSON.stringify(data)
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Using Promise</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">// Options object contains method (GET, PATCH, POST), headers, body, etc.</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nx">fetch</span><span class="p">(</span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">)</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nx">output</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="p">})</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{})</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">// Using Await</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="kd">let</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">URL</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="kd">let</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="kd">let</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">)</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="nx">output</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+</span></code></pre></div>
 <h2 id="geolocation-api">Geolocation API</h2>
-<pre><code class="language-js">// Properties
-coords
-coords.latitude // longitude, altitude, accuracy, altitudeAccuracy, heading, speed
-
-// Methods
-// Current geographic location of user
-getCurrentPosition(successCallback, errorCallback, options)
-// User's live location
-watchPosition(successCallback, errorCallback, options)
-clearWatch(id) // Clear ongoing watch
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Properties</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nx">coords</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nx">coords</span><span class="p">.</span><span class="nx">latitude</span><span class="w"> </span><span class="c1">// longitude, altitude, accuracy, altitudeAccuracy, heading, speed</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">// Methods</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1">// Current geographic location of user</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nx">getCurrentPosition</span><span class="p">(</span><span class="nx">successCallback</span><span class="p">,</span><span class="w"> </span><span class="nx">errorCallback</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1">// User&#39;s live location</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="nx">watchPosition</span><span class="p">(</span><span class="nx">successCallback</span><span class="p">,</span><span class="w"> </span><span class="nx">errorCallback</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nx">clearWatch</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="c1">// Clear ongoing watch</span>
+</span></code></pre></div>
 
 
 

@@ -12412,44 +12412,44 @@
 <ul>
 <li>Helps to manipulate 'this' value of a function</li>
 </ul>
-<pre><code class="language-js">// thisObject controls the context for the fucntion
-// It is the object whose properties need to be accessed using 'this'
-func.call(thisObject, ...args)
-
-function printer() { console.log(this.name) }
-const person1 = { name: 'John Wick' }
-const person2 = { name: 'Tom Cruise' }
-printer.call(person1) // John Wick
-printer.call(person2) // Tom Cruise
-
-// Function in object
-const student1 = {
-  name: 'John Wick',
-  printName: function() { console.log(this.name) }
-}
-const student2 = { name: 'Tom Cruise' }
-student1.printName() // John Wick
-student1.printName.call(student2) // Tom Cruise
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// thisObject controls the context for the fucntion</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">// It is the object whose properties need to be accessed using &#39;this&#39;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nx">func</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">thisObject</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">args</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kd">function</span><span class="w"> </span><span class="nx">printer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">person1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;John Wick&#39;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">person2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Tom Cruise&#39;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nx">printer</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">person1</span><span class="p">)</span><span class="w"> </span><span class="c1">// John Wick</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nx">printer</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">person2</span><span class="p">)</span><span class="w"> </span><span class="c1">// Tom Cruise</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1">// Function in object</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="kd">const</span><span class="w"> </span><span class="nx">student1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;John Wick&#39;</span><span class="p">,</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="nx">printName</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">}</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="kd">const</span><span class="w"> </span><span class="nx">student2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Tom Cruise&#39;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="nx">student1</span><span class="p">.</span><span class="nx">printName</span><span class="p">()</span><span class="w"> </span><span class="c1">// John Wick</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="nx">student1</span><span class="p">.</span><span class="nx">printName</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">student2</span><span class="p">)</span><span class="w"> </span><span class="c1">// Tom Cruise</span>
+</span></code></pre></div>
 <h3 id="apply">Apply</h3>
 <ul>
 <li>Similar to call(), but takes args in an array</li>
 </ul>
-<pre><code class="language-js">func.apply(thisObject, [...args])
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">func</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">thisObject</span><span class="p">,</span><span class="w"> </span><span class="p">[...</span><span class="nx">args</span><span class="p">])</span>
+</span></code></pre></div>
 <h3 id="bind">Bind</h3>
 <ul>
 <li>Helps to manipulate 'this' value of a function without invoking it immediately</li>
 </ul>
-<pre><code class="language-js">// args are optional arguments that will prepended to the arguments
-// They will be partially applied when the function is invoked
-func.bind(thisObject, ...args)
-
-function printer() { console.log(this.name) }
-const person = { name: 'John Wick' }
-const printName = printer.bind(person)
-printName() // John Wick
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// args are optional arguments that will prepended to the arguments</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1">// They will be partially applied when the function is invoked</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nx">func</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">thisObject</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">args</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kd">function</span><span class="w"> </span><span class="nx">printer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;John Wick&#39;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">printName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">printer</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nx">printName</span><span class="p">()</span><span class="w"> </span><span class="c1">// John Wick</span>
+</span></code></pre></div>
 <h2 id="closures">Closures</h2>
 <ul>
 <li>Allows nested functions to access variables defined in the scope of parent function</li>
@@ -12460,36 +12460,36 @@ printName() // John Wick
 <li>Concept in which the scope of the variables is determined at the compilation</li>
 <li>Based on the structure of the code</li>
 </ul>
-<pre><code class="language-js">function outer(val1) {
-  function inner(val2) {
-    console.log(val1, val2)
-  }
-  inner('world')
-}
-outer('hello') // hello world
-
-function outer(val1) {
-  return function inner(val2) {
-    console.log(val1, val2)
-  }
-}
-const func = outer('hello')
-func('world') // hello world
-
-function setCounter() {
-  let counter = 10
-  return function count() {
-    counter -= 1
-    console.log(counter)
-  }
-}
-const func = setCounter()
-// Execution of outer function is finished
-// Still the nested function can access the outer scope
-func() // 9
-func() // 8
-func() // 7
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">outer</span><span class="p">(</span><span class="nx">val1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">inner</span><span class="p">(</span><span class="nx">val2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val1</span><span class="p">,</span><span class="w"> </span><span class="nx">val2</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nx">inner</span><span class="p">(</span><span class="s1">&#39;world&#39;</span><span class="p">)</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nx">outer</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span><span class="w"> </span><span class="c1">// hello world</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="kd">function</span><span class="w"> </span><span class="nx">outer</span><span class="p">(</span><span class="nx">val1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">inner</span><span class="p">(</span><span class="nx">val2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val1</span><span class="p">,</span><span class="w"> </span><span class="nx">val2</span><span class="p">)</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="p">}</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="kd">const</span><span class="w"> </span><span class="nx">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">outer</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="nx">func</span><span class="p">(</span><span class="s1">&#39;world&#39;</span><span class="p">)</span><span class="w"> </span><span class="c1">// hello world</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setCounter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">count</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="nx">counter</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">1</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">counter</span><span class="p">)</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="p">}</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="kd">const</span><span class="w"> </span><span class="nx">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setCounter</span><span class="p">()</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="c1">// Execution of outer function is finished</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="c1">// Still the nested function can access the outer scope</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="nx">func</span><span class="p">()</span><span class="w"> </span><span class="c1">// 9</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="nx">func</span><span class="p">()</span><span class="w"> </span><span class="c1">// 8</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="nx">func</span><span class="p">()</span><span class="w"> </span><span class="c1">// 7</span>
+</span></code></pre></div>
 
 
 

@@ -12475,111 +12475,111 @@
 <ul>
 <li>Callbacks: (before, after, around)_command</li>
 </ul>
-<pre><code class="language-rb"># app/channels/application_cable/connection.rb
-module ApplicationCable
-  class Connection &lt; ActionCable::Connection::Base
-    identified_by :current_user
-
-    def connect
-      self.current_user = find_verified_user
-    end
-
-    private
-
-      def find_verified_user
-        if verified_user = User.find_by(id: cookies.encrypted[:user_id])
-          verified_user
-        else
-          reject_unauthorized_connection
-        end
-      end
-  end
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># app/channels/application_cable/connection.rb</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">module</span><span class="w"> </span><span class="nn">ApplicationCable</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="k">class</span><span class="w"> </span><span class="nc">Connection</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ActionCable</span><span class="o">::</span><span class="no">Connection</span><span class="o">::</span><span class="no">Base</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">identified_by</span><span class="w"> </span><span class="ss">:current_user</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">connect</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="nb">self</span><span class="o">.</span><span class="n">current_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find_verified_user</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="k">end</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="kp">private</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="k">def</span><span class="w"> </span><span class="nf">find_verified_user</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">verified_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">User</span><span class="o">.</span><span class="n">find_by</span><span class="p">(</span><span class="nb">id</span><span class="p">:</span><span class="w"> </span><span class="n">cookies</span><span class="o">.</span><span class="n">encrypted</span><span class="o">[</span><span class="ss">:user_id</span><span class="o">]</span><span class="p">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">          </span><span class="n">verified_user</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="k">else</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">          </span><span class="n">reject_unauthorized_connection</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="k">end</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">      </span><span class="k">end</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span><span class="k">end</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="k">end</span>
+</span></code></pre></div>
 <h2 id="channels">Channels</h2>
 <ul>
 <li>Callbacks: (before, after)_subscribe, (before, after)_unsubscribe</li>
 </ul>
-<pre><code class="language-rb"># app/channels/application_cable/channel.rb
-module ApplicationCable
-  class Channel &lt; ActionCable::Channel::Base
-  end
-end
-
-# app/channels/chat_channel.rb
-class ChatChannel &lt; ApplicationCable::Channel
-  # Called when the consumer has successfully
-  # become a subscriber to this channel
-  def subscribed
-    # Streams provide the mechanism by which channels route published content
-    # (broadcasts) to their subscribers
-    stream_from &quot;chat_#{params[:room]}&quot;
-  end
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># app/channels/application_cable/channel.rb</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">module</span><span class="w"> </span><span class="nn">ApplicationCable</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="k">class</span><span class="w"> </span><span class="nc">Channel</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ActionCable</span><span class="o">::</span><span class="no">Channel</span><span class="o">::</span><span class="no">Base</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="k">end</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">end</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># app/channels/chat_channel.rb</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">class</span><span class="w"> </span><span class="nc">ChatChannel</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationCable</span><span class="o">::</span><span class="no">Channel</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="c1"># Called when the consumer has successfully</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="c1"># become a subscriber to this channel</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">subscribed</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="c1"># Streams provide the mechanism by which channels route published content</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="c1"># (broadcasts) to their subscribers</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="n">stream_from</span><span class="w"> </span><span class="s2">&quot;chat_</span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:room</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="k">end</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="k">end</span>
+</span></code></pre></div>
 <h2 id="broadcasting">Broadcasting</h2>
-<pre><code class="language-rb"># Somewhere in your app this is called, perhaps from a NewCommentJob
-ActionCable.server.broadcast(
-  &quot;chat_#{room}&quot;,
-  {
-    sent_by: 'Paul',
-    body: 'This is a cool chat app'
-  }
-)
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Somewhere in your app this is called, perhaps from a NewCommentJob</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="no">ActionCable</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="s2">&quot;chat_</span><span class="si">#{</span><span class="n">room</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="ss">sent_by</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Paul&#39;</span><span class="p">,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="ss">body</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;This is a cool chat app&#39;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">)</span>
+</span></code></pre></div>
 <h2 id="consumer">Consumer</h2>
-<pre><code class="language-js">// app/javascript/channels/consumer.js
-// Action Cable provides the framework to deal with WebSockets in Rails
-// You can generate new channels where WebSocket features live
-// Using the `bin/rails generate channel` command
-import { createConsumer } from &quot;@rails/actioncable&quot;;
-
-export default createConsumer();
-
-// Specify a different URL to connect to
-createConsumer(&quot;wss://example.com/cable&quot;);
-// Or when using websockets over HTTP
-createConsumer(&quot;https://ws.example.com/cable&quot;);
-// Use a function to dynamically generate the URL
-createConsumer(getWebSocketURL);
-
-function getWebSocketURL() {
-    const token = localStorage.get(&quot;auth-token&quot;);
-    return `wss://example.com/cable?token=${token}`;
-}
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// app/javascript/channels/consumer.js</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">// Action Cable provides the framework to deal with WebSockets in Rails</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">// You can generate new channels where WebSocket features live</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">// Using the `bin/rails generate channel` command</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createConsumer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rails/actioncable&quot;</span><span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">createConsumer</span><span class="p">();</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1">// Specify a different URL to connect to</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nx">createConsumer</span><span class="p">(</span><span class="s2">&quot;wss://example.com/cable&quot;</span><span class="p">);</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">// Or when using websockets over HTTP</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nx">createConsumer</span><span class="p">(</span><span class="s2">&quot;https://ws.example.com/cable&quot;</span><span class="p">);</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1">// Use a function to dynamically generate the URL</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="nx">createConsumer</span><span class="p">(</span><span class="nx">getWebSocketURL</span><span class="p">);</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="kd">function</span><span class="w"> </span><span class="nx">getWebSocketURL</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;auth-token&quot;</span><span class="p">);</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`wss://example.com/cable?token=</span><span class="si">${</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="p">}</span>
+</span></code></pre></div>
 <h2 id="subscriber">Subscriber</h2>
-<pre><code class="language-js">// app/javascript/channels/chat_channel.js
-import consumer from &quot;./consumer&quot;;
-// A consumer can act as a subscriber to a given channel any number of time
-consumer.subscriptions.create({ channel: &quot;ChatChannel&quot;, room: &quot;1st Room&quot; });
-consumer.subscriptions.create({ channel: &quot;ChatChannel&quot;, room: &quot;2nd Room&quot; });
-consumer.subscriptions.create(
-    { channel: &quot;ChatChannel&quot;, room: &quot;Best Room&quot; },
-    {
-        received(data) {
-            this.appendLine(data);
-        },
-
-        appendLine(data) {
-            const html = this.createLine(data);
-            const element = document.querySelector(
-                &quot;[data-chat-room='Best Room']&quot;
-            );
-            element.insertAdjacentHTML(&quot;beforeend&quot;, html);
-        },
-
-        createLine(data) {
-            return (
-                &lt;article class=&quot;chat-line&quot;&gt;
-                    &lt;span class=&quot;speaker&quot;&gt;${data[&quot;sent_by&quot;]}&lt;/span&gt;
-                    &lt;span class=&quot;body&quot;&gt;${data[&quot;body&quot;]}&lt;/span&gt;
-                &lt;/article&gt;
-            );
-        },
-    }
-);
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// app/javascript/channels/chat_channel.js</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">consumer</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./consumer&quot;</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">// A consumer can act as a subscriber to a given channel any number of time</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nx">consumer</span><span class="p">.</span><span class="nx">subscriptions</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span><span class="w"> </span><span class="nx">channel</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ChatChannel&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">room</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1st Room&quot;</span><span class="w"> </span><span class="p">});</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nx">consumer</span><span class="p">.</span><span class="nx">subscriptions</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span><span class="w"> </span><span class="nx">channel</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ChatChannel&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">room</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2nd Room&quot;</span><span class="w"> </span><span class="p">});</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nx">consumer</span><span class="p">.</span><span class="nx">subscriptions</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">channel</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ChatChannel&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">room</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Best Room&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="nx">received</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">appendLine</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">        </span><span class="nx">appendLine</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">createLine</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">                </span><span class="s2">&quot;[data-chat-room=&#39;Best Room&#39;]&quot;</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">            </span><span class="p">);</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">            </span><span class="nx">element</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s2">&quot;beforeend&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">html</span><span class="p">);</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">        </span><span class="nx">createLine</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">                </span><span class="o">&lt;</span><span class="nx">article</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">&quot;chat-line&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">                    </span><span class="o">&lt;</span><span class="nx">span</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">&quot;speaker&quot;</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">{</span><span class="nx">data</span><span class="p">[</span><span class="s2">&quot;sent_by&quot;</span><span class="p">]}</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">                    </span><span class="o">&lt;</span><span class="nx">span</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">&quot;body&quot;</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">{</span><span class="nx">data</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]}</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">                </span><span class="o">&lt;</span><span class="err">/article&gt;</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">            </span><span class="p">);</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="p">);</span>
+</span></code></pre></div>
 
 
 

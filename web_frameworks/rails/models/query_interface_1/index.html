@@ -12482,13 +12482,13 @@
 
 <h1 id="query-interface-1">Query Interface 1</h1>
 <h2 id="retrieve-object">Retrieve Object</h2>
-<pre><code class="language-rb">Customer.find(id) # Raises error if not found
-Customer.find(ids)
-Customer.first # last
-Customer.find_by(attributes)
-Customer.find_by!(attributes) # Raises error if not found
-Customer.where(attributes).first
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="no">Customer</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span><span class="w"> </span><span class="c1"># Raises error if not found</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="no">Customer</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="no">Customer</span><span class="o">.</span><span class="n">first</span><span class="w"> </span><span class="c1"># last</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="no">Customer</span><span class="o">.</span><span class="n">find_by</span><span class="p">(</span><span class="n">attributes</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="no">Customer</span><span class="o">.</span><span class="n">find_by!</span><span class="p">(</span><span class="n">attributes</span><span class="p">)</span><span class="w"> </span><span class="c1"># Raises error if not found</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="no">Customer</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">attributes</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
+</span></code></pre></div>
 <h2 id="retrieve-multiple-objects">Retrieve Multiple Objects</h2>
 <ul>
 <li>When it's required to iterate over a large set of records<ul>
@@ -12507,28 +12507,28 @@ Customer.where(attributes).first
 </ul>
 </li>
 </ul>
-<pre><code class="language-rb"># Find Each
-# Retrieves records in batches and then yields each one to the block
-Customer.where(weekly_subscriber: true).find_each do |customer|
-  NewsMailer.weekly(customer).deliver_now
-end
-
-find_each(batch_size: 5000)
-find_each(start: 2000) # First ID
-find_each(start: 2000, finish: 10000) # First &amp; last ID
-find_each(order: :desc)
-
-# Find in Batches
-# Similar to find_each, but it yields batches to the block as an array of model
-# Give add_customers an array of 1000 recently active customers at a time
-Customer.recently_active.find_in_batches do |customers|
-  export.add_customers(customers)
-end
-
-find_in_batches(batch_size: 5000)
-find_in_batches(start: 2000) # First ID
-find_in_batches(start: 2000, finish: 10000) # First &amp; last ID
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Find Each</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># Retrieves records in batches and then yields each one to the block</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="no">Customer</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">weekly_subscriber</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span><span class="p">)</span><span class="o">.</span><span class="n">find_each</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">customer</span><span class="o">|</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="no">NewsMailer</span><span class="o">.</span><span class="n">weekly</span><span class="p">(</span><span class="n">customer</span><span class="p">)</span><span class="o">.</span><span class="n">deliver_now</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">end</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">find_each</span><span class="p">(</span><span class="ss">batch_size</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">find_each</span><span class="p">(</span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">)</span><span class="w"> </span><span class="c1"># First ID</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">find_each</span><span class="p">(</span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w"> </span><span class="ss">finish</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span><span class="w"> </span><span class="c1"># First &amp; last ID</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">find_each</span><span class="p">(</span><span class="ss">order</span><span class="p">:</span><span class="w"> </span><span class="ss">:desc</span><span class="p">)</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1"># Find in Batches</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1"># Similar to find_each, but it yields batches to the block as an array of model</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c1"># Give add_customers an array of 1000 recently active customers at a time</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="no">Customer</span><span class="o">.</span><span class="n">recently_active</span><span class="o">.</span><span class="n">find_in_batches</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">customers</span><span class="o">|</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">  </span><span class="n">export</span><span class="o">.</span><span class="n">add_customers</span><span class="p">(</span><span class="n">customers</span><span class="p">)</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="k">end</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="n">find_in_batches</span><span class="p">(</span><span class="ss">batch_size</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">)</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="n">find_in_batches</span><span class="p">(</span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">)</span><span class="w"> </span><span class="c1"># First ID</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="n">find_in_batches</span><span class="p">(</span><span class="ss">start</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w"> </span><span class="ss">finish</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span><span class="w"> </span><span class="c1"># First &amp; last ID</span>
+</span></code></pre></div>
 <h2 id="conditions">Conditions</h2>
 <ul>
 <li>Building conditions as pure strings can be vulnerable to SQL injection<ul>
@@ -12537,114 +12537,114 @@ find_in_batches(start: 2000, finish: 10000) # First &amp; last ID
 </ul>
 </li>
 </ul>
-<pre><code class="language-rb"># Array Conditions
-Book.where('title = ? AND out_of_print = ?', params[:title], false)
-# Placeholder Conditions
-Book.where(
-  'created_at &gt;= :start_date AND created_at &lt;= :end_date',
-  start_date: params[:start_date], end_date: params[:end_date]
-)
-# Sanitizing Conditions (Required for wild cards like '%')
-Book.where('title LIKE ?', Book.sanitize_sql_like(params[:title]) + '%')
-
-## Hash Conditions
-Book.where(out_of_print: true)
-Author.joins(:books).where(books: { author: author })
-Book.where([:author_id, :id] =&gt; [[15, 1], [15, 2]])
-Book.where(created_at: (Time.now.midnight - 1.day)..Time.now.midnight)
-Customer.where(orders_count: [1, 3, 5])
-
-# Multiple Conditions
-Customer.where(last_name: 'Smith', orders_count: [1, 3, 5])
-Customer.where(last_name: 'Smith').where(orders_count: [1, 3, 5])
-
-# Logical Conditions
-Customer.where.not(orders_count: [1, 3, 5]) # nil values won't be returned
-Customer.where(last_name: 'Smith').or(Customer.where(orders_count: [1, 3, 5]))
-Customer.where(id: [1, 2]).and(Customer.where(id: [2, 3]))
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Array Conditions</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="no">Book</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;title = ? AND out_of_print = ?&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">params</span><span class="o">[</span><span class="ss">:title</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="kp">false</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Placeholder Conditions</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="no">Book</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="s1">&#39;created_at &gt;= :start_date AND created_at &lt;= :end_date&#39;</span><span class="p">,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="ss">start_date</span><span class="p">:</span><span class="w"> </span><span class="n">params</span><span class="o">[</span><span class="ss">:start_date</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="ss">end_date</span><span class="p">:</span><span class="w"> </span><span class="n">params</span><span class="o">[</span><span class="ss">:end_date</span><span class="o">]</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># Sanitizing Conditions (Required for wild cards like &#39;%&#39;)</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="no">Book</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;title LIKE ?&#39;</span><span class="p">,</span><span class="w"> </span><span class="no">Book</span><span class="o">.</span><span class="n">sanitize_sql_like</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:title</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">## Hash Conditions</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="no">Book</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">out_of_print</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span><span class="p">)</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="no">Author</span><span class="o">.</span><span class="n">joins</span><span class="p">(</span><span class="ss">:books</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">books</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="ss">author</span><span class="p">:</span><span class="w"> </span><span class="n">author</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="no">Book</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="o">[</span><span class="ss">:author_id</span><span class="p">,</span><span class="w"> </span><span class="ss">:id</span><span class="o">]</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="o">[[</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="o">[</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">]]</span><span class="p">)</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="no">Book</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">created_at</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">midnight</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="o">.</span><span class="n">day</span><span class="p">)</span><span class="o">..</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">midnight</span><span class="p">)</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="no">Customer</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">orders_count</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">]</span><span class="p">)</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="c1"># Multiple Conditions</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="no">Customer</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">last_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Smith&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">orders_count</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">]</span><span class="p">)</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="no">Customer</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">last_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Smith&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">orders_count</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">]</span><span class="p">)</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="c1"># Logical Conditions</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="no">Customer</span><span class="o">.</span><span class="n">where</span><span class="o">.</span><span class="n">not</span><span class="p">(</span><span class="ss">orders_count</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="c1"># nil values won&#39;t be returned</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="no">Customer</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">last_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Smith&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">or</span><span class="p">(</span><span class="no">Customer</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">orders_count</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">]</span><span class="p">))</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="no">Customer</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="nb">id</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">and</span><span class="p">(</span><span class="no">Customer</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="nb">id</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">]</span><span class="p">))</span>
+</span></code></pre></div>
 <h2 id="query-operations">Query Operations</h2>
-<pre><code class="language-rb"># Order
-Book.order(title: :asc, created_at: :desc)
-Book.order(:title, created_at: :desc) # asc by default
-Book.order('title ASC, created_at DESC')
-Book.order('title ASC', 'created_at DESC')
-
-# Select
-Book.select(:isbn, :out_of_print)
-Book.select('isbn, out_of_print')
-Book.select(:title).distinct
-
-# Limit
-Customer.limit(5)
-Customer.limit(5).offset(30)
-
-# Group
-Order.group(:status).count
-Order.select('created_at').group('created_at')
-
-# Having
-Order.group('created_at').having('sum(total) &gt; ?', 200)
-Order.select('created_at, sum(total) as total_price')
-     .group('created_at')
-     .having('sum(total) &gt; ?', 200)
-
-# Null Relation
-# Returns a chainable relation with no records
-# Useful where a Active Record relation is required for further operations
-Book.none
-
-# Read-only Objects
-Customer.readonly.first
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Order</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="no">Book</span><span class="o">.</span><span class="n">order</span><span class="p">(</span><span class="ss">title</span><span class="p">:</span><span class="w"> </span><span class="ss">:asc</span><span class="p">,</span><span class="w"> </span><span class="ss">created_at</span><span class="p">:</span><span class="w"> </span><span class="ss">:desc</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="no">Book</span><span class="o">.</span><span class="n">order</span><span class="p">(</span><span class="ss">:title</span><span class="p">,</span><span class="w"> </span><span class="ss">created_at</span><span class="p">:</span><span class="w"> </span><span class="ss">:desc</span><span class="p">)</span><span class="w"> </span><span class="c1"># asc by default</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="no">Book</span><span class="o">.</span><span class="n">order</span><span class="p">(</span><span class="s1">&#39;title ASC, created_at DESC&#39;</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="no">Book</span><span class="o">.</span><span class="n">order</span><span class="p">(</span><span class="s1">&#39;title ASC&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;created_at DESC&#39;</span><span class="p">)</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Select</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="no">Book</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="ss">:isbn</span><span class="p">,</span><span class="w"> </span><span class="ss">:out_of_print</span><span class="p">)</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="no">Book</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;isbn, out_of_print&#39;</span><span class="p">)</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="no">Book</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="ss">:title</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1"># Limit</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="no">Customer</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="no">Customer</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">offset</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c1"># Group</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="no">Order</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="ss">:status</span><span class="p">)</span><span class="o">.</span><span class="n">count</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="no">Order</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;created_at&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;created_at&#39;</span><span class="p">)</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="c1"># Having</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="no">Order</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;created_at&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">having</span><span class="p">(</span><span class="s1">&#39;sum(total) &gt; ?&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">)</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="no">Order</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;created_at, sum(total) as total_price&#39;</span><span class="p">)</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">     </span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;created_at&#39;</span><span class="p">)</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">     </span><span class="o">.</span><span class="n">having</span><span class="p">(</span><span class="s1">&#39;sum(total) &gt; ?&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">)</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="c1"># Null Relation</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="c1"># Returns a chainable relation with no records</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="c1"># Useful where a Active Record relation is required for further operations</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="no">Book</span><span class="o">.</span><span class="n">none</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="c1"># Read-only Objects</span>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="no">Customer</span><span class="o">.</span><span class="n">readonly</span><span class="o">.</span><span class="n">first</span>
+</span></code></pre></div>
 <h2 id="find-or-build">Find or Build</h2>
-<pre><code class="language-rb">customer = Customer.find_or_initialize_by(first_name: 'Nina')
-customer.persisted? # false
-customer.new_record? # true
-customer.save # true
-
-customer = Customer.find_or_create_by(first_name: 'Andy')
-customer = Customer.find_or_create_by!(first_name: 'Andy')
-
-# If an attribute (say 'locked') should not be included in the query
-# But should be assigned if a new record is created
-Customer.create_with(locked: false).find_or_create_by(first_name: 'Andy')
-Customer.find_or_create_by(first_name: 'Andy') { |c| c.locked = false }
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">customer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Customer</span><span class="o">.</span><span class="n">find_or_initialize_by</span><span class="p">(</span><span class="ss">first_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Nina&#39;</span><span class="p">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">customer</span><span class="o">.</span><span class="n">persisted?</span><span class="w"> </span><span class="c1"># false</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">customer</span><span class="o">.</span><span class="n">new_record?</span><span class="w"> </span><span class="c1"># true</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">customer</span><span class="o">.</span><span class="n">save</span><span class="w"> </span><span class="c1"># true</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">customer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Customer</span><span class="o">.</span><span class="n">find_or_create_by</span><span class="p">(</span><span class="ss">first_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Andy&#39;</span><span class="p">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">customer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Customer</span><span class="o">.</span><span class="n">find_or_create_by!</span><span class="p">(</span><span class="ss">first_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Andy&#39;</span><span class="p">)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1"># If an attribute (say &#39;locked&#39;) should not be included in the query</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># But should be assigned if a new record is created</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="no">Customer</span><span class="o">.</span><span class="n">create_with</span><span class="p">(</span><span class="ss">locked</span><span class="p">:</span><span class="w"> </span><span class="kp">false</span><span class="p">)</span><span class="o">.</span><span class="n">find_or_create_by</span><span class="p">(</span><span class="ss">first_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Andy&#39;</span><span class="p">)</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="no">Customer</span><span class="o">.</span><span class="n">find_or_create_by</span><span class="p">(</span><span class="ss">first_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Andy&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">c</span><span class="o">|</span><span class="w"> </span><span class="n">c</span><span class="o">.</span><span class="n">locked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">false</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
 <h2 id="calculations">Calculations</h2>
-<pre><code class="language-rb">Customer.count
-Customer.where(first_name: 'Ryan').count
-Customer.includes(:orders).where(first_name: 'Ryan', orders: { status: 'shipped' }).count
-
-Order.average(&quot;subtotal&quot;)
-Order.minimum(&quot;subtotal&quot;)
-Order.maximum(&quot;subtotal&quot;)
-Order.sum(&quot;subtotal&quot;)
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="no">Customer</span><span class="o">.</span><span class="n">count</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="no">Customer</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">first_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Ryan&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="no">Customer</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="ss">:orders</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">first_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Ryan&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">orders</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="ss">status</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;shipped&#39;</span><span class="w"> </span><span class="p">})</span><span class="o">.</span><span class="n">count</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="no">Order</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="s2">&quot;subtotal&quot;</span><span class="p">)</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="no">Order</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="s2">&quot;subtotal&quot;</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="no">Order</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="s2">&quot;subtotal&quot;</span><span class="p">)</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="no">Order</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="s2">&quot;subtotal&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <h2 id="existence-of-objects">Existence of Objects</h2>
-<pre><code class="language-rb">Customer.exists?(1) # SELECT 1 FROM customers WHERE id = 1 LIMIT 1
-Customer.exists?(id: [1, 2, 3])
-Customer.exists?(first_name: ['Jane', 'Sergei'])
-Customer.where(first_name: 'Ryan').exists?
-
-Order.any? # SELECT 1 FROM orders LIMIT 1
-Order.shipped.any?
-Book.where(out_of_print: true).any?
-Customer.first.orders.any?
-
-Order.many? # SELECT COUNT(*) FROM (SELECT 1 FROM orders LIMIT 2)
-Order.shipped.many?
-Book.where(out_of_print: true).many?
-Customer.first.orders.many?
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="no">Customer</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1"># SELECT 1 FROM customers WHERE id = 1 LIMIT 1</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="no">Customer</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="nb">id</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">]</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="no">Customer</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="ss">first_name</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Sergei&#39;</span><span class="o">]</span><span class="p">)</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="no">Customer</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">first_name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Ryan&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">exists?</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="no">Order</span><span class="o">.</span><span class="n">any?</span><span class="w"> </span><span class="c1"># SELECT 1 FROM orders LIMIT 1</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="no">Order</span><span class="o">.</span><span class="n">shipped</span><span class="o">.</span><span class="n">any?</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="no">Book</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">out_of_print</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span><span class="p">)</span><span class="o">.</span><span class="n">any?</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="no">Customer</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">orders</span><span class="o">.</span><span class="n">any?</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="no">Order</span><span class="o">.</span><span class="n">many?</span><span class="w"> </span><span class="c1"># SELECT COUNT(*) FROM (SELECT 1 FROM orders LIMIT 2)</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="no">Order</span><span class="o">.</span><span class="n">shipped</span><span class="o">.</span><span class="n">many?</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="no">Book</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">out_of_print</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span><span class="p">)</span><span class="o">.</span><span class="n">many?</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="no">Customer</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">orders</span><span class="o">.</span><span class="n">many?</span>
+</span></code></pre></div>
 <h2 id="explain">Explain</h2>
 <ul>
 <li>Returns query plan for a given query</li>
 </ul>
-<pre><code class="language-rb">Customer.where(id: 1).joins(:orders).explain
-Customer.where(id: 1).includes(:orders).explain
-Customer.where(id: 1).joins(:orders).explain(:analyze, :verbose)
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="no">Customer</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="nb">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">joins</span><span class="p">(</span><span class="ss">:orders</span><span class="p">)</span><span class="o">.</span><span class="n">explain</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="no">Customer</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="nb">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="ss">:orders</span><span class="p">)</span><span class="o">.</span><span class="n">explain</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="no">Customer</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="nb">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">joins</span><span class="p">(</span><span class="ss">:orders</span><span class="p">)</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="ss">:analyze</span><span class="p">,</span><span class="w"> </span><span class="ss">:verbose</span><span class="p">)</span>
+</span></code></pre></div>
 
 
 

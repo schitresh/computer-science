@@ -12404,62 +12404,62 @@
 <ul>
 <li>Mutable</li>
 </ul>
-<pre><code class="language-rb">subjects = { phy: 'Physics', chem: 'Chemistry', math: 'Mathematics' } # Symbol keys
-numbers = { 1 =&gt; 'one', 2 =&gt; 'two' } # Number keys
-words = { 'one' =&gt; 1, 'two' =&gt; 2 } # String keys
-lists = { [1, 2] =&gt;  'one', [3, 4] =&gt; 'two' } # Array keys
-
-[['a', 100], ['b', 200]].to_h # From list of lists: { 'a' =&gt; 100, 'b' =&gt; 200 }
-{ **hash1, **hash2 }
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">subjects</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="ss">phy</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Physics&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">chem</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Chemistry&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">math</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Mathematics&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1"># Symbol keys</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;one&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;two&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1"># Number keys</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;one&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;two&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1"># String keys</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">lists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">]</span><span class="w"> </span><span class="o">=&gt;</span><span class="w">  </span><span class="s1">&#39;one&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">]</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;two&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1"># Array keys</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="o">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="o">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="o">]].</span><span class="n">to_h</span><span class="w"> </span><span class="c1"># From list of lists: { &#39;a&#39; =&gt; 100, &#39;b&#39; =&gt; 200 }</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">{</span><span class="w"> </span><span class="o">**</span><span class="n">hash1</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">hash2</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="accessing">Accessing</h3>
-<pre><code class="language-rb"># If key is not present, it will return nil
-subjects[:math] # Mathematics
-numbers[1]
-words['one'] # 1
-lists[[1, 2]]
-
-subjects[:math] = 'Algebra'
-subjects[:stat] = 'Statistics'
-subjects.delete(:math)
-
-subjects.to_a # Array of pairs
-subjects.each { |key, value| p(key, value) }
-subjects.include?(:phy) # true
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># If key is not present, it will return nil</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">subjects</span><span class="o">[</span><span class="ss">:math</span><span class="o">]</span><span class="w"> </span><span class="c1"># Mathematics</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">numbers</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">words</span><span class="o">[</span><span class="s1">&#39;one&#39;</span><span class="o">]</span><span class="w"> </span><span class="c1"># 1</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">lists</span><span class="o">[[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">]]</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">subjects</span><span class="o">[</span><span class="ss">:math</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Algebra&#39;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">subjects</span><span class="o">[</span><span class="ss">:stat</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Statistics&#39;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">subjects</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="ss">:math</span><span class="p">)</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">subjects</span><span class="o">.</span><span class="n">to_a</span><span class="w"> </span><span class="c1"># Array of pairs</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">subjects</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="o">|</span><span class="w"> </span><span class="nb">p</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">subjects</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="ss">:phy</span><span class="p">)</span><span class="w"> </span><span class="c1"># true</span>
+</span></code></pre></div>
 <h2 id="general-methods">General Methods</h2>
-<pre><code class="language-rb">empty? # nil?
-# present? &amp; blank? are rails methods
-each_key(&amp;block)
-each_value(&amp;block)
-each_pair(&amp;block)
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">empty?</span><span class="w"> </span><span class="c1"># nil?</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># present? &amp; blank? are rails methods</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">each_key</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">each_value</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">each_pair</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+</span></code></pre></div>
 <h2 id="instance-methods">Instance Methods</h2>
-<pre><code class="language-rb"># Return view objects that are refreshed dynamically whenever anything changes
-# Need to typecast to get a list from them
-keys
-values
-entries # [[key1, val1], [key2, val2]]
-dig(:key1, :key2, ...) # Gets value from nested hash
-
-default # Returns default value
-default = value # Sets default value
-
-# Updates the existing keys from dict2 and adds new keys
-# List of lists or tuples, or keywords can also be used instead of dict2
-merge(hash2) # merge!
-merge(key1: val1, key2: val2, ...)
-merge(h2, h3)
-merge(h2, h3) { |key, old_val, new_val| old_val + new_val }
-transform_keys(&amp;block) # Updates all keys as specified in the block
-transform_values(&amp;block) # Updates all values as specified in the block
-dup
-
-compact # Removes nil elements
-delete(:key) # Removes the key and returns the value
-slice(**keys) # Get a new hash with the given keys
-except(**keys) # Get a new hash except the given keys
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Return view objects that are refreshed dynamically whenever anything changes</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># Need to typecast to get a list from them</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">keys</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">values</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">entries</span><span class="w"> </span><span class="c1"># [[key1, val1], [key2, val2]]</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">dig</span><span class="p">(</span><span class="ss">:key1</span><span class="p">,</span><span class="w"> </span><span class="ss">:key2</span><span class="p">,</span><span class="w"> </span><span class="o">...</span><span class="p">)</span><span class="w"> </span><span class="c1"># Gets value from nested hash</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">default</span><span class="w"> </span><span class="c1"># Returns default value</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="c1"># Sets default value</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1"># Updates the existing keys from dict2 and adds new keys</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1"># List of lists or tuples, or keywords can also be used instead of dict2</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="n">merge</span><span class="p">(</span><span class="n">hash2</span><span class="p">)</span><span class="w"> </span><span class="c1"># merge!</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="n">merge</span><span class="p">(</span><span class="ss">key1</span><span class="p">:</span><span class="w"> </span><span class="n">val1</span><span class="p">,</span><span class="w"> </span><span class="ss">key2</span><span class="p">:</span><span class="w"> </span><span class="n">val2</span><span class="p">,</span><span class="w"> </span><span class="o">...</span><span class="p">)</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="n">merge</span><span class="p">(</span><span class="n">h2</span><span class="p">,</span><span class="w"> </span><span class="n">h3</span><span class="p">)</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="n">merge</span><span class="p">(</span><span class="n">h2</span><span class="p">,</span><span class="w"> </span><span class="n">h3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">old_val</span><span class="p">,</span><span class="w"> </span><span class="n">new_val</span><span class="o">|</span><span class="w"> </span><span class="n">old_val</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">new_val</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="n">transform_keys</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span><span class="w"> </span><span class="c1"># Updates all keys as specified in the block</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="n">transform_values</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span><span class="w"> </span><span class="c1"># Updates all values as specified in the block</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="nb">dup</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="n">compact</span><span class="w"> </span><span class="c1"># Removes nil elements</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="n">delete</span><span class="p">(</span><span class="ss">:key</span><span class="p">)</span><span class="w"> </span><span class="c1"># Removes the key and returns the value</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="n">slice</span><span class="p">(</span><span class="o">**</span><span class="n">keys</span><span class="p">)</span><span class="w"> </span><span class="c1"># Get a new hash with the given keys</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="n">except</span><span class="p">(</span><span class="o">**</span><span class="n">keys</span><span class="p">)</span><span class="w"> </span><span class="c1"># Get a new hash except the given keys</span>
+</span></code></pre></div>
 
 
 

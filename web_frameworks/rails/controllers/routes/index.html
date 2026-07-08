@@ -12488,16 +12488,16 @@
 <li>Routes are defined in 'config/routes.rb'</li>
 <li>Use <code>rails routes</code> to get info about all the routes</li>
 </ul>
-<pre><code class="language-rb"># config/routes.rb
-Rails.application.routes.draw do
-  # GET /patients/17
-  # Request is dispatched to the patients controller's show action
-  # With { id: '17' } in params
-  # It can also generate path which can be used in links
-  # &lt;%= link_to 'Patient Record', patient_path(@patient) %&gt;
-  get '/patients/:id', to: 'patients#show'
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># config/routes.rb</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="no">Rails</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">draw</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="c1"># GET /patients/17</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="c1"># Request is dispatched to the patients controller&#39;s show action</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="c1"># With { id: &#39;17&#39; } in params</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="c1"># It can also generate path which can be used in links</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="c1"># &lt;%= link_to &#39;Patient Record&#39;, patient_path(@patient) %&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="n">get</span><span class="w"> </span><span class="s1">&#39;/patients/:id&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">to</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;patients#show&#39;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">end</span>
+</span></code></pre></div>
 <h2 id="resourceful-routes">Resourceful Routes</h2>
 <ul>
 <li>Quickly declares all the common routes for a given resourceful controller<ul>
@@ -12530,138 +12530,138 @@ end
 <li>It is recommended to not nest more than one resource</li>
 <li>Nesting many resources makes it cumbersome to manage routes &amp; paths</li>
 </ul>
-<pre><code class="language-rb"># ArticlesController
-# Routes are nested under magazine element
-# /magazines/:magazine_id/articles
-# Path will be like magazine_articles_path, edit_magazine_article_path
-resources :magazines do
-  resources :articles
-end
-
-# Shallow Nesting
-resources :articles do
-  resources :comments, only: [:index, :new, :create]
-end
-resources :comments, only: [:show, :edit, :update, :destroy]
-
-# Short form for the shallow nesting
-resources :articles do
-  resources :comments, shallow: true
-end
-
-# Will shallow nest all the defined resources inside articles
-resources :articles, shallow: true do
-  resources :comments
-  resources :quotes
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># ArticlesController</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># Routes are nested under magazine element</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># /magazines/:magazine_id/articles</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Path will be like magazine_articles_path, edit_magazine_article_path</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">resources</span><span class="w"> </span><span class="ss">:magazines</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="n">resources</span><span class="w"> </span><span class="ss">:articles</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">end</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># Shallow Nesting</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">resources</span><span class="w"> </span><span class="ss">:articles</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="n">resources</span><span class="w"> </span><span class="ss">:comments</span><span class="p">,</span><span class="w"> </span><span class="ss">only</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:index</span><span class="p">,</span><span class="w"> </span><span class="ss">:new</span><span class="p">,</span><span class="w"> </span><span class="ss">:create</span><span class="o">]</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">end</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">resources</span><span class="w"> </span><span class="ss">:comments</span><span class="p">,</span><span class="w"> </span><span class="ss">only</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:show</span><span class="p">,</span><span class="w"> </span><span class="ss">:edit</span><span class="p">,</span><span class="w"> </span><span class="ss">:update</span><span class="p">,</span><span class="w"> </span><span class="ss">:destroy</span><span class="o">]</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="c1"># Short form for the shallow nesting</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">resources</span><span class="w"> </span><span class="ss">:articles</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="n">resources</span><span class="w"> </span><span class="ss">:comments</span><span class="p">,</span><span class="w"> </span><span class="ss">shallow</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="k">end</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="c1"># Will shallow nest all the defined resources inside articles</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="n">resources</span><span class="w"> </span><span class="ss">:articles</span><span class="p">,</span><span class="w"> </span><span class="ss">shallow</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">  </span><span class="n">resources</span><span class="w"> </span><span class="ss">:comments</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">  </span><span class="n">resources</span><span class="w"> </span><span class="ss">:quotes</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="k">end</span>
+</span></code></pre></div>
 <h2 id="namespaces">Namespaces</h2>
-<pre><code class="language-rb"># Admin::ArticlesController
-# Routes are prefixed: /admin/articles
-namespace :admin do
-  resources :articles, :comments
-end
-
-# Admin::ArticlesController
-# Routes are NOT prefixed: /articles
-scope module: 'admin' do
-  resources :articles, :comments
-end
-
-resources :articles, module: 'admin'
-
-# ArticlesController
-# Routes are prefixed: /admin/articles
-scope '/admin' do
-  resources :articles, :comments
-end
-
-# ArticlesController
-# Routes are prefixed: /admin/articles
-resources :articles, path: '/admin/articles'
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Admin::ArticlesController</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># Routes are prefixed: /admin/articles</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">namespace</span><span class="w"> </span><span class="ss">:admin</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="n">resources</span><span class="w"> </span><span class="ss">:articles</span><span class="p">,</span><span class="w"> </span><span class="ss">:comments</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">end</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Admin::ArticlesController</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># Routes are NOT prefixed: /articles</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">scope</span><span class="w"> </span><span class="ss">module</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;admin&#39;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="n">resources</span><span class="w"> </span><span class="ss">:articles</span><span class="p">,</span><span class="w"> </span><span class="ss">:comments</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">end</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">resources</span><span class="w"> </span><span class="ss">:articles</span><span class="p">,</span><span class="w"> </span><span class="ss">module</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;admin&#39;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="c1"># ArticlesController</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="c1"># Routes are prefixed: /admin/articles</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="n">scope</span><span class="w"> </span><span class="s1">&#39;/admin&#39;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span><span class="n">resources</span><span class="w"> </span><span class="ss">:articles</span><span class="p">,</span><span class="w"> </span><span class="ss">:comments</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="k">end</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="c1"># ArticlesController</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="c1"># Routes are prefixed: /admin/articles</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="n">resources</span><span class="w"> </span><span class="ss">:articles</span><span class="p">,</span><span class="w"> </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;/admin/articles&#39;</span>
+</span></code></pre></div>
 <h2 id="custom-actions">Custom Actions</h2>
-<pre><code class="language-rb">resources :photos do
-  member do
-    # /photos/1/preview
-    # params[:id]
-    # preview_photo_path
-    get 'preview'
-  end
-
-  collection do
-    # /photos/search
-    # search_photos_path
-    get 'search'
-  end
-
-  get 'preview', on: :member
-  get 'search', on: :collection
-
-  # /comments/new/preview
-  # preview_new_comment_path
-  get 'preview', on: :new
-end
-
-resources :photos do
-  # /photos/1/preview
-  # params[:photo_id]
-  # photo_preview_path
-  get 'preview'
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">resources</span><span class="w"> </span><span class="ss">:photos</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="n">member</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="c1"># /photos/1/preview</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="c1"># params[:id]</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="c1"># preview_photo_path</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="n">get</span><span class="w"> </span><span class="s1">&#39;preview&#39;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="k">end</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="n">collection</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="c1"># /photos/search</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="c1"># search_photos_path</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="n">get</span><span class="w"> </span><span class="s1">&#39;search&#39;</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="k">end</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="n">get</span><span class="w"> </span><span class="s1">&#39;preview&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">on</span><span class="p">:</span><span class="w"> </span><span class="ss">:member</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="n">get</span><span class="w"> </span><span class="s1">&#39;search&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">on</span><span class="p">:</span><span class="w"> </span><span class="ss">:collection</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">  </span><span class="c1"># /comments/new/preview</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">  </span><span class="c1"># preview_new_comment_path</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">  </span><span class="n">get</span><span class="w"> </span><span class="s1">&#39;preview&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">on</span><span class="p">:</span><span class="w"> </span><span class="ss">:new</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="k">end</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="n">resources</span><span class="w"> </span><span class="ss">:photos</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">  </span><span class="c1"># /photos/1/preview</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">  </span><span class="c1"># params[:photo_id]</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">  </span><span class="c1"># photo_preview_path</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">  </span><span class="n">get</span><span class="w"> </span><span class="s1">&#39;preview&#39;</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="k">end</span>
+</span></code></pre></div>
 <h2 id="url-helpers">URL Helpers</h2>
 <ul>
 <li>If the argument is an object of a model, it can identify path automatically</li>
 </ul>
-<pre><code class="language-js">&lt;%= link_to 'Ad details', magazine_ad_path(@magazine, @ad) %&gt;
-&lt;%= link_to 'Ad details', url_for([@magazine, @ad]) %&gt;
-&lt;%= link_to 'Ad details', [@magazine, @ad] %&gt;
-&lt;%= link_to 'Magazine details', @magazine %&gt;
-&lt;%= link_to 'Edit Ad', [:edit, @magazine, @ad] %&gt;
-</code></pre>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">&lt;%=</span><span class="w"> </span><span class="nx">link_to</span><span class="w"> </span><span class="s1">&#39;Ad details&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">magazine_ad_path</span><span class="p">(</span><span class="err">@</span><span class="nx">magazine</span><span class="p">,</span><span class="w"> </span><span class="err">@</span><span class="nx">ad</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="o">&lt;%=</span><span class="w"> </span><span class="nx">link_to</span><span class="w"> </span><span class="s1">&#39;Ad details&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">url_for</span><span class="p">([</span><span class="err">@</span><span class="nx">magazine</span><span class="p">,</span><span class="w"> </span><span class="err">@</span><span class="nx">ad</span><span class="p">])</span><span class="w"> </span><span class="o">%&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="o">&lt;%=</span><span class="w"> </span><span class="nx">link_to</span><span class="w"> </span><span class="s1">&#39;Ad details&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="err">@</span><span class="nx">magazine</span><span class="p">,</span><span class="w"> </span><span class="err">@</span><span class="nx">ad</span><span class="p">]</span><span class="w"> </span><span class="o">%&gt;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="o">&lt;%=</span><span class="w"> </span><span class="nx">link_to</span><span class="w"> </span><span class="s1">&#39;Magazine details&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">@</span><span class="nx">magazine</span><span class="w"> </span><span class="o">%&gt;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="o">&lt;%=</span><span class="w"> </span><span class="nx">link_to</span><span class="w"> </span><span class="s1">&#39;Edit Ad&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">:</span><span class="nx">edit</span><span class="p">,</span><span class="w"> </span><span class="err">@</span><span class="nx">magazine</span><span class="p">,</span><span class="w"> </span><span class="err">@</span><span class="nx">ad</span><span class="p">]</span><span class="w"> </span><span class="o">%&gt;</span>
+</span></code></pre></div>
 <h2 id="non-resourceful-routes">Non-Resourceful Routes</h2>
-<pre><code class="language-rb">root to: 'pages#main'
-root 'pages#main' # shortcut for the above
-
-# Routes both /photos &amp; /photos/:id to display action, id is optional parameter
-get 'photos(/:id)', to: 'photos#display'
-get 'photos/:id/:user_id', to: 'photos#show'
-get 'photos/:id/with_user/:user_id', to: 'photos#show'
-get '/stories/:name', to: redirect('/articles/%{name}')
-
-# Default params
-# Sets params[:format] = 'jpg'
-get 'photos/:id', to: 'photos#show', defaults: { format: 'jpg' }
-
-# Wildcard segments
-# books/some/section/title-of-book, params[:section] = 'some/section'
-get 'books/*section/:title', to: 'books#show'
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">root</span><span class="w"> </span><span class="ss">to</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;pages#main&#39;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">root</span><span class="w"> </span><span class="s1">&#39;pages#main&#39;</span><span class="w"> </span><span class="c1"># shortcut for the above</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Routes both /photos &amp; /photos/:id to display action, id is optional parameter</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">get</span><span class="w"> </span><span class="s1">&#39;photos(/:id)&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">to</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;photos#display&#39;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">get</span><span class="w"> </span><span class="s1">&#39;photos/:id/:user_id&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">to</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;photos#show&#39;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">get</span><span class="w"> </span><span class="s1">&#39;photos/:id/with_user/:user_id&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">to</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;photos#show&#39;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">get</span><span class="w"> </span><span class="s1">&#39;/stories/:name&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">to</span><span class="p">:</span><span class="w"> </span><span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/articles/%{name}&#39;</span><span class="p">)</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># Default params</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1"># Sets params[:format] = &#39;jpg&#39;</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="n">get</span><span class="w"> </span><span class="s1">&#39;photos/:id&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">to</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;photos#show&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">defaults</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">format</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;jpg&#39;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="c1"># Wildcard segments</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="c1"># books/some/section/title-of-book, params[:section] = &#39;some/section&#39;</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="n">get</span><span class="w"> </span><span class="s1">&#39;books/*section/:title&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">to</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;books#show&#39;</span>
+</span></code></pre></div>
 <h2 id="concerns">Concerns</h2>
 <ul>
 <li>Declares common routes that can be reused inside other resources &amp; routes</li>
 </ul>
-<pre><code class="language-rb">concern :commentable do
-  resources :comments
-end
-
-concern :image_attachable do
-  resources :images, only: :index
-end
-
-# This is equivalent to nested resources
-# resources :messages do
-#   resources :comments
-# end
-resources :messages, concerns: :commentable
-resources :articles, concerns: [:commentable, :image_attachable]
-
-# Can be used in namespaces &amp; scopes as well
-namespace :articles do
-  concerns :commentable
-end
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">concern</span><span class="w"> </span><span class="ss">:commentable</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="n">resources</span><span class="w"> </span><span class="ss">:comments</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">end</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">concern</span><span class="w"> </span><span class="ss">:image_attachable</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="n">resources</span><span class="w"> </span><span class="ss">:images</span><span class="p">,</span><span class="w"> </span><span class="ss">only</span><span class="p">:</span><span class="w"> </span><span class="ss">:index</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">end</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1"># This is equivalent to nested resources</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1"># resources :messages do</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c1">#   resources :comments</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="c1"># end</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="n">resources</span><span class="w"> </span><span class="ss">:messages</span><span class="p">,</span><span class="w"> </span><span class="ss">concerns</span><span class="p">:</span><span class="w"> </span><span class="ss">:commentable</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="n">resources</span><span class="w"> </span><span class="ss">:articles</span><span class="p">,</span><span class="w"> </span><span class="ss">concerns</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:commentable</span><span class="p">,</span><span class="w"> </span><span class="ss">:image_attachable</span><span class="o">]</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="c1"># Can be used in namespaces &amp; scopes as well</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="n">namespace</span><span class="w"> </span><span class="ss">:articles</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">  </span><span class="n">concerns</span><span class="w"> </span><span class="ss">:commentable</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="k">end</span>
+</span></code></pre></div>
 
 
 

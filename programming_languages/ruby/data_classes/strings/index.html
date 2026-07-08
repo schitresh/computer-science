@@ -12492,93 +12492,93 @@
 <ul>
 <li>Mutable</li>
 </ul>
-<pre><code class="language-rb">text = 'hello'
-text[1] # 'e' (Single char is also a string)
-text[-4] # 'e'
-text + 'world' # 'hello world'
-text * 3 # 'hellohellohello'
-
-text = &quot;Hello World!&quot;
-para = 'Multiline'\
-       'String'
-
-'hello'.include?('el') # True
-
-'hello\nworld' # Doesn't add new line
-&quot;hello\nworld&quot; # Adds new line
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;hello&#39;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">text</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="c1"># &#39;e&#39; (Single char is also a string)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">text</span><span class="o">[-</span><span class="mi">4</span><span class="o">]</span><span class="w"> </span><span class="c1"># &#39;e&#39;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">text</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;world&#39;</span><span class="w"> </span><span class="c1"># &#39;hello world&#39;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">text</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="c1"># &#39;hellohellohello&#39;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello World!&quot;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">para</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Multiline&#39;</span><span class="p">\</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">       </span><span class="s1">&#39;String&#39;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="s1">&#39;hello&#39;</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="s1">&#39;el&#39;</span><span class="p">)</span><span class="w"> </span><span class="c1"># True</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="s1">&#39;hello</span><span class="se">\n</span><span class="s1">world&#39;</span><span class="w"> </span><span class="c1"># Doesn&#39;t add new line</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="s2">&quot;hello</span><span class="se">\n</span><span class="s2">world&quot;</span><span class="w"> </span><span class="c1"># Adds new line</span>
+</span></code></pre></div>
 <h2 id="interpolation">Interpolation</h2>
-<pre><code class="language-rb">&quot;Employee name is #{name}&quot;
-&quot;Category code is #{get_code(product)}&quot;
-&quot;Category code is #{category || DEFAULT_CATEGORY}&quot;
-&quot;Pecentage: #{(value / 20) * 100}&quot;
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="s2">&quot;Employee name is </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="s2">&quot;Category code is </span><span class="si">#{</span><span class="n">get_code</span><span class="p">(</span><span class="n">product</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s2">&quot;Category code is </span><span class="si">#{</span><span class="n">category</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="no">DEFAULT_CATEGORY</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s2">&quot;Pecentage: </span><span class="si">#{</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">}</span><span class="s2">&quot;</span>
+</span></code></pre></div>
 <h2 id="slicing">Slicing</h2>
-<pre><code class="language-rb"># From left, the indexes are 0, 1, 2, ...
-# From right, the indexes are ..., -3, -2, -1
-# Can use [range] or slice(range)
-
-text = 'hello world'
-text[..4] # 'hello', the range (..4) alone is not valid
-text[...5] # 'hello'
-text[6..] # 'world'
-text[..-7] # 'hello'
-
-text[2..4] # 'llo'
-text[-5..-3] # 'wor'
-text[6..-3] # 'wor'
-
-text[6..][..2] # 'wor'
-
-text[2..3] = 'kk' # 'hekko world'
-text[2..4] = 'kk' # 'hekk world'
-text[2..3] = 'asdf' # 'heasdfo world'
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># From left, the indexes are 0, 1, 2, ...</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># From right, the indexes are ..., -3, -2, -1</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Can use [range] or slice(range)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;hello world&#39;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">text</span><span class="o">[..</span><span class="mi">4</span><span class="o">]</span><span class="w"> </span><span class="c1"># &#39;hello&#39;, the range (..4) alone is not valid</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">text</span><span class="o">[...</span><span class="mi">5</span><span class="o">]</span><span class="w"> </span><span class="c1"># &#39;hello&#39;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">text</span><span class="o">[</span><span class="mi">6</span><span class="o">..]</span><span class="w"> </span><span class="c1"># &#39;world&#39;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">text</span><span class="o">[..-</span><span class="mi">7</span><span class="o">]</span><span class="w"> </span><span class="c1"># &#39;hello&#39;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="n">text</span><span class="o">[</span><span class="mi">2</span><span class="o">..</span><span class="mi">4</span><span class="o">]</span><span class="w"> </span><span class="c1"># &#39;llo&#39;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">text</span><span class="o">[-</span><span class="mi">5</span><span class="o">..-</span><span class="mi">3</span><span class="o">]</span><span class="w"> </span><span class="c1"># &#39;wor&#39;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">text</span><span class="o">[</span><span class="mi">6</span><span class="o">..-</span><span class="mi">3</span><span class="o">]</span><span class="w"> </span><span class="c1"># &#39;wor&#39;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="n">text</span><span class="o">[</span><span class="mi">6</span><span class="o">..][..</span><span class="mi">2</span><span class="o">]</span><span class="w"> </span><span class="c1"># &#39;wor&#39;</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="n">text</span><span class="o">[</span><span class="mi">2</span><span class="o">..</span><span class="mi">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;kk&#39;</span><span class="w"> </span><span class="c1"># &#39;hekko world&#39;</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="n">text</span><span class="o">[</span><span class="mi">2</span><span class="o">..</span><span class="mi">4</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;kk&#39;</span><span class="w"> </span><span class="c1"># &#39;hekk world&#39;</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="n">text</span><span class="o">[</span><span class="mi">2</span><span class="o">..</span><span class="mi">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;asdf&#39;</span><span class="w"> </span><span class="c1"># &#39;heasdfo world&#39;</span>
+</span></code></pre></div>
 <h2 id="instance-methods">Instance Methods</h2>
 <ul>
 <li>Applied on string like <code>string.method_name(*args, **kwargs)</code></li>
 </ul>
 <h3 id="general">General</h3>
-<pre><code class="language-rb">length
-empty? # nil?
-# present? &amp; blank? are rails methods
-to_sym
-
-str &lt;&lt; str2 # Appends str2
-insert(index, str2)
-reverse # reverse!
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">length</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">empty?</span><span class="w"> </span><span class="c1"># nil?</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># present? &amp; blank? are rails methods</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">to_sym</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">str</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">str2</span><span class="w"> </span><span class="c1"># Appends str2</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">insert</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">str2</span><span class="p">)</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">reverse</span><span class="w"> </span><span class="c1"># reverse!</span>
+</span></code></pre></div>
 <h3 id="find-and-replace">Find and replace</h3>
-<pre><code class="language-rb">index(substr) # rindex
-count(substr) # Counts occurrence of substring
-
-tr(substr, replace_with)
-sub(regex_or_string, replace_with) # Replaces the first matching regex or string
-sub('foo', hash) # Replaces foo with bar, hash = { 'foo' =&gt; 'bar' }
-sub(regex_or_string) { |match| some_action }
-gsub(regex_or_string, replace_with) # Replaces all the matching regex or string
-
-start_with(prefix)
-end_with(suffix)
-delete_prefix(prefix)
-delete_suffix(suffix)
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">index</span><span class="p">(</span><span class="n">substr</span><span class="p">)</span><span class="w"> </span><span class="c1"># rindex</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">count</span><span class="p">(</span><span class="n">substr</span><span class="p">)</span><span class="w"> </span><span class="c1"># Counts occurrence of substring</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">tr</span><span class="p">(</span><span class="n">substr</span><span class="p">,</span><span class="w"> </span><span class="n">replace_with</span><span class="p">)</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">sub</span><span class="p">(</span><span class="n">regex_or_string</span><span class="p">,</span><span class="w"> </span><span class="n">replace_with</span><span class="p">)</span><span class="w"> </span><span class="c1"># Replaces the first matching regex or string</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nb">sub</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">hash</span><span class="p">)</span><span class="w"> </span><span class="c1"># Replaces foo with bar, hash = { &#39;foo&#39; =&gt; &#39;bar&#39; }</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nb">sub</span><span class="p">(</span><span class="n">regex_or_string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">match</span><span class="o">|</span><span class="w"> </span><span class="n">some_action</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nb">gsub</span><span class="p">(</span><span class="n">regex_or_string</span><span class="p">,</span><span class="w"> </span><span class="n">replace_with</span><span class="p">)</span><span class="w"> </span><span class="c1"># Replaces all the matching regex or string</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">start_with</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="n">end_with</span><span class="p">(</span><span class="n">suffix</span><span class="p">)</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="n">delete_prefix</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="n">delete_suffix</span><span class="p">(</span><span class="n">suffix</span><span class="p">)</span>
+</span></code></pre></div>
 <h3 id="split-and-join">Split and Join</h3>
-<pre><code class="language-rb">strip # Removes trailing whitespaces
-# lstrip, rstrip
-split(delimiter_or_regex) # Deletes delimiter, splits and returns list of subsrings
-partition(sep) # Splits the string in 3 tuples on occurence of separator
-# lpartition, rpartition
-array.join(str) # Joins the array using the string
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">strip</span><span class="w"> </span><span class="c1"># Removes trailing whitespaces</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># lstrip, rstrip</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">split</span><span class="p">(</span><span class="n">delimiter_or_regex</span><span class="p">)</span><span class="w"> </span><span class="c1"># Deletes delimiter, splits and returns list of subsrings</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">partition</span><span class="p">(</span><span class="n">sep</span><span class="p">)</span><span class="w"> </span><span class="c1"># Splits the string in 3 tuples on occurence of separator</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># lpartition, rpartition</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">array</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="w"> </span><span class="c1"># Joins the array using the string</span>
+</span></code></pre></div>
 <h3 id="case">Case</h3>
-<pre><code class="language-rb">casecmp?(str2) # Compares string by ignoring case
-# Use with ! to edit in place
-downcase
-upcase
-titleize # Titlecase
-capitalize # Capitalizes the first letter of string
-</code></pre>
+<div class="language-rb highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">casecmp?</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span><span class="w"> </span><span class="c1"># Compares string by ignoring case</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># Use with ! to edit in place</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">downcase</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">upcase</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">titleize</span><span class="w"> </span><span class="c1"># Titlecase</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">capitalize</span><span class="w"> </span><span class="c1"># Capitalizes the first letter of string</span>
+</span></code></pre></div>
 
 
 

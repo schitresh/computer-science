@@ -12506,78 +12506,78 @@
 
 <h1 id="queries">Queries</h1>
 <h3 id="select">Select</h3>
-<pre><code class="language-sql">-- Select all columns
-select * from employees;
-
--- Select specific columns
-select employee_id, full_name, date_of_joining from employees;
-
--- Alias column names
-select
-  full_name as name,
-  datediff(date_of_birth, curdate()) as age
-from employees;
-
--- Select distinct values
-select distinct(city) from employees;
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">-- Select all columns</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">-- Select specific columns</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">select</span><span class="w"> </span><span class="n">employee_id</span><span class="p">,</span><span class="w"> </span><span class="n">full_name</span><span class="p">,</span><span class="w"> </span><span class="n">date_of_joining</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">-- Alias column names</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">select</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="n">full_name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">name</span><span class="p">,</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="n">datediff</span><span class="p">(</span><span class="n">date_of_birth</span><span class="p">,</span><span class="w"> </span><span class="n">curdate</span><span class="p">())</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">age</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1">-- Select distinct values</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">select</span><span class="w"> </span><span class="k">distinct</span><span class="p">(</span><span class="n">city</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</span></code></pre></div>
 <h3 id="order-and-limit">Order and Limit</h3>
-<pre><code class="language-sql">select * from employees order by date_of_joining;
-select * from employees order by date_of_joining, salary desc;
-select * from employees order by date_of_joining desc, salary desc;
-
-select * from employees limit 10;
-
--- Select 10 random employees
-select * from employees order by rand() limit 10;
-
--- Select employees having the 10th to 15th highest salary
-select * from employees order by salary limit 5 offset 10;
-select * from employees order by salary limit 5, 10;
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">date_of_joining</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">date_of_joining</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">desc</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">date_of_joining</span><span class="w"> </span><span class="k">desc</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">desc</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">limit</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">-- Select 10 random employees</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">rand</span><span class="p">()</span><span class="w"> </span><span class="k">limit</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">-- Select employees having the 10th to 15th highest salary</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">limit</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">offset</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">limit</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span></code></pre></div>
 <h3 id="where-conditions">Where Conditions</h3>
-<pre><code class="language-sql">-- Comparison operators
-select * from employees where city is null;
-select * from employees where city is not null;
-select * from employees where city = 'New York';
-select * from employees where city != 'New York';
-
--- Logical operators
-select * from employees where city = 'New York' and salary &gt;= 10000;
-select * from employees where city = 'New York' or salary &gt;= 10000;
-
--- String operators
-select * from employees where name like '%wick';
--- Contains h at third position
-select * from employees where name like '__h%';
-
--- Range operators
-select * from employees where salary between 5000 and 10000;
-
--- Membership operators
-select * from employees where city in ('New York', 'Los Angeles');
-select * from employees where city not in ('New York', 'Los Angeles');
-select * from employees where city in (
-  select city from cities where state_code = 'NY'
-);
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">-- Comparison operators</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;New York&#39;</span><span class="p">;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;New York&#39;</span><span class="p">;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">-- Logical operators</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;New York&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;New York&#39;</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">-- String operators</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;%wick&#39;</span><span class="p">;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1">-- Contains h at third position</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;__h%&#39;</span><span class="p">;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="c1">-- Range operators</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="c1">-- Membership operators</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;New York&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Los Angeles&#39;</span><span class="p">);</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;New York&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Los Angeles&#39;</span><span class="p">);</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">  </span><span class="k">select</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">cities</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">state_code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;NY&#39;</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="p">);</span>
+</span></code></pre></div>
 <h3 id="conditionals">Conditionals</h3>
-<pre><code class="language-sql">-- If
-select
-  full_name,
-  if(salary &lt; 10000, 'Employee', 'Executive') as category
-from employees;
-
--- Case
-select
-  full_name,
-  (case
-    when salary &lt; 10000 then 'Employee'
-    when salary &lt; 20000 then 'Executive'
-    else 'Senior Executive'
-  end) as category
-from employees;
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">-- If</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">select</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="n">full_name</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Employee&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Executive&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">category</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1">-- Case</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">select</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="n">full_name</span><span class="p">,</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="p">(</span><span class="k">case</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="k">when</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="s1">&#39;Employee&#39;</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="k">when</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20000</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="s1">&#39;Executive&#39;</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Senior Executive&#39;</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="k">end</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">category</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</span></code></pre></div>
 <h3 id="sets">Sets</h3>
 <ul>
 <li>Applied between two 'select' queries where both the queries<ul>
@@ -12587,54 +12587,54 @@ from employees;
 </ul>
 </li>
 </ul>
-<pre><code class="language-sql">-- 'Union' returns distinct values
-(select city from employees) union (select city from students);
-
--- 'Union all' allows duplicates
-(select city from employees) union all (select city from students);
-
--- 'Intersect' returns common values
-(select city from employees) intersect (select city from students);
-
--- 'Minus' returns distinct values
-(select city from employees) minus (select city from students);
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">-- &#39;Union&#39; returns distinct values</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="p">)</span><span class="w"> </span><span class="k">union</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">students</span><span class="p">);</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">-- &#39;Union all&#39; allows duplicates</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="p">)</span><span class="w"> </span><span class="k">union</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">students</span><span class="p">);</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1">-- &#39;Intersect&#39; returns common values</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="p">)</span><span class="w"> </span><span class="k">intersect</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">students</span><span class="p">);</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1">-- &#39;Minus&#39; returns distinct values</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="p">)</span><span class="w"> </span><span class="n">minus</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">students</span><span class="p">);</span>
+</span></code></pre></div>
 <h3 id="group">Group</h3>
 <ul>
 <li>Placed after the 'where' clause and before the 'order' &amp; 'having' clause</li>
 <li>The 'having' clause is used for filtering the grouped data</li>
 <li>In case of multiple rows, the data from the first row is shown</li>
 </ul>
-<pre><code class="language-sql">select
-    city,
-    count(*) as num_of_employees
-from employees
-where date_of_joining &gt;= '2023-01-01'
-group by city
-order by num_of_employees;
-
-select
-    city,
-    year(date_of_joining) as year_of_joining,
-    count(*) as num_of_employees
-from employees
-group by city, year(date_of_joining);
-
-select
-    city,
-    count(*) as num_of_employees
-from employees
-group by city
-having sum(salary) &gt; 100000 and num_of_employees &lt; 5;
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">select</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="n">city</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">num_of_employees</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">from</span><span class="w"> </span><span class="n">employees</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">where</span><span class="w"> </span><span class="n">date_of_joining</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="s1">&#39;2023-01-01&#39;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">city</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">num_of_employees</span><span class="p">;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">select</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="n">city</span><span class="p">,</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="k">year</span><span class="p">(</span><span class="n">date_of_joining</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">year_of_joining</span><span class="p">,</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">num_of_employees</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="k">from</span><span class="w"> </span><span class="n">employees</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="k">year</span><span class="p">(</span><span class="n">date_of_joining</span><span class="p">);</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="k">select</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="n">city</span><span class="p">,</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">num_of_employees</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="k">from</span><span class="w"> </span><span class="n">employees</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">city</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="k">having</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100000</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">num_of_employees</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span></code></pre></div>
 <h3 id="aggregators">Aggregators</h3>
 <ul>
 <li>Count, Sum, Avg, Max, Min</li>
 </ul>
-<pre><code class="language-sql">select sum(salary) from employees where department_id = 5;
-select count(*) from employees group by department_id;
-select * from employees group by department_id having count(*) &gt; 10;
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">select</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">department_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">select</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">department_id</span><span class="p">;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">department_id</span><span class="w"> </span><span class="k">having</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span></code></pre></div>
 <h3 id="joins">Joins</h3>
 <ul>
 <li>inner join (or join)</li>
@@ -12646,62 +12646,62 @@ select * from employees group by department_id having count(*) &gt; 10;
 </ul>
 </li>
 </ul>
-<pre><code class="language-sql">select * from employees
-join addresses on employees.address_id = addresses.id;
-
--- Self Join
-select
-  emps.full_name as emp_name,
-  manager.full_name as manager_name,
-from employees as emps
-join employees as managers on managers.id = emps.manager_id;
-
--- Full Outer Join
--- MySQL does not explicitly support a full outer join
-select * from employees left join departments on employees.department_id = departments.id
-union
-select * from employees right join departments on employees.department_id = departments.id;
-
--- Update with join
-update employees
-join employees as managers on managers.id = emps.manager_id
-set employees.manager_name = managers.full_name;
-
--- Delete with join
-delete employees
-from employees
-join employees as managers on managers.id = emps.manager_id
-where managers.full_name 'John Wick';
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">join</span><span class="w"> </span><span class="n">addresses</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">employees</span><span class="p">.</span><span class="n">address_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addresses</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1">-- Self Join</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">select</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="n">emps</span><span class="p">.</span><span class="n">full_name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">emp_name</span><span class="p">,</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="n">manager</span><span class="p">.</span><span class="n">full_name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">manager_name</span><span class="p">,</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">emps</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="k">join</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">managers</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">managers</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emps</span><span class="p">.</span><span class="n">manager_id</span><span class="p">;</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1">-- Full Outer Join</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="c1">-- MySQL does not explicitly support a full outer join</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">left</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">employees</span><span class="p">.</span><span class="n">department_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">departments</span><span class="p">.</span><span class="n">id</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="k">union</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">right</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">departments</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">employees</span><span class="p">.</span><span class="n">department_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">departments</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="c1">-- Update with join</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="k">update</span><span class="w"> </span><span class="n">employees</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="k">join</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">managers</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">managers</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emps</span><span class="p">.</span><span class="n">manager_id</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="k">set</span><span class="w"> </span><span class="n">employees</span><span class="p">.</span><span class="n">manager_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">managers</span><span class="p">.</span><span class="n">full_name</span><span class="p">;</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="c1">-- Delete with join</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="k">delete</span><span class="w"> </span><span class="n">employees</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="k">from</span><span class="w"> </span><span class="n">employees</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="k">join</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">managers</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">managers</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emps</span><span class="p">.</span><span class="n">manager_id</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="k">where</span><span class="w"> </span><span class="n">managers</span><span class="p">.</span><span class="n">full_name</span><span class="w"> </span><span class="s1">&#39;John Wick&#39;</span><span class="p">;</span>
+</span></code></pre></div>
 <h2 id="partition-by">Partition By</h2>
 <ul>
 <li>'group by' shows only the top rows</li>
 <li>But 'partition by' shows all the rows along with the partitioned values</li>
 </ul>
-<pre><code class="language-sql">-- For each employee, show the average salary of the employee's department
--- Does not group the employees, but selectively gets the average
-select
-  full_name,
-  salary,
-  avg(salary) over (partition by department) as department_average_salary
-from employees;
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">-- For each employee, show the average salary of the employee&#39;s department</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1">-- Does not group the employees, but selectively gets the average</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">select</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="n">full_name</span><span class="p">,</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="n">salary</span><span class="p">,</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="k">avg</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="n">over</span><span class="w"> </span><span class="p">(</span><span class="n">partition</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">department</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">department_average_salary</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</span></code></pre></div>
 <h2 id="over">Over</h2>
 <ul>
 <li>Apply function over by ordering rows with or without partition</li>
 </ul>
-<pre><code class="language-sql">select
-  full_name,
-  salary,
-  rank() over (order by salary) as salary_rank
-from employees;
-
-select
-  full_name,
-  salary,
-  rank() over (partition by department order by salary) as salary_rank_within_department
-from employees;
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">select</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="n">full_name</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="n">salary</span><span class="p">,</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="n">rank</span><span class="p">()</span><span class="w"> </span><span class="n">over</span><span class="w"> </span><span class="p">(</span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">salary_rank</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="k">select</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">  </span><span class="n">full_name</span><span class="p">,</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">  </span><span class="n">salary</span><span class="p">,</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">  </span><span class="n">rank</span><span class="p">()</span><span class="w"> </span><span class="n">over</span><span class="w"> </span><span class="p">(</span><span class="n">partition</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">department</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">salary_rank_within_department</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">from</span><span class="w"> </span><span class="n">employees</span><span class="p">;</span>
+</span></code></pre></div>
 
 
 
